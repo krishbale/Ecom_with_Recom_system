@@ -3,9 +3,9 @@
 
 ## Project Members:
 
-## Bishnu Upadhyay: Bishnuupadhyay12@gmail.com
-## Arjun Khadka: khadkaarjun028@gmail.com
-## Balkrishna Pokharel: sushil.pokharel.7528@gmail.com
+## Bishnu Upadhyay: 
+## Arjun Khadka: 
+## Balkrishna Pokharel:
 
 
 ## First of all clone the github repos which will be available to your email.
