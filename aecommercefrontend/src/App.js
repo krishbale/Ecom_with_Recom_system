@@ -6,7 +6,6 @@ import Contact from './pages/Contact';
 import Productpage from './pages/Productpage';
 import Login from './pages/Login';
 import Logout from './pages/Logout';
-
 import Footer from './pages/Footer';
 import './App.css';
 
