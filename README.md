@@ -8,12 +8,20 @@
 ## Balkrishna Pokharel:
 
 
-## First of all clone the github repos which will be available to your email.
-## Save the folder workspace and open the folder with  visual studio code 
+## Install node js 
+## install github bash ?? set up the your account in git bash 
  //   or
 
  
-##  directly open by clicking on the main file explorer main bar (ahead of search box)   using "cmd /c code ." from root project directoreis
-## Go to frontend directory README.md for quicksetup for both front and back server
+##  install visual studio code
+## Downlaod the zip file of the repositories
 
-## Guys before after making changes to the project make a new branch and push there not in the main branch 
+## Extract the zip and open the folder with vs code .
+
+
+## Now install the modules for both frontend and backend
+
+## cd aecommerce and npm install and to run npm start again open new cmd    cd backend and npm install and nodemon app. 
+
+
+## 
