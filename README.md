@@ -24,4 +24,6 @@
 ## cd aecommerce and npm install and to run npm start again open new cmd    cd backend and npm install and nodemon app. 
 
 
-## 
+## And again if run git branch "your_branch" to create new branch and git pull origin master to get the file of main branch 
+
+## Remember
