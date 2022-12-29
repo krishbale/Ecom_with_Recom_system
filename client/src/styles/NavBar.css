@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #24252a;
+
+}
+
+li, a , button {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+.navbar{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+
+}
+.nav_items{
+    list-style: none;
+}
+
+ .nav_items__item {
+    display: inline-block;
+    padding: 0px 20px;
+
+ }
