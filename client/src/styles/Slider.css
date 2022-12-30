@@ -1,0 +1,29 @@
+.productitem{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:1rem;
+    border-bottom: 1px solid rgb(163, 162, 162);
+}
+.card{
+    margin:1rem 0;
+    border:2px solid rgb(173, 168, 168);
+}
+.image{
+    display: flex;
+    justify-content: center;
+    height:350px;
+}
+.card .image img{
+    width:80%;
+   
+}
+.card .image{
+    margin: auto;
+}
+.card .des h2{
+  align-items: center;
+}
+.card .des span{
+    display:flex;
+    justify-content: space-between;
+}

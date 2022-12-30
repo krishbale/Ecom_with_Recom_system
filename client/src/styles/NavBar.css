@@ -2,30 +2,35 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #24252a;
 
+}
+li {
+    display: inline;
+    padding: .5rem .8rem;
+ 
+}
+li:hover{
+    background-color: rgb(189, 187, 187);
+    color:black;
+border-radius: .6rem;
 }
 
 li, a , button {
     font-family: 'Courier New', Courier, monospace;
-    font-weight: 500;
-    font-size: 16px;
-    color: #edf0f1;
+    font-weight: 600;
+    font-size: 18px;
     text-decoration: none;
+    color: black;
 }
-.navbar{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 30px 10%;
+nav{
+display: flex;
+justify-content: space-between;
+align-items: center;
+ background-color: rgb(228, 226, 226);
+ border-bottom: 2px solid rgb(79, 78, 78);
+padding: .8rem .5rem;
 
 }
 .nav_items{
     list-style: none;
 }
-
- .nav_items__item {
-    display: inline-block;
-    padding: 0px 20px;
-
- }
