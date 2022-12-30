@@ -11,9 +11,10 @@ import About from '../pages/About'
 import Contact from '../pages/Contact'
 import Login from '../pages/Login'
 import Logout from '../pages/Logout'
+
 const NavBar = () => {
   return (
-    <>
+    <>  
 
       <Router >
         <div className="navbar">
