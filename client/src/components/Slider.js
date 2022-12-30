@@ -6,12 +6,14 @@ function Slider() {
    const [products ,setProducts]=useState([]);
    useEffect(() => {
     const fetchdata = async () => {
-      const { data } = await axios.get("http://fakestoreapi.com/products");
-      setProducts(data);
+      const { data } = await axios.get('/products');
+      setProducts(data.data);
+      
+      console.log(data);
     };
     fetchdata();
   }, []);
-console.log(products)
+// console.log(products.data)
 
 return(
  <> 
