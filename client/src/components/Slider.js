@@ -20,7 +20,7 @@ return(
  <h1>All Product</h1>
   <div className='productitem'>
  {products.map((product)=>{
-             const {id,title,price, description ,category, image, rate, count} = product;
+             const {id,title,price, description ,category, image, rating, count} = product;
              return(
                  <div className='card' key={id}>
                          <div className='image'>
@@ -30,8 +30,8 @@ return(
                          <div className='des'>
                              <h2>{title.slice(0,25)}</h2>
                              <span>
-                             <h3>{price}</h3>
-                             <h3>rating</h3>
+                             <h3>Price:{price}</h3>
+                             <h3>rating:{rating.rate}</h3>
                              </span>
                            
                          </div>
