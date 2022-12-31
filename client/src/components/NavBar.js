@@ -11,6 +11,7 @@ import About from '../pages/About'
 import Contact from '../pages/Contact'
 import Login from '../pages/Login'
 import Logout from '../pages/Logout'
+import Detail from '../pages/Detail';
 
 const NavBar = () => {
   return (
@@ -46,6 +47,7 @@ const NavBar = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
+            <Route path="/details/:id" element={<Detail />} />
           </Routes>
         </div>
       </Router>

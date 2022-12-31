@@ -1,0 +1,16 @@
+.detail{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap:1rem;
+    align-items: center;
+    border:1px solid red;
+}
+.image{
+display:flex;
+justify-content: center;
+}
+.description{
+    display:grid;
+    justify-content: center;
+    text-align: center;
+}

@@ -1,5 +1,6 @@
 import '../styles/Slider.css'
-import React, { useEffect,useState } from 'react'
+import {useState,useEffect} from 'react'
+import { Link} from "react-router-dom";
 import axios from "axios"
 
 function Slider() {
@@ -32,6 +33,13 @@ return(
                              <span>
                              <h3>Price:{price}</h3>
                              <h3>rating:{rating.rate}</h3>
+                              <div>
+                              <h3>Price:{price}</h3>
+                             <h3>Rating:{rating.rate}</h3>
+                              </div>
+                              <div>
+                              <Link to={`/details/${id}`} className='btn '>Learn More</Link>
+                              </div>
                              </span>
                            
                          </div>
