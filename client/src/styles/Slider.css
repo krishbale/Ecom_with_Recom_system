@@ -72,6 +72,7 @@ padding:1.4rem 0rem;
 .image:hover .overlay{
     opacity: 0.8;
 }
+
 .announcement{
     padding: .2rem 0;
     background-color: rgb(108, 108, 107);
