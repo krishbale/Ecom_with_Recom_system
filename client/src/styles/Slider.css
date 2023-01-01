@@ -72,3 +72,41 @@ padding:1.4rem 0rem;
 .image:hover .overlay{
     opacity: 0.8;
 }
+.announcement{
+    padding: .2rem 0;
+    background-color: rgb(108, 108, 107);
+    color: #fff;
+    align-items: center;
+}
+.slider_section{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMO236NaqOHYzx6tYnItSR_ut1wGtTCIJl8w&usqp=CAU);
+    background-repeat:no-repeat;
+    min-height:100vh;
+    background-size:cover;
+}
+.product_section{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 5rem;
+    padding: .5rem 0;
+    margin-bottom: 1rem;
+ border-top: 2px solid rgb(79, 78, 78);
+ border-bottom: 2px solid rgb(79, 78, 78);
+
+}
+.category button{
+    font-size: 2rem;
+                               width:fit-content !important;
+    margin-left: .5rem !important;
+    padding: .3rem .6rem !important;
+    font-size: .8rem;
+    font-weight: 600;
+    border-radius: .5rem;
+    color: black !important;
+    cursor: pointer;
+    background-color: rgb(231, 228, 228) !important;
+}
+.center{
+   display: flex;
+   justify-content: center;
+}

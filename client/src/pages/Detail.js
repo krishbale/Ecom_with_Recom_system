@@ -2,12 +2,12 @@ import React from 'react'
 import "../styles/Detail.css"
 import { useState, useEffect } from 'react';
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 
 function Detail() {
+  let navigate = useNavigate();
   const [loading, isloading] = useState(true);
-
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchdata = async () => {
@@ -23,9 +23,10 @@ function Detail() {
     return <div className="page_loading">Loading.....</div>;
   }
 
+
   return (
     <>
-      
+      <div  ><button className="back" onClick={() => navigate(-1)}>go back</button></div>
       <div className='detail'>
 
         <div className="image-container">

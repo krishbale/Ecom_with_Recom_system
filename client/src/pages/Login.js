@@ -31,7 +31,7 @@ const Login = () => {
     </div>
 
     <div className="container" style={{'background-color':'#f1f1f1'}} >
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" className="cancelbtn">Cancel</button>
+      <button type="button" className="button1" onclick="document.getElementById('id01').style.display='none'" className="cancelbtn">Cancel</button>
       <span className="psw">Forgot    <Link to="/">password?</Link></span>
     </div>
   </form>

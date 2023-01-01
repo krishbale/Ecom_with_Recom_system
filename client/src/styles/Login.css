@@ -13,7 +13,7 @@ form {
   }
   
   /* Set a style for all buttons */
-  .container button {
+  .container .button1 {
     background-color: darkgrey;
     color: #EEEEEE;
     padding: 14px 20px;
