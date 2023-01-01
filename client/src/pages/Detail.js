@@ -6,43 +6,53 @@ import { useParams } from 'react-router-dom'
 
 
 function Detail() {
-  const [loading,isloading] = useState(true);
-  
-    const [products ,setProducts]=useState([]);
-    useEffect(() => {
-     const fetchdata = async () => {
-       const { data } = await axios.get('/products');
-       setProducts(data.data);
-       isloading(false)
-     };
-     fetchdata();
-   }, []);
-   let {id}= useParams()
-     let productDetail = products.find(item=> item.id == id )
-     if(loading){
-      return <div className="page_loading">Loading.....</div>;
-     }
-     
-    return(
-      <>
-      <h1>{productDetail.title}</h1>
+  const [loading, isloading] = useState(true);
+
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const fetchdata = async () => {
+      const { data } = await axios.get('/products');
+      setProducts(data.data);
+      isloading(false)
+    };
+    fetchdata();
+  }, []);
+  let { id } = useParams()
+  let productDetail = products.find(item => item.id == id)
+  if (loading) {
+    return <div className="page_loading">Loading.....</div>;
+  }
+
+  return (
+    <>
+      
       <div className='detail'>
-      <h1>{productDetail.id}</h1>
-      <div className="image">
-        <img src={productDetail.image}/> 
-      </div>
-      <div className="description">
-        <h1>{productDetail.title}</h1>
-        <p>{productDetail.description}</p>
-        <h3>{productDetail.price}</h3>
-      </div>
+
+        <div className="image-container">
+          <div className='image'>
+          <img src={productDetail.image} />
+          </div>
+        
+        </div>
+        <div className="description">
+          <div className='title'><h1>{productDetail.title}</h1></div>
+          <div className='des'>
+          <p>{productDetail.description}</p>
+          </div>
+          
+          <span>
+          <h3>Price:${productDetail.price}</h3>
+          <button className='cartbutton'>Add to Cart</button>
+          </span>
+         
+        </div>
       </div>
 
-      </>
+    </>
 
 
-    )
- 
+  )
+
 }
 
 export default Detail
