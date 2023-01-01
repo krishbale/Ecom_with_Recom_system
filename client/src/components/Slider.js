@@ -58,7 +58,7 @@ function Slider() {
                       <h5>rating:{rating.rate}</h5>
                     </div>
                     <div>
-                     <button className='addCard'>Add to card</button>
+                     <button className='addCard'>Buy Now</button>
                     </div>
                   </span>
 
