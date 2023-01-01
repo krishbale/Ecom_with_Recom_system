@@ -2,9 +2,15 @@ import '../styles/Slider.css'
 import { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import axios from "axios"
+import cart from '../assets/cart.svg'
 
 function Slider() {
   const [products, setProducts] = useState([]);
+  function handleproducts(id){
+  console.log(id);
+
+   
+  }
   useEffect(() => {
     const fetchdata = async () => {
       const { data } = await axios.get('/products');
@@ -21,7 +27,7 @@ function Slider() {
       <h1>All Product</h1>
       <div className='productitem'>
         {products.map((product) => {
-          const { id, title, price, description, category, image, rating, count } = product;
+          const { id, title, price,   image, rating,  } = product;
           return (
             <div className='card' key={id}>
               <div className='item'>
@@ -43,7 +49,11 @@ function Slider() {
                       <h5>rating:{rating.rate}</h5>
                     </div>
                     <div>
-                     <button className='addCard'>Add to card</button>
+                    <button >
+                    <img src={cart} alt="Add to Cart " style={{height:"25px",width:'30px'}} />
+
+                    </button>
+                 
                     </div>
                   </span>
 
