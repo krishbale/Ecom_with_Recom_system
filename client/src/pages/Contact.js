@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <>
 
-      <div class="container">
+      <div class="contact">
   <form action="action_page.php">
 
     <label htmlFor="fname">First Name</label>
