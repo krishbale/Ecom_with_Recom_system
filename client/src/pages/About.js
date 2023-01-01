@@ -17,7 +17,7 @@ const About = () => (
       <div className="column">
         <div className="card">
           <img src={p5} alt="Jane" style={{width:'100%'}} />
-          <div className="container">
+          <div className="item">
             <h2>Jane Doe</h2>
             <p className="title">Project Members</p>
             <p> Designers</p>

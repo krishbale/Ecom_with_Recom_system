@@ -17,7 +17,7 @@ const Login = () => {
       <img src={avatar} alt="Avatar" className="avatar"/>
     </div>
 
-    <div className="container">
+    <div className="login-container">
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required/>
 

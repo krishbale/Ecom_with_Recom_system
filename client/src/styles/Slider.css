@@ -3,15 +3,23 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap:1rem;
     border-bottom: 1px solid rgb(163, 162, 162);
+    background-color:#fff !important;
 }
-.card{
+.productitem .card{
     margin:1rem 0;
     border:2px solid rgb(173, 168, 168);
+  
+}
+
+.productitem .card.item{
+padding-top: .8rem !important;
+
 }
 .image{
     display: flex;
     justify-content: center;
-    height:350px;
+    height:200px;
+    position:relative;
 }
 .card .image img{
     width:80%;
@@ -19,23 +27,48 @@
 }
 
 .card .image{
+   margin-top: 1rem;
     margin: auto;
 }
 .card .des{
-vertical-align: bottom;
+padding:1.4rem 0rem;
 
 }
-.card .des h2{
+.card .des h3{
   align-items: center;
 }
 .card .des span{
     display:flex;
     justify-content: space-between;
     align-items: center;
+    padding-top:.8rem;
 }
-.card .des span .btn{
+.card .des span .addCard{
     border-radius: 1rem;
     background-color: rgb(231, 228, 228);
     color: blue;
     padding: .4rem .8rem;
+}
+.overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    opacity: 0;
+    transition:opacity 0.4s ease-in-out;
+    background-color: black;
+    cursor: pointer;
+   
+}
+.overlay .learnmore{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color:#fff !important;
+    text-align: center;
+}
+.image:hover .overlay{
+    opacity: 0.8;
 }
