@@ -4,8 +4,11 @@ import add from '../assets/add.svg'
 import minus from '../assets/minus.svg'
 import delet from '../assets/delete.svg'
 import emptycart from '../assets/clearcart.svg'
+import { useCartContext } from '../context/Cartcontext';
 const Cartui = () => {
     const [loading,isloading] = useState(false);
+    const { cart } = useCartContext;
+    console.log(cart);
    
 
 
