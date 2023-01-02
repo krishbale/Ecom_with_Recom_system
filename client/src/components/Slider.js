@@ -33,7 +33,7 @@ function Slider() {
     <section className="slider_section"></section>
      <div className="product_section  center"> Latest Products </div>
       <div className="category center">
-        <button active onClick={()=>setFiltered(products)}>all</button>
+        <button  onClick={()=>setFiltered(products)}>all</button>
         <button onClick={()=>filteredProduct('jewelery')}>jewelery</button>
         <button onClick={()=>filteredProduct("men's clothing")}>men's clothing</button>
         <button onClick={()=>filteredProduct("electronics")}>electronics</button>

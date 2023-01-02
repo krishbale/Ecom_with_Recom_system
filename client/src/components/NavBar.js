@@ -1,7 +1,7 @@
 import React from 'react'
 import carticon  from '../assets/cart.svg'
 import {
-  BrowserRouter as Router,
+  
   Routes,
   Route,
   Link
@@ -18,7 +18,7 @@ const NavBar = () => {
   return (
     <>  
 
-      <Router >
+      
         <div className="navbar">
           <nav>
             <ul>
@@ -53,7 +53,7 @@ const NavBar = () => {
             <Route path="/details/:id" element={<Detail />} />
           </Routes>
         </div>
-      </Router>
+    
     </>
   )
 }

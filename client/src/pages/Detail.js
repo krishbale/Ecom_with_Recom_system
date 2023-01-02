@@ -2,13 +2,17 @@ import React from 'react'
 import "../styles/Detail.css"
 import { useState, useEffect } from 'react';
 import axios from 'axios'
-import { useNavigate, useParams } from 'react-router-dom'
+import { NavLink, useNavigate, useParams } from 'react-router-dom'
 
 
 function Detail() {
   let navigate = useNavigate();
   const [loading, isloading] = useState(true);
   const [products, setProducts] = useState([]);
+  const [ cart,setCart] = useState([]);
+
+
+  
   useEffect(() => {
     const fetchdata = async () => {
       const { data } = await axios.get('/products');
@@ -18,10 +22,12 @@ function Detail() {
     fetchdata();
   }, []);
   let { id } = useParams()
-  let productDetail = products.find(item => item.id == id)
+  let productDetail = products.find(item => item.id === id)
   if (loading) {
     return <div className="page_loading">Loading.....</div>;
   }
+
+
 
 
   return (
@@ -31,7 +37,7 @@ function Detail() {
 
         <div className="image-container">
           <div className='image'>
-          <img src={productDetail.image} />
+          <img src={productDetail.image} alt=""/>
           </div>
         
         </div>
@@ -43,11 +49,15 @@ function Detail() {
           
           <span>
           <h3>Price:${productDetail.price}</h3>
-          <button className='cartbutton'>Add to Cart</button>
+          {/* <NavLink onClick={()=> addtoCart(productDetail.id, productDetail)} to={'/cart'}>
+          <button  className='cartbutton'>Add to Cart</button>
+          </NavLink> */}
+         
+          <button  className='cartbutton'>Buy </button>
           </span>
          
         </div>
-      </div>
+      </div>  
 
     </>
 

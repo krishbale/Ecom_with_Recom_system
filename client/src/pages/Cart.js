@@ -1,44 +1,71 @@
-import React from 'react'
+import React, { createContext, useReducer,useEffect } from 'react'
+import {reducer} from '../pages/reducer'
+import '../styles/AddtoCart.css'
+import Cartui from './Cartui'
+
+import { products } from '../context/products';
+export const  CartContext = createContext();
+
+const initialState = {
+  // cart:[],
+
+  item:products,
+  totalAmount:0,
+  totalItem:0,
 
 
+
+};
 const Cart = () => {
+  const [state,dispatch] = useReducer(reducer,initialState);
+  const removeItem = (id) => {
+    return dispatch({
+      type:'REMOVE_ITEM',
+      payload:id,
+    })
+
+  }
+  const increment = (id) => {
+    return dispatch({
+      type:'ADD_ITEM',
+      payload:id,
+    })
+
+  }
+  const decrement = (id) => {
+    return dispatch({
+      type:'SUB_ITEM',
+      payload:id,
+    })
+
+  }
+  const clearCart = () => {
+    return dispatch({ type: "CLEAR_CART" });
+  };
+  useEffect(() => {
+    dispatch({ type: "GET_TOTAL" });
+    // console.log("Awesome");
+  }, [state.item]);
+
+  // const addtoCart = (products) =>{
+  //   dispatch({type:"ADD_TO_CART",payload:{ id,products}});
+
+
+
+  // }
 
 
 
   return (
     <>
-            <div className="cart-container">
-          <h2>Cart</h2>
-          <table>
-            <thead>
-              <tr>
-              <th><strong>Product</strong></th>
-              <th><strong>Price</strong></th>
-            </tr>
-            </thead>
-            <tbody id="carttable">
-            </tbody>
-          </table>
-          <br/>
-          <table id="carttotals">
-            <tr>
-              <td><strong>Items</strong></td>
-              <td><strong>Total</strong></td>
-            </tr>
-            <tr>
-              <td>x <span id="itemsquantity">0</span></td>
-             
-              <td>$<span id="total">0</span></td>
-            </tr></table>
-
-            
-          <div className="cart-buttons">  
-            <button id="emptycart">Empty Cart</button>
-            <button id="checkout">Checkout</button>
-          </div>
-        </div>
+    <CartContext.Provider value={{... state,removeItem,increment,decrement,clearCart}}>
+    <Cartui />
+    </CartContext.Provider>
+ 
     </>
+  
+   
   )
 }
 
-export default Cart;
+export default Cart
