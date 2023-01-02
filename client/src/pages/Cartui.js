@@ -41,10 +41,11 @@ const Cartui = () => {
     Array.isArray(item) ?  
     
     item.map((item,index)=>
+    
     <tbody key={index}>
       <tr>
       <td>{item.id}</td>
-      <td><img style={{height:"20px",width:"20px"}} src={item.img} alt="phone" /></td>
+      <td><img style={{height:"20px",width:"20px"}} src={item.image} alt="phone" /></td>
       <td>{item.title}</td>
       <td>{item.price}</td>
       <td>
