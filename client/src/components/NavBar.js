@@ -13,8 +13,10 @@ import Contact from '../pages/Contact'
 import Login from '../pages/Login'
 import Cart from '../pages/Cartui'
 import Detail from '../pages/Detail';
+import { useCartContext } from '../context/Cartcontext';
 
 const NavBar = () => {
+  const { totalItem  } = useCartContext()
   return (
     <>  
 
@@ -39,9 +41,17 @@ const NavBar = () => {
               <li className="nav_items active">
                 <Link to="/login">Login</Link>
               </li>
+          
               <li className="nav_items active">
-                <Link to="/cart/"><img src={carticon} style={{height:"20px",width:"30px"}} alt="Cart"/></Link>
+                <Link  to="/cart/">
+                  <img  src={carticon}
+                 style={{height:"20px",width:"30px"}}
+                  alt="Cart"/>
+                    <span className='noti_count'>{totalItem}</span>
+                  </Link>
               </li>
+             
+             
              
             </ul>
           </nav>

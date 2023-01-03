@@ -5,7 +5,10 @@ import cart from '../assets/cart.svg'
 const Foryou = ({allproducts}) => {
     const {addtoCart} = useCartContext(); 
     const displayconsole= (title)=>{
-      window.alert(` 1 item ${title} is added to the cart`)
+      window.scrollTo({
+        top:0,
+        behavior:'smooth',
+      })
   
   
      }

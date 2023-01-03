@@ -34,3 +34,13 @@ padding: .8rem .5rem;
 .nav_items{
     list-style: none;
 }
+.noti_count{
+    cursor: pointer;
+    padding:0 3px;
+    background-color: turquoise;
+    color: white;
+    font-weight: 200;
+    border-radius: 25px;
+    position: relative;
+    top:-15px;
+}
