@@ -96,7 +96,7 @@ padding:1.4rem 0rem;
  border-bottom: 2px solid rgb(79, 78, 78);
 
 }
-.category button{
+.category {
     font-size: 2rem;
                                width:fit-content !important;
     margin-left: .5rem !important;

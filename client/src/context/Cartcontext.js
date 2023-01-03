@@ -9,8 +9,9 @@ const CartProvider = ({children})=>{
 
     }
 const [state,dispatch] = useReducer(reducer,initialState)
-const addtoCart=(id,products)=>{
-    dispatch({type:"ADD_TO_CART",payload:{id,products}});
+const addtoCart=(products)=>{
+    dispatch({type:"ADD_TO_CART",payload:{products}});
+    // console.log(products)
 
 }
 

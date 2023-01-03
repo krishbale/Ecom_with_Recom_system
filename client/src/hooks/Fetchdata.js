@@ -16,9 +16,10 @@ const Fetchsingledata = (id) => {
                 let singleproduct = products.find(item => item.id === id)
                
                 setData(singleproduct);
-                console.log(singleproduct)
+              
                 if(typeof singleproduct !== "undefined"){
                     isloading(false);
+                    console.log(singleproduct)
 
                 }
               

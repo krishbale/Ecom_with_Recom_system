@@ -8,14 +8,19 @@ function Detail() {
   let { id } = useParams()
   const {addtoCart} = useCartContext(); 
   let navigate = useNavigate();
+
   
   const {data,loading} = Fetchsingledata(id);
-   
+   const displayconsole= (data)=>{
+    window.alert(` 1 item ${data.title} is added to the cart`)
+
+
+   }
   
 if(!loading){
   return(
     <>
-    <div  ><button className="back" onClick={() => navigate(-1)}>go back</button></div>
+    
       <div className='detail'>
 
         <div className="image-container">
@@ -32,13 +37,16 @@ if(!loading){
           
           <span>
           <h3>Price:${data.price}</h3>
+          {/* {console.log(data.id)} */}
            <NavLink 
-           onClick={()=> addtoCart(data.id,data)} 
+           onClick={()=> addtoCart(data)} 
            to={'/cart'}>
-          <button  className='cartbutton'>Add to Cart</button>
+          <button     className='cartbutton'>Buy </button>
           </NavLink> 
          
-          <button  className='cartbutton'>Buy </button>
+         
+          <button  onClick={()=> [addtoCart(data),displayconsole(data)]}  className='cartbutton'>Add to Cart</button>
+          <div  ><button className="back" onClick={() => navigate(-1)}>Continue Shopping</button></div>
           </span>
          
         </div>

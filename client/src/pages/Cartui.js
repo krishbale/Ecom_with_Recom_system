@@ -7,7 +7,7 @@ import emptycart from '../assets/clearcart.svg'
 import { useCartContext } from '../context/Cartcontext';
 const Cartui = () => {
     const [loading,isloading] = useState(false);
-    const { cart } = useCartContext;
+    const { cart } = useCartContext()
     console.log(cart);
    
 
