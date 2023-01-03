@@ -13,7 +13,14 @@ const Fetchallproducts = () => {
                 const { data } = await axios.get('/products');
                 let products = data.data
                 setAllproductss(products);
-                isloading(false);
+                
+                if(Array.isArray(products)){
+                    isloading(false);
+                    console.log(products)
+                    
+
+                }
+               
             }catch(e){
                 console.log(e);
                 

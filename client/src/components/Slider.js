@@ -1,48 +1,64 @@
 import '../styles/Slider.css'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from "react-router-dom";
-import axios from "axios"
 import cart from '../assets/cart.svg'
 import { useCartContext } from '../context/Cartcontext'
+import { Fetchallproducts } from '../hooks/FetchAll';
+import Foryou from './Foryou';
+
 function Slider() {
+
+  //addtocartbuttonlogic
   const {addtoCart} = useCartContext(); 
   const displayconsole= (title)=>{
     window.alert(` 1 item ${title} is added to the cart`)
 
 
    }
-  const [products, setProducts] = useState([]);
-
+ 
+//fetching data
+  const {allproducts ,loading} = Fetchallproducts();
+  //
   const [filtered , setFiltered] = useState([])
-    useEffect(() => {
-    const fetchdata = async () => {
-      const { data } = await axios.get('/products');
-        setProducts( await data.data);
-        setFiltered( await data.data);
-    };
-    fetchdata();
-  }, []);
-  
-  // console.log(products.data)
+  if(loading){
+    return(
+      <>
+        <h1>Loading</h1>
+      </>
+    )
+  }
  const filteredProduct = (cat)=>{
-  const updatedList = products.filter((x)=>x.category === cat)
+  const updatedList = allproducts.filter((x)=>x.category === cat)
   setFiltered(updatedList)
  }
 
   return (
     <> 
-    <section className="announcement"><h4>Anouncement Section !!!</h4></section>
-    <section className="slider_section"></section>
-     <div className="product_section  center"> Latest Products </div>
+    <section className="announcement">
+      <input className='search' type="text" placeholder='Search' />
+    </section>
+  
+    <section className="slider_section">
+    
       <div className="category center">
-        <button  onClick={()=>setFiltered(products)}>all</button>
-        <button onClick={()=>filteredProduct('jewelery')}>jewelery</button>
-        <button onClick={()=>filteredProduct("men's clothing")}>men's clothing</button>
-        <button onClick={()=>filteredProduct("electronics")}>electronics</button>
-        <button onClick={()=>filteredProduct("women's clothing")}>women's clothing</button>
+      
+
+        {/* <button className='categories'  onClick={()=>setFiltered(allproducts)}>All</button> */}
+        <button  className='categories' onClick={()=>filteredProduct('jewelery')}>Jewelery</button>
+        <button className='categories' onClick={()=>filteredProduct("men's clothing")}>Men's clothing</button>
+        <button className='categories' onClick={()=>filteredProduct("electronics")}>Electronics</button>
+        <button className='categories' onClick={()=>filteredProduct("women's clothing")}>Women's clothing</button>
+      
 
       </div>
+
+
+    </section>
+    
+    
       <div className='productitem'>
+      
+  
         {filtered.map((product) => {
           const { id, title, price,   image, rating,  } = product;
           return (
@@ -82,6 +98,10 @@ function Slider() {
 
           )
         })}
+      
+
+        <Foryou  allproducts= { allproducts } />
+
       </div>
     </>
   )
