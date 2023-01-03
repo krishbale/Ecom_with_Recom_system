@@ -11,7 +11,7 @@ import Slider from "../components/Slider"
 import About from '../pages/About'
 import Contact from '../pages/Contact'
 import Login from '../pages/Login'
-import Cart from '../pages/Cart'
+import Cart from '../pages/Cartui'
 import Detail from '../pages/Detail';
 
 const NavBar = () => {

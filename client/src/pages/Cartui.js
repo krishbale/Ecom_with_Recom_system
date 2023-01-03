@@ -1,18 +1,15 @@
-import React, { useContext, useState  } from 'react'
-import { CartContext } from './Cart';
+import React, {  useState  } from 'react'
+import '../styles/AddtoCart.css'
 import add from '../assets/add.svg'
 import minus from '../assets/minus.svg'
 import delet from '../assets/delete.svg'
 import emptycart from '../assets/clearcart.svg'
 import { useCartContext } from '../context/Cartcontext';
+import { useNavigate } from 'react-router-dom'
 const Cartui = () => {
+  const navigate = useNavigate();
     const [loading,isloading] = useState(false);
-    const { cart } = useCartContext()
-    console.log(cart);
-   
-
-
-     const {item,removeItem,clearCart,totalItem,totalAmount,increment,decrement } = useContext(CartContext)
+    const { cart,removeItem,clearCart,totalItem,totalAmount,increment,decrement  } = useCartContext()
      if(loading){
         return(
             <>
@@ -41,9 +38,9 @@ const Cartui = () => {
 
   {
 
-    Array.isArray(item) ?  
+    Array.isArray(cart) ?  
     
-    item.map((item,index)=>
+    cart.map((item,index)=>
     
     <tbody key={index}>
       <tr>
@@ -110,7 +107,7 @@ const Cartui = () => {
     </table>
     <button>Checkout</button>
     <br />
-    <button>  Continue Shopping</button>
+    <div  ><button className="back" onClick={() => navigate('/')}>Continue Shopping</button></div>
 
  
   <br />
