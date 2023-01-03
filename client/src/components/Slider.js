@@ -7,6 +7,7 @@ import { Fetchallproducts } from '../hooks/FetchAll';
 import Foryou from './Foryou';
 
 function Slider() {
+ const [title,setTitle] = useState('Latest Products');
 
   //addtocartbuttonlogic
   const {addtoCart} = useCartContext(); 
@@ -28,8 +29,10 @@ function Slider() {
     )
   }
  const filteredProduct = (cat)=>{
+  
   const updatedList = allproducts.filter((x)=>x.category === cat)
   setFiltered(updatedList)
+  setTitle(cat);
  }
 
   return (
@@ -41,6 +44,7 @@ function Slider() {
     <section className="slider_section">
     
       <div className="category center">
+    
       
 
         {/* <button className='categories'  onClick={()=>setFiltered(allproducts)}>All</button> */}
@@ -52,9 +56,9 @@ function Slider() {
 
       </div>
 
-
-    </section>
     
+    </section>
+    <div className="product_section  center"> {title}</div>
     
       <div className='productitem'>
       
@@ -99,7 +103,7 @@ function Slider() {
           )
         })}
       
-
+     
         <Foryou  allproducts= { allproducts } />
 
       </div>

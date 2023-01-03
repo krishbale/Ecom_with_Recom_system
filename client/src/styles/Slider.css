@@ -103,8 +103,11 @@ padding:1.4rem 0rem;
     margin-top: 5rem;
     padding: .5rem 0;
     margin-bottom: 1rem;
- border-top: 2px solid rgb(79, 78, 78);
- border-bottom: 2px solid rgb(79, 78, 78);
+    border : 2px solid rgb(79, 78, 78)
+ /* border-top:    2px solid rgb(79, 78, 78); */
+ /* border-bottom: 2px solid rgb(79, 78, 78); */
+ /* border-left:   2px solid rgb(79, 78, 78); */
+ /* border-right:  2px solid rgb(79, 78, 78); */
 
 } */
 .category {
@@ -158,3 +161,15 @@ border-radius: 150px;
     width:
     
 } */
+.All{
+    font-size: 1.5rem;
+    display: flexbox;
+    font-weight: 600;
+    align-items: center;
+    position: relative;
+    left:0%;
+    top:0;
+    
+    /* margin-bottom: rem; */
+    /* border : 2px solid rgb(79, 78, 78) */
+}

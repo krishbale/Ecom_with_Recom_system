@@ -12,7 +12,8 @@ const Foryou = ({allproducts}) => {
     
   return (
     <>
-   
+      
+      {/* <div className="All">for you</div> */}
         {Array.isArray(allproducts) && allproducts.map((item) => 
         {
             const { id, title, price,   image, rating,  } = item;

@@ -25,9 +25,7 @@ const NavBar = () => {
               <li>logo</li>
             </ul>
             <ul>
-            <li className="nav_items active">
-                <Link to="/cart/"><img src={carticon} style={{height:"20px",width:"30px"}} alt="Cart"/></Link>
-              </li>
+          
               <li className="nav_items active">
                 <Link to="/">Home</Link>
                 
@@ -40,6 +38,9 @@ const NavBar = () => {
               </li>
               <li className="nav_items active">
                 <Link to="/login">Login</Link>
+              </li>
+              <li className="nav_items active">
+                <Link to="/cart/"><img src={carticon} style={{height:"20px",width:"30px"}} alt="Cart"/></Link>
               </li>
              
             </ul>
