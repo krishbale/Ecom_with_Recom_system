@@ -29,7 +29,7 @@ const Fetchsingledata = (id) => {
             }
         };
         fetchData();
-    }, [])
+    }, [id])
   return { data ,loading};
   
 }

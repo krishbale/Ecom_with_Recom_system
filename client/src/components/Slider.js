@@ -3,14 +3,16 @@ import { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import axios from "axios"
 import cart from '../assets/cart.svg'
-
+import { useCartContext } from '../context/Cartcontext'
 function Slider() {
-  const [products, setProducts] = useState([]);
-  function handleproducts(id){
-  console.log(id);
+  const {addtoCart} = useCartContext(); 
+  const displayconsole= (title)=>{
+    window.alert(` 1 item ${title} is added to the cart`)
 
-   
-  }
+
+   }
+  const [products, setProducts] = useState([]);
+
   const [filtered , setFiltered] = useState([])
     useEffect(() => {
     const fetchdata = async () => {
@@ -23,7 +25,7 @@ function Slider() {
   
   // console.log(products.data)
  const filteredProduct = (cat)=>{
-  const updatedList = products.filter((x)=>x.category == cat)
+  const updatedList = products.filter((x)=>x.category === cat)
   setFiltered(updatedList)
  }
 
@@ -48,7 +50,7 @@ function Slider() {
               <div className='item'>
               <Link to={`/details/${id}`}>
                 <div className='image'>
-                  <img src={image} alt="image" />
+                  <img src={image} alt="logo" />
                   <div className="overlay">
                 <div className="learnmore">
                   <h3>Learn More</h3>
@@ -64,10 +66,12 @@ function Slider() {
                       <h5>rating:{rating.rate}</h5>
                     </div>
                     <div>
-                    <button >
+                    <button  onClick={()=> [addtoCart(product),displayconsole(title)]}  className='cartbutton'>
                     <img src={cart} alt="Add to Cart " style={{height:"25px",width:'30px'}} />
-
                     </button>
+                  
+
+                   
                  
                     </div>
                   </span>
