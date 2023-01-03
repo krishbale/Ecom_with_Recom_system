@@ -1,58 +1,66 @@
 import React from 'react'
 import "../styles/Detail.css"
-import { useState, useEffect } from 'react';
-import axios from 'axios'
-import { useNavigate, useParams } from 'react-router-dom'
-
+import { NavLink, useNavigate, useParams } from 'react-router-dom'
+import { useCartContext } from '../context/Cartcontext'
+import { Fetchsingledata } from '../hooks/Fetchdata';
 
 function Detail() {
-  let navigate = useNavigate();
-  const [loading, isloading] = useState(true);
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    const fetchdata = async () => {
-      const { data } = await axios.get('/products');
-      setProducts(data.data);
-      isloading(false)
-    };
-    fetchdata();
-  }, []);
   let { id } = useParams()
-  let productDetail = products.find(item => item.id == id)
-  if (loading) {
-    return <div className="page_loading">Loading.....</div>;
-  }
+  const {addtoCart} = useCartContext(); 
+  let navigate = useNavigate();
+
+  
+  const {data,loading} = Fetchsingledata(id);
+   const displayconsole= (data)=>{
+    window.alert(` 1 item ${data.title} is added to the cart`)
 
 
-  return (
+   }
+  
+if(!loading){
+  return(
     <>
-      <div  ><button className="back" onClick={() => navigate(-1)}>go back</button></div>
+    
       <div className='detail'>
 
         <div className="image-container">
           <div className='image'>
-          <img src={productDetail.image} />
+          <img src={data.image} alt=""/>
           </div>
         
         </div>
         <div className="description">
-          <div className='title'><h1>{productDetail.title}</h1></div>
+          <div className='title'><h1>{data.title}</h1></div>
           <div className='des'>
-          <p>{productDetail.description}</p>
+          <p>{data.description}</p>
           </div>
           
           <span>
-          <h3>Price:${productDetail.price}</h3>
-          <button className='cartbutton'>Add to Cart</button>
+          <h3>Price:${data.price}</h3>
+          {/* {console.log(data.id)} */}
+           <NavLink 
+           onClick={()=> addtoCart(data)} 
+           to={'/cart'}>
+          <button     className='cartbutton'>Buy </button>
+          </NavLink> 
+         
+         
+          <button  onClick={()=> [addtoCart(data),displayconsole(data)]}  className='cartbutton'>Add to Cart</button>
+          <div  ><button className="back" onClick={() => navigate(-1)}>Continue Shopping</button></div>
           </span>
          
         </div>
-      </div>
+      </div>  
+
 
     </>
+  );
+}else if(loading){
+  <>
+    <h1>Loading ....</h1>
+  </>
 
-
-  )
+}
 
 }
 
