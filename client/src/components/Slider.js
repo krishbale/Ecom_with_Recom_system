@@ -1,12 +1,14 @@
 import '../styles/Slider.css'
 import { useState } from 'react'
 import { Link } from "react-router-dom";
-import cart from '../assets/cart.svg'
+
 import { useCartContext } from '../context/Cartcontext'
 import { Fetchallproducts } from '../hooks/FetchAll';
-import Foryou from './Foryou';
+import ProductCard from './ProductCard';
+
 
 function Slider() {
+
  const [title,setTitle] = useState('Latest Products');
 
   //addtocartbuttonlogic
@@ -40,17 +42,17 @@ function Slider() {
 
   return (
     <> 
-    <section className="announcement">
-      <input className='search' type="text" placeholder='Search' />
-    </section>
-  
+    <div className='container grid grid-filter-column'>
+      <div >
+{/* //filtersection */}
+
     <section className="slider_section">
     
-      <div className="category center">
+      <div className="categorycenter">
     
       
 
-        {/* <button className='categories'  onClick={()=>setFiltered(allproducts)}>All</button> */}
+        <button className='categories'  onClick={()=>setFiltered(allproducts)}>All</button>
         <button  className='categories' onClick={()=>filteredProduct('jewelery')}>Jewelery</button>
         <button className='categories' onClick={()=>filteredProduct("men's clothing")}>Men's clothing</button>
         <button className='categories' onClick={()=>filteredProduct("electronics")}>Electronics</button>
@@ -61,14 +63,47 @@ function Slider() {
 
     
     </section>
-    <div className="product_section  center"> {title}</div>
-    
-      <div className='productitem'>
-      
+
+      </div>
+      <section className='product-view--sort'>
+        <div className='sort-filter'>
+{/* //sort area */}
+<section className="announcement">
+      <input className='search' type="text" placeholder='Search' />
+    </section>
+
+        </div>
+        <div className='main-product'>
+
+{/* //render data */}
   
-        {filtered.map((product) => {
-          const { id, title, price,   image, rating,  } = product;
-          return (
+<div className="section">
+    <div className='container'>
+    <div className='grid grid-three-column'>
+    {
+          filtered.map((product)=>
+          
+             <ProductCard product={product}/> 
+          )
+          
+        
+        }
+    </div>
+     </div>
+    
+     
+     </div>
+
+        </div>
+      </section>
+    </div>
+  
+  
+  
+  
+        {/* {filtered.map((product) =>  */}
+        
+          {/* return (
             <div className='card' key={id}>
               <div className='item'>
               <Link to={`/details/${id}`}>
@@ -77,7 +112,9 @@ function Slider() {
                   <div className="overlay">
                 <div className="learnmore">
                   <h3>Learn More</h3>
+                  
                 </div>
+               
               </div>
                 </div>
                 </Link>
@@ -89,8 +126,8 @@ function Slider() {
                       <h5>rating:{rating.rate}</h5>
                     </div>
                     <div>
-                    <button  onClick={()=> [addtoCart(product),displayconsole(title)]}  className='cartbutton'>
-                    <img src={cart} alt="Add to Cart " style={{height:"25px",width:'30px'}} />
+                    <button  onClick={()=> [addtoCart(product),displayconsole(title)]}  >
+                    ADD ITEM 
                     </button>
                   
 
@@ -103,13 +140,14 @@ function Slider() {
               </div>
             </div>
 
-          )
-        })}
+          ) */}
+        {/* } */}
+        
+        
       
-     
-        <Foryou  allproducts= { allproducts } />
+      
 
-      </div>
+     
     </>
   )
 }

@@ -3,8 +3,10 @@ import "../styles/Detail.css"
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { useCartContext } from '../context/Cartcontext'
 import { Fetchsingledata } from '../hooks/Fetchdata';
+import Foryou from '../components/Foryou';
+import cart from '../assets/cart.svg'
 
-function Detail() {
+const  Detail= () =>{
   let { id } = useParams()
   const {addtoCart} = useCartContext(); 
   let navigate = useNavigate();
@@ -37,21 +39,23 @@ if(!loading){
           
           <span>
           <h3>Price:${data.price}</h3>
-          {/* {console.log(data.id)} */}
-           <NavLink 
+          <button  onClick={()=> [addtoCart(data),displayconsole(data)]} >
+          <img src={cart} alt="Add to Cart " style={{height:"25px",width:'30px'}} />
+          </button>
+          <NavLink 
            onClick={()=> addtoCart(data)} 
            to={'/cart'}>
-          <button     className='cartbutton'>Buy </button>
+          <button>Checkout</button>
           </NavLink> 
-         
-         
-          <button  onClick={()=> [addtoCart(data),displayconsole(data)]}  className='cartbutton'>Add to Cart</button>
-          <div  ><button className="back" onClick={() => navigate(-1)}>Continue Shopping</button></div>
+          <button  onClick={() => navigate(-1)}>Continue Shopping</button>
           </span>
+          {/* <Foryou /> */}
          
         </div>
       </div>  
+      
 
+     
 
     </>
   );
@@ -61,6 +65,7 @@ if(!loading){
   </>
 
 }
+
 
 }
 
