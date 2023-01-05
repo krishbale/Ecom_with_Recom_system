@@ -106,7 +106,7 @@ function Slider() {
         })}
       
      
-        <Foryou  allproducts= { allproducts } />
+        {/* <Foryou  allproducts= { allproducts } /> */}
 
       </div>
     </>
