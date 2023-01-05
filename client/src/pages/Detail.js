@@ -3,8 +3,9 @@ import "../styles/Detail.css"
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { useCartContext } from '../context/Cartcontext'
 import { Fetchsingledata } from '../hooks/Fetchdata';
-
+import { Link } from "react-router-dom";
 function Detail() {
+  let array = [1,2,3,4]
   let { id } = useParams()
   const {addtoCart} = useCartContext(); 
   let navigate = useNavigate();
@@ -51,7 +52,62 @@ if(!loading){
          
         </div>
       </div>  
+      
+      <div className="product_section  center">Recommended products for you</div>
+    
+      <div className='productitem'>
+      {
+        array.map((e,i) => {
+          return (
+            <>
+            
+            
+              
+              <div  className='card' key={i}>
+              <div key={e} className='item'>
+              <Link to={`/details/${"id"}`}>
+                <div className='image'>
+                  <img src={"image"} alt="logo" />
+                  <div className="overlay">
+                <div className="learnmore">
+                  <h3>Learn More {e}</h3>
+                </div>
+              </div>
+                </div>
+                </Link>
+                <div className='des'>
+                  <h3>"titlesubstring"(0, 18)...</h3>
+                  <span>
+                    <div>
+                      <h5>Price:"price"</h5>
+                      <h5>rating:"ratingrate"</h5>
+                    </div>
+                    <div>
+                    <button  onClick={()=> [addtoCart("product"),displayconsole("title")]}  className='cartbutton'>
+                    <img src={"cart"} alt="Add to Cart " style={{height:"25px",width:'30px'}} />
+                    </button>
+                  
 
+                   
+                 
+                    </div>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+            
+              
+            
+            </>
+          
+          )
+        })
+
+      }
+    
+      
+</div>
 
     </>
   );
