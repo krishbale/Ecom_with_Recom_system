@@ -19,7 +19,7 @@ const Foryou = ({allproducts}) => {
       {/* <div className="All">for you</div> */}
         {Array.isArray(allproducts) && allproducts.map((item) => 
         {
-            const { id, title, price,   image, rating,  } = item;
+            const { id, title, price, description,  image,   } = item;
             return (
             <div className='card' key={id}>
               <div className='item'>
@@ -38,7 +38,7 @@ const Foryou = ({allproducts}) => {
                   <span>
                     <div>
                       <h5>Price:{price}</h5>
-                      <h5>rating:{rating.rate}</h5>
+                     
                     </div>
                     <div>
                     <button  onClick={()=> [addtoCart(item),displayconsole(title)]}  className='cartbutton'>
