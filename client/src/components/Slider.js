@@ -67,7 +67,7 @@ function Slider() {
       
   
         {filtered.map((product) => {
-          const { id, title, price,   image, rating,  } = product;
+          const { id, title, price,  descriptions, image,   } = product;
           return (
             <div className='card' key={id}>
               <div className='item'>
@@ -86,7 +86,6 @@ function Slider() {
                   <span>
                     <div>
                       <h5>Price:{price}</h5>
-                      <h5>rating:{rating.rate}</h5>
                     </div>
                     <div>
                     <button  onClick={()=> [addtoCart(product),displayconsole(title)]}  className='cartbutton'>
@@ -107,7 +106,7 @@ function Slider() {
         })}
       
      
-        <Foryou  allproducts= { allproducts } />
+        {/* <Foryou  allproducts= { allproducts } /> */}
 
       </div>
     </>
