@@ -64,15 +64,11 @@ function Slider() {
                       <h5>rating:{rating.rate}</h5>
                     </div>
                     <div>
-<<<<<<< HEAD
-                     <button className='addCard'>Buy Now</button>
-=======
                     <button >
                     <img src={cart} alt="Add to Cart " style={{height:"25px",width:'30px'}} />
 
                     </button>
                  
->>>>>>> balkrishna
                     </div>
                   </span>
 
