@@ -1,5 +1,9 @@
 
   const rawdocs = require('../server/ProductItem/product.json');
+
+
+
+  
   const formatteddocs = rawdocs.map((products)=>{
     let id = products.id;
     let content = products.title.concat(" "+products.category+" "+products.description+" "+ products.price) 
