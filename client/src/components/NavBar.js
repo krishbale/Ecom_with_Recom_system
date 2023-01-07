@@ -1,7 +1,7 @@
 import React from 'react'
 import carticon  from '../assets/cart.svg'
 import {
-  BrowserRouter as Router,
+  
   Routes,
   Route,
   Link
@@ -11,23 +11,23 @@ import Slider from "../components/Slider"
 import About from '../pages/About'
 import Contact from '../pages/Contact'
 import Login from '../pages/Login'
-import Cart from '../pages/Cart'
+import Cart from '../pages/Cartui'
 import Detail from '../pages/Detail';
+import { useCartContext } from '../context/Cartcontext';
 
 const NavBar = () => {
+  const { totalItem  } = useCartContext()
   return (
     <>  
 
-      <Router >
+      
         <div className="navbar">
           <nav>
             <ul>
               <li>logo</li>
             </ul>
             <ul>
-            <li className="nav_items active">
-                <Link to="/cart/"><img src={carticon} style={{height:"20px",width:"30px"}} alt="Cart"/></Link>
-              </li>
+          
               <li className="nav_items active">
                 <Link to="/">Home</Link>
                 
@@ -41,6 +41,17 @@ const NavBar = () => {
               <li className="nav_items active">
                 <Link to="/login">Login</Link>
               </li>
+          
+              <li className="nav_items active">
+                <Link  to="/cart/">
+                  <img  src={carticon}
+                 style={{height:"20px",width:"30px"}}
+                  alt="Cart"/>
+                    <span className='noti_count'>{totalItem}</span>
+                  </Link>
+              </li>
+             
+             
              
             </ul>
           </nav>
@@ -53,7 +64,7 @@ const NavBar = () => {
             <Route path="/details/:id" element={<Detail />} />
           </Routes>
         </div>
-      </Router>
+    
     </>
   )
 }
