@@ -30,12 +30,12 @@
     }
   }
 
-  // scorearray.sort((b,a)=> a.score-b.score)
-  // // console.log(scorearray);
-  // if(scorearray.id1==id  || scorearray.id2 ==id){
+  scorearray.sort((b,a)=> a.score-b.score)
+  // console.log(scorearray);
+  if(scorearray.id1==id  || scorearray.id2 ==id){
 
-  //   scorearray.slice(0,3)
-  // }
+    scorearray.slice(0,3)
+  }
 
 
 
