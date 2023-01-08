@@ -14,16 +14,28 @@
   // Calculate the tf-idf vectors for the documents
   let vectors = tfidf(docContents);
   
+  let scorearray = []
   // Calculate the cosine similarity between each pair of documents
   for (let i = 0; i < vectors.length; i++) {
-    for (let j = i + 1; j < vectors.length; j++) {
+    for (let j = 0; j < i; j ++) {
       let similarity = cosineSimilarity(vectors[i], vectors[j]);
-      console.log(`Similarity between documents ${formatteddocs[i].id} and ${formatteddocs[j].id}: ${similarity}`);
+      const scoreobj = {
+        id:formatteddocs[i].id,
+        id1:formatteddocs[j].id,
+        score:similarity
+      }
+      scorearray.push(scoreobj);
+
+      // console.log(`Similarity between documents ${formatteddocs[i].id} and ${formatteddocs[j].id}: ${similarity}`);
     }
   }
-  //
 
+  // scorearray.sort((b,a)=> a.score-b.score)
+  // // console.log(scorearray);
+  // if(scorearray.id1==id  || scorearray.id2 ==id){
 
+  //   scorearray.slice(0,3)
+  // }
 
 
 
@@ -120,3 +132,8 @@ function tfidf(docs) {
 //   console.log(similarity);
     
   
+
+  // finally sort the similar documents by descending order
+
+
+module.exports = scorearray;
