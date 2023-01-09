@@ -1,8 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const product = require("../controller/products")
+const recom = require('../controller/recommendation')
 
+router.get('/products/',product)
+router.get('/getrecom/:id',recom)
 
-router.route('/products').get(product)
 module.exports = router
 

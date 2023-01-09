@@ -34,13 +34,14 @@
     }
   }
 
-  scorearray.sort((b,a)=> a.score-b.score)
+  // scorearray.sort((b,a)=> a.score-b.score)
   // console.log(scorearray);
   //hello from balkrishna
-  if(scorearray.id1==id  || scorearray.id2 ==id){
+  // if(scorearray.id1==id  || scorearray.id2 ==id){
 
-    scorearray.slice(0,3)
-  }
+  //   scorearray.slice(0,3)
+  // }
+// console.log(scorearray);
 
 
 
