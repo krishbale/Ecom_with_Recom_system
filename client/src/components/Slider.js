@@ -5,7 +5,7 @@ import cart from '../assets/cart.svg'
 import { useCartContext } from '../context/Cartcontext'
 import { Fetchallproducts } from '../hooks/FetchAll';
 import Foryou from './Foryou';
-
+import LoadingAnimations from '../pages/LoadingAnimations';
 function Slider() {
  const [title,setTitle] = useState('Latest Products');
 
@@ -25,12 +25,12 @@ function Slider() {
   //
   const [filtered , setFiltered] = useState([])
   if(loading){
-    return(
-      <>
-        <h1>Loading</h1>
-      </>
-    )
+return(
+  <LoadingAnimations/>
+)
   }
+  
+  
  const filteredProduct = (cat)=>{
   
   const updatedList = allproducts.filter((x)=>x.category === cat)

@@ -5,6 +5,7 @@ import { useCartContext } from '../context/Cartcontext'
 import { Fetchsingledata } from '../hooks/Fetchdata';
 import { Fetchallproducts } from '../hooks/FetchAll';
 import { Link } from "react-router-dom";
+import LoadingAnimations from './LoadingAnimations';
 function Detail() {
   // let array = [1,2,3,4]
   let { id } = useParams()
@@ -112,9 +113,9 @@ if(!loading){
     </>
   );
 }else if(loading){
-  <>
-    <h1>Loading ....</h1>
-  </>
+return(
+  <LoadingAnimations/>
+)
 
 }
 
