@@ -25,7 +25,7 @@ const recom = async (req,res,next)=>{
     
     
     let recomdata = []
-for(i=0;i<uniqueIds.length;i++){
+  for(i=0;i<uniqueIds.length;i++){
   let id = uniqueIds[i];
   let rec = data.findIndex(item => item.id === id);
   recomdata[i] = data[rec];

@@ -17,7 +17,7 @@ function Detail() {
   const {data,loading} = Fetchsingledata(id);
 
    const displayconsole= (data)=>{
-    window.alert(` 1 item ${data.title} is added to the cart`)
+    window.alert(` 1 item ${data } is added to the cart`)
 
 
    }
@@ -49,7 +49,7 @@ if(!loading){
           </NavLink> 
          
          
-          <button  onClick={()=> [addtoCart(data),displayconsole(data)]}  className='cartbutton'>Add to Cart</button>
+          <button  onClick={()=> [addtoCart(data),displayconsole(data.title)]}  className='cartbutton'>Add to Cart</button>
           <div  ><button className="back" onClick={() => navigate(-1)}>Continue Shopping</button></div>
           </span>
          
@@ -83,7 +83,7 @@ if(!loading){
                       <h5>rating:"4"</h5>
                     </div>
                     <div>
-                    <button  onClick={()=> [addtoCart("product"),displayconsole("title")]}  className='cartbutton'>
+                    <button  onClick={()=> [addtoCart(product),displayconsole(product.title)]}  className='cartbutton'>
                     {/* <img src={"cart"} alt="Add to Cart " style={{height:"25px",width:'30px'}} /> */}Add to Cart
                     </button>
                   
