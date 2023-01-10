@@ -2,7 +2,7 @@ import  { useState,useEffect } from 'react'
 
 import axios from 'axios';
 
-const Fetchallproducts = (url) => {
+const Fetchallproducts = (url,id) => {
     const [loading,isloading] = useState(true);
     const [allproducts,setAllproductss] = useState([])
 
@@ -29,7 +29,7 @@ const Fetchallproducts = (url) => {
             }
         };
         fetchData();
-    }, [])
+    }, [id])
   return {allproducts,loading};
   
 }

@@ -11,7 +11,7 @@ function Detail() {
   const {addtoCart} = useCartContext(); 
   let navigate = useNavigate();
   //fetching data
-  const {allproducts } = Fetchallproducts(`/getrecom/${id}`);
+  const {allproducts } = Fetchallproducts(`/getrecom/${id}`,id);
   //
     let array = allproducts;
   const {data,loading} = Fetchsingledata(id);
