@@ -51,10 +51,10 @@ function Slider() {
       
 
         <button className='categories'  onClick={()=>setFiltered(allproducts)}>All</button>
-        <button  className='categories' onClick={()=>filteredProduct('jewelery')}>Jewelery</button>
-        <button className='categories' onClick={()=>filteredProduct("men's clothing")}>Men's clothing</button>
+        <button  className='categories' onClick={()=>filteredProduct('watch')}>Watch</button>
+        <button className='categories' onClick={()=>filteredProduct("laptop")}>Laptop</button>
         <button className='categories' onClick={()=>filteredProduct("electronics")}>Electronics</button>
-        <button className='categories' onClick={()=>filteredProduct("women's clothing")}>Women's clothing</button>
+        <button className='categories' onClick={()=>filteredProduct("mobile")}>Mobile</button>
       
 
       </div>
