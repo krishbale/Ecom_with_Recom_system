@@ -252,5 +252,181 @@
         "description": "This watch is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
         "category": "watch",
         "image": "https://images.pexels.com/photos/51011/pexels-photo-51011.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "id": "33",
+        "title": "Refurbished Apple Watch",
+        "price": 10000,
+        "brand": "apple",
+        "description": "The Apple Watch SE displays Activity rings that let you know how much you moved, exercised, and stood using three simple metrics. With this data, you’ll be encouraged to have some healthy competition with friends and family. You can also enjoy awards and personalised coaching. The Apple Watch SE provides water resistance up to 50 m so that you can get into the water without worrying about damaging the device.",
+        "category": "watch",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk76R-tCenrkjNf7FU9myRPK7asJQc4R6rfw&usqp=CAU"
+    },
+    {
+        "id": "34",
+        "title": "Apple Watch Series 7 [GPS 45mm] - iSure",
+        "price": 55000,
+        "brand": "apple",
+        "description": "The most advanced Apple Watch features powerful health innovations like sensors and apps to measure your blood oxygen and take an ECG. The larger, Always-On Retina display makes it easier to use and read. The most durable Apple Watch. Charges faster so you can get going quicker. Available in a range of sizes and materials, with dozens of bands to choose from. Change up your look by switching your band or by customizing your watch face in millions of ways.",
+        "category": "watch",
+        "image": "https://www.daraz.com.np/products/apple-watch-series-7-gps-45mm-isure-i119018066-s1032593627.html?&search=pdp_same_topselling?spm=a2a0e.pdp.recommend_2.1.b604F918F918Wd&mp=1&scm=1007.38553.252219.0&clickTrackInfo=15c64765-8647-4791-a515-f9cf23ed8c63__119018066__7537__cate__309933__0.0__0.0__0.0__0.0__0.0__0.0__0__null__null__null__null__null__null____69600.0__0.0__5.0__3__69600.0__228727,239317__null__null__null__3650.16544_955.3632__null__28557__null__0.0__0.0________null__null"
+    },
+    {
+        "id": "35",
+        "title": "Apple Watch Series 8 45mm GPS Aluminium/Sport Band",
+        "price": 60000,
+        "brand": "apple",
+        "description": "The aluminum case is lightweight and made from 100 percent recycled aerospace-grade alloy. The Sport Band is made from a durable yet surprisingly soft high-performance fluoroelastomer with an innovative pin-and-tuck closure.",
+        "category": "watch",
+        "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MPLT3ref_VW_34FR+watch-45-alum-midnight-nc-8s_VW_34FR_WF_CO?wid=700&hei=700&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1660778409162%2C1661968921009"
+    },
+    {
+        "id": "36",
+        "title": "Samsung Galaxy Watch 4 Classic 46Mm",
+        "price": 45000,
+        "brand": "samsung",
+        "description": " Some looks are timeless, like the Galaxy Watch4 Classic's rotating bezel and vivid screen. The refined design brings sophistication to your wrist and its high-end stainless steel materials express its powerful and intuitive functionality.",
+        "category": "watch",
+        "image": "https://www.samsung.com/global/galaxy/galaxy-watch4-classic/specs/images/galaxy-watch4-classic_specs_design_stainless_steel-lte-bluetooth-46mm-black_s3.jpg"
+    },
+    {
+        "id": "37",
+        "title": "Samsung Galaxy Watch 5",
+        "price": 40000,
+        "brand": "samsung",
+        "description": " Things are a little different this year as Samsung launched the Galaxy Watch 5 series without a “Classic” model. Instead, it released two variants of the smartwatch, namely, the Galaxy Watch 5 and Galaxy Watch 5 Pro. The updates to the Watch 5 are iterative but the Watch 5 Pro is a different beast of its own.",
+        "category": "watch",
+        "image": "https://www.gadgetbytenepal.com/wp-content/uploads/2022/07/Samsung-Galaxy-Watch-5-5-Pro-Design-Display.jpg"
+    },
+    {
+        "id": "38",
+        "title": "Samsung Galaxy Watch4 Classic",
+        "price": 45000,
+        "brand": "samsung",
+        "description": " This rotating bezel turns more than heads Some looks are timeless, like the Galaxy Watch4 Classic's rotating bezel and vivid screen. The refined design adds sophistication to your wrist for an elevated style.",
+        "category": "watch",
+        "image": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-watch4.jpg"
+    },
+    {
+        "id": "39",
+        "title": "MacBook Pro 14” 2021 Apple M1 Pro chip with 10-Core CPU 16-Core GPU 1TB SSD Storage 16GB Unified Memory",
+        "price": 100000,
+        "brand": "apple",
+        "description": "Silver ,Space Gray, 10-core CPU with 8 performance cores and 2 efficiency cores 16-core GPU 16-core Neural Engine 200GB/s memory bandwidth Liquid Retina XDR display 14.2-inch (diagonal) Liquid Retina XDR display;1 3024-by-1964 native resolution at 254 pixels per inch XDR (Extreme Dynamic Range)– Up to 1000 nits sustained (full-screen) brightness, 1600 nits peak brightness. 1,000,000:1 contrast ratio",
+        "category": "laptop",
+        "image": "https://www.macsupportnepal.com/wp-content/uploads/2021/10/mbp14-spacegray-select-202110-600x558.jpeg"
+    },
+
+    {
+        "id": "40",
+        "title": "Game-changing MacBook Pro with M1 Pro and M1 Max",
+        "price": 140000,
+        "brand": "apple",
+        "description": " The new MacBook Pro features a 1080p camera, the best audio system in a notebook, and the most advanced connectivity ever in a MacBook Pro Apple today unveiled the completely reimagined MacBook Pro powered by the all-new M1 Pro and M1 Max — the first pro chips designed for the Mac. Available in 14- and 16-inch models, MacBook Pro delivers groundbreaking processing, graphics, and machine learning (ML) performance whether running on battery or plugged in, as well as amazing battery life — enabling workflows previously unimaginable on a notebook. The new MacBook Pro also features a stunning Liquid Retina XDR display, a wide range of ports for advanced connectivity, a 1080p FaceTime HD camera, and the best audio system in a notebook. Combined with macOS Monterey, which is engineered down to its core to take full advantage of M1 Pro and M1 Max, the user experience is simply unrivaled. Shattering the limits of what a notebook can do, MacBook Pro is designed for developers, photographers, filmmakers, 3D artists, scientists, music producers, and anyone who wants the world’s best notebook.",
+        "category": "laptop",
+        "image": "https://www.apple.com/newsroom/images/product/mac/standard/Apple_MacBook-Pro_14-16-inch_10182021_big.jpg.large.jpg"
+    },
+    {
+        "id": "41",
+        "title": "New MacBook Air",
+        "price": 205000,
+        "brand": "apple",
+        "description": "Offering quad-core processors for the first time, MacBook Air now delivers even more speed across everyday activities, from organizing photos and creating presentations to editing videos. Featuring the latest 10th-generation Intel Core processors up to 1.2GHz quad-core Core i7 with Turbo Boost speeds up to 3.8GHz, MacBook Air delivers up to two times faster performance when compared to the previous generation. And with Intel Iris Plus Graphics, MacBook Air now delivers up to 80 percent faster graphics performance, so graphics-intensive activities like playing games and editing video are faster than ever. ",
+        "category": "laptop",
+        "image": "https://www.apple.com/newsroom/images/product/mac/standard/Apple_new-macbook-air-wallpaper-screen_03182020_big.jpg.large.jpg"
+    },
+
+    {
+        "id": "42",
+        "title": "Samsung Notebook 9 Pro",
+        "price": 100000,
+        "brand": "samsung",
+        "description": "The Samsung Notebook 9 Pro takes advantage of a breathtaking display, reduced bezels, and dual 1.5W stereo speakers with Thunder Amp to increase maximum volume output, while offering a fully immersive experience as you create, work, or enjoy. It also features a comprehensively redesigned keyboard, and 14 hours of battery life¹, so you can get things done faster, better, and wherever. The Samsung Notebook 9 Pro runs on a Windows 10 Home operating system, and is built for creative-minded professionals who are looking for products to bring their ideas to life. And the Active Pen—with more than 4000 levels of pressure sensitivity—comes included in the box, and will inspire users to write, draw, and create both for work and fun.",
+        "category": "laptop",
+        "image": "https://img.us.news.samsung.com/us/wp-content/uploads/2019/01/14103832/Notebook-9-Pro-3-950x633.jpg"
+    },
+
+    {
+        "id": "43",
+        "title": "iPhone 14 Pro Max",
+        "price": 175000,
+        "brand": "apple",
+        "description": "iPhone 14 Pro Max. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. Crash Detection, a new safety feature, calls for help when you can’t. Experience a 6.7-inch Super Retina XDR Display with ProMotion, Cinematic mode in 4K Dolby Vision up to 30 fps and action mode for smooth, steady handheld videos. Enjoy more with all-day battery life and up to 29 hours of video playback, the new A16 Bionic chip, superfast 5G cellular and the new iOS 16 which offers even more ways to personalise, communicate and share.",
+        "category": "mobile",
+        "image": "https://www.vodafone.com.au/_next/image?url=https%3A%2F%2Fwww.vodafone.com.au%2Fimages%2Fdevices%2Fapple%2Fiphone-14-pro-max%2Fiphone-14-pro-max-deep-purple-feature1-l.jpg&w=1920&q=90"
+    },
+    {
+        "id": "44",
+        "title": "iphone 14 plus",
+        "price": 155000,
+        "brand": "apple",
+        "description": "iPhone 14 Plus. Think big with a larger 6.7-inch display and all-day battery life. Capture stunning photos in low light and bright light with the new dual-camera system. Crash Detection, a new safety feature, calls for help when you can’t. Experience a 6.7-inch Super Retina XDR Display, Cinematic mode in 4K Dolby Vision up to 30 fps and action mode for smooth, steady handheld videos. Enjoy more with all-day battery life and up to 26 hours of video playback, an A15 Bionic chip with 5-core GPU for lightning-fast performance, superfast 5G cellular and the new iOS 16 which offers even more ways to personalise, communicate and share.",
+        "category": "mobile",
+        "image": "https://www.vodafone.com.au/_next/image?url=https%3A%2F%2Fwww.vodafone.com.au%2Fimages%2Fdevices%2Fapple%2Fiphone-14-plus%2Fiphone-14-plus-blue-feature1-l.jpg&w=1920&q=90"
+    },
+    {
+        "id": "45",
+        "title": "mobile",
+        "price": 140000,
+        "brand": "apple",
+        "description": " iPhone 14. With the most impressive dual-camera system on iPhone. Capture stunning photos in low light and bright light. Get peace of mind with vital safety features. Experience a 6.1-inch Super Retina XDR Display, Cinematic mode in 4K Dolby Vision up to 30 fps and action mode for smooth, steady handheld videos. Enjoy more with all-day battery life and up to 20 hours of video playback, an A15 Bionic chip with 5-core GPU for lightning-fast performance, superfast 5G cellular and the new iOS 16 which offers even more ways to personalise, communicate and share.",
+        "category": "mobile",
+        "image": "https://www.vodafone.com.au/_next/image?url=https%3A%2F%2Fwww.vodafone.com.au%2Fimages%2Fdevices%2Fapple%2Fiphone-14%2Fiphone-14-blue-feature1-l.jpg&w=1920&q=90"
+    },
+
+    {
+        "id": "46",
+        "title": "Samsung Galaxy Z Fold4 5G",
+        "price": 80000,
+        "brand": "samsung",
+        "description": "Introducing the Galaxy Z Fold4 5G from Samsung. This is Samsung’s lightest Fold yet, and comes packed with incredible features. The 7.6-inch folding inner display allows you to jump straight from a smartphone to a tablet-like experience; while the convenient Flex Mode means you can make hands-free video calls or prop the Galaxy Z Fold4 5G at the perfect angle to immerse yourself in your favourite show. With a massive internal memory, 4400mAh battery and 25W fast charging, the Galaxy Z Fold4 5G is a true powerhouse.      ",
+        "category": "mobile",
+        "image": "https://www.vodafone.com.au/_next/image?url=https%3A%2F%2Fwww.vodafone.com.au%2Fimages%2Fdevices%2Fsamsung%2Fsamsung-galaxy-z-fold4%2Fsamsung-galaxy-z-fold4-greygreen-01-l.jpg&w=1920&q=90"
+    },
+    {
+        "id": "47",
+        "title": "Samsung Galaxy Z Flip4 5G",
+        "price": 80000,
+        "brand": "samsung",
+        "description": "The Samsung Galaxy Z Flip4 5G is the full screen phone that can fold to fit in your pocket. It’s small, durable and comes in a range of statement colours to fit your style. Flex Mode allows you to go hands-free for video chats and selfies, while the interactive cover screen means you can check messages, take photos, play music and more without ever having to open your phone. The Galaxy Z Flip4 5G also features the Quick Selfie function, which means you can snap selfies quickly even while the cover is closed.",
+        "category": "mobile",
+        "image": "https://www.vodafone.com.au/_next/image?url=https%3A%2F%2Fwww.vodafone.com.au%2Fimages%2Fdevices%2Fsamsung%2Fsamsung-galaxy-z-flip4-5g%2Fsamsung-galaxy-z-flip4-purple-01-l.jpg&w=1920&q=90"
+    },
+    {
+        "id": "48",
+        "title": "Samsung Galaxy S22 Ultra 5G",
+        "price": 40000,
+        "brand": "samsung",
+        "description": "We are breaking the rules of innovation with the Galaxy S22 Ultra 5G. Setting the standard at being our most epic smartphone. Our most advanced Pro-grade camera yet. Shoot in 108MP – the highest resolution on a smartphone in Australia and the largest pixel sensor and auto frame rate, bringing Nightography to life. Galaxy S22 Ultra 5G has the longest battery life ever on a Galaxy S Series and the first with an embedded S Pen. It has the brightest display and the fastest chip ever in a Galaxy smartphone, plus the strongest Gorilla Glass Victus+ and our strongest Armor Aluminium frame on a Galaxy device.   ",
+        "category": "mobile",
+        "image": "https://www.vodafone.com.au/_next/image?url=https%3A%2F%2Fwww.vodafone.com.au%2Fimages%2Fdevices%2Fsamsung%2Fsamsung-galaxy-s22-ultra%2Fsamsung-galaxy-s22-ultra-burgundy-front-l.jpg&w=1920&q=90"
+    },
+
+    {
+        "id": "49",
+        "title": "OPPO Find X5 Pro 5G",
+        "price": 80000,
+        "brand": "oppo",
+        "description": "The OPPO Find X5 Pro 5G features a premium ceramic design, created to be smooth to the touch yet tough enough for everyday use. Take it on all your adventures and capture every moment thanks to the Hasselblad Camera for Mobile. Plus, you can enjoy super-fast charging thanks to the 80W SUPERVOOCTM Flash Charge, which can deliver a 50% charge in just 12 minutes.",
+        "category": "mobile",
+        "image": "https://www.vodafone.com.au/_next/image?url=https%3A%2F%2Fwww.vodafone.com.au%2Fimages%2Fdevices%2Foppo%2Foppo-find-x5-pro-5g%2Foppo-find-x5-pro-ceramic-white-front-l.jpg&w=1920&q=90"
+    },
+    {
+        "id": "50",
+        "title": "OPPO A57 4G",
+        "price": 80000,
+        "brand": "oppo",
+        "description": "Feel beyond ordinary with OPPO A57 4G. With Superfast 33W SUPERVOOC™, there’s no more waiting around for your phone to charge – you’ll be able to charge up and get out the door fast. Plus, thanks to the 6.56-inch Colour-Rich Display, images and videos will spring to life whether you’re scrolling social media, playing a game or watching a video.",
+        "category": "mobile",
+        "image": "https://www.vodafone.com.au/_next/image?url=https%3A%2F%2Fwww.vodafone.com.au%2Fimages%2Fdevices%2Foppo%2Foppo-a57-4g%2Foppo-a57-glowing-black-front-l.jpg&w=1920&q=90"
+    },
+    {
+        "id": "51",
+        "title": "OPPO Reno8 5G",
+        "price": 40000,
+        "brand": "oppo",
+        "description": "Keep shining fearlessly with OPPO Reno8 5G. The Dual Sony Flagship Sensors deliver greater dynamic range, incredible noise reduction and reduced motion ghosting while Ultra Night Video helps you to see the details of shadows. The 80W SUPERVOOC™ charging gets your Reno8 5G up and running in no time while the sleek, streamlined, unibody design fits comfortably in your hand. Plus Reno8 5G is powered by the MediaTek Dimensity 1300, an incredibly power efficient chip.",
+        "category": "mobile",
+        "image": "https://www.vodafone.com.au/_next/image?url=https%3A%2F%2Fwww.vodafone.com.au%2Fimages%2Fdevices%2Foppo%2Foppo-reno-8-5g%2Foppo-reno8-5g-shimmer-black-front-l.jpg&w=1920&q=90"
     }
 ]
