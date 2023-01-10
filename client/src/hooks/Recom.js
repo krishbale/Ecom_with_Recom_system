@@ -10,7 +10,7 @@ const Recomdata = (id) => {
         const fetchData = async () => {
             try{
                 isloading(true);
-                const { data } = await axios.get(`/getrem/${id}`);
+                const { data } = await axios.get(`/getrecom/${id}`);
                 let recom = data.data
                
                 setRecomData(recom);
