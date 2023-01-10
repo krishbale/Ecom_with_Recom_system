@@ -21,7 +21,7 @@ const NavBar = () => {
     <>  
 
       
-        <div className="navbar">
+        <div  className="navbar">
           <nav>
             <ul>
               <li>logo</li>
@@ -42,7 +42,7 @@ const NavBar = () => {
                 <Link to="/login">Login</Link>
               </li>
           
-              <li className="nav_items active">
+              <li key={totalItem} className="nav_items active">
                 <Link  to="/cart/">
                   <img  src={carticon}
                  style={{height:"20px",width:"30px"}}

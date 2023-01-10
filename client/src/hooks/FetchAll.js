@@ -2,7 +2,7 @@ import  { useState,useEffect } from 'react'
 
 import axios from 'axios';
 
-const Fetchallproducts = () => {
+const Fetchallproducts = (url) => {
     const [loading,isloading] = useState(true);
     const [allproducts,setAllproductss] = useState([])
 
@@ -10,8 +10,10 @@ const Fetchallproducts = () => {
         const fetchData = async () => {
             try{
                 isloading(true)
-                const { data } = await axios.get('/products');
-                let products = data.data
+                const { data } = await axios.get(url);
+               
+                let products =  data.data ? data.data: data.recomdata
+                console.log(products);
                 setAllproductss(products);
                 
                 if(Array.isArray(products)){
