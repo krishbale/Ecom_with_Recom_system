@@ -21,7 +21,7 @@ function Slider() {
    }
  
 //fetching data
-  const {allproducts ,loading} = Fetchallproducts();
+  const {allproducts ,loading} = Fetchallproducts('/products');
   //
   const [filtered , setFiltered] = useState([])
   if(loading){

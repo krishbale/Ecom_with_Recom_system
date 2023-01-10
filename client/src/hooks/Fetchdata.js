@@ -19,7 +19,7 @@ const Fetchsingledata = (id) => {
               
                 if(typeof singleproduct !== "undefined"){
                     isloading(false);
-                    console.log(singleproduct)
+                    // console.log(singleproduct)
 
                 }
               
