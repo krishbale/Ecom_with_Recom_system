@@ -6,7 +6,7 @@
   
   const formatteddocs = rawdocs.map((products)=>{
     let id = products.id;
-    let content = products.title.concat(" "+products.category+" "+products.description+" "+ products.price) 
+    let content = products.title.concat(" "+products.category+" "+products.description+" "+ products.price+" "+products.brand) 
     return(({id:id,content:content}));
 
    
@@ -61,7 +61,7 @@ function tfidf(docs) {
 // Filtering out the stopwords
 let terms = split.filter(word => !stopwords.includes(word));  
       // Calculate the term frequency for each term in the document
-      console.log(terms)
+    
       for (let j = 0; j < terms.length; j++) {
         let term = terms[j];
         if (termFreq[term]) {
