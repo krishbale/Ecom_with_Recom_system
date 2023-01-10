@@ -50,7 +50,7 @@ function Slider() {
     
       
 
-        {/* <button className='categories'  onClick={()=>setFiltered(allproducts)}>All</button> */}
+        <button className='categories'  onClick={()=>setFiltered(allproducts)}>All</button>
         <button  className='categories' onClick={()=>filteredProduct('jewelery')}>Jewelery</button>
         <button className='categories' onClick={()=>filteredProduct("men's clothing")}>Men's clothing</button>
         <button className='categories' onClick={()=>filteredProduct("electronics")}>Electronics</button>
