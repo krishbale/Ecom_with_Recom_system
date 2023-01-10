@@ -15,12 +15,12 @@ function Detail() {
   //
     let array = allproducts;
   const {data,loading} = Fetchsingledata(id);
+
    const displayconsole= (data)=>{
     window.alert(` 1 item ${data.title} is added to the cart`)
 
 
    }
-  
 if(!loading){
   return(
     <>
@@ -62,10 +62,7 @@ if(!loading){
       {
         array.map((product,i) => {
           return (
-            <>
-            
-            
-              
+            <>  
               <div  className='card' key={product.id} >
               <div key={product.id}  className='item'>
               <Link to={`/details/${product.id}`}>
