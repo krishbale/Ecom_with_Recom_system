@@ -3,21 +3,24 @@ import "../styles/Detail.css"
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { useCartContext } from '../context/Cartcontext'
 import { Fetchsingledata } from '../hooks/Fetchdata';
+import { Recomdata } from '../hooks/Recom';
 import { Link } from "react-router-dom";
 function Detail() {
-  let array = [1,2,3,4]
+
+  
+  let array = []
   let { id } = useParams()
   const {addtoCart} = useCartContext(); 
   let navigate = useNavigate();
 
   
   const {data,loading} = Fetchsingledata(id);
+  const {recomData,loading:loading1} = Recomdata(id);
    const displayconsole= (data)=>{
     window.alert(` 1 item ${data.title} is added to the cart`)
 
 
    }
-  
 if(!loading){
   return(
     <>
@@ -57,29 +60,29 @@ if(!loading){
     
       <div className='productitem'>
       {
-        array.map((e,i) => {
+        recomData.map((data) => {
           return (
             <>
             
             
               
-              <div  className='card' key={i}>
-              <div key={e} className='item'>
+              <div  className='card' key={data.id}>
+              <div  className='item'>
               <Link to={`/details/${"id"}`}>
                 <div className='image'>
-                  <img src={"image"} alt="logo" />
+                  <img src={data.image} alt="logo" />
                   <div className="overlay">
                 <div className="learnmore">
-                  <h3>Learn More {e}</h3>
+                  <h3>Learn More </h3>
                 </div>
               </div>
                 </div>
                 </Link>
                 <div className='des'>
-                  <h3>"titlesubstring"(0, 18)...</h3>
+                  <h3>{data.title}</h3>
                   <span>
                     <div>
-                      <h5>Price:"price"</h5>
+                      <h5>{data.price}</h5>
                       <h5>rating:"ratingrate"</h5>
                     </div>
                     <div>
@@ -111,7 +114,7 @@ if(!loading){
 
     </>
   );
-}else if(loading){
+}else if(loading1){
   <>
     <h1>Loading ....</h1>
   </>

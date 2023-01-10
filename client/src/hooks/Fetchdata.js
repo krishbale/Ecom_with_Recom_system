@@ -6,7 +6,6 @@ const Fetchsingledata = (id) => {
     const [data,setData] = useState({})
     const [loading,isloading] = useState(true)
   
-  
     useEffect(() => {
         const fetchData = async () => {
             try{
