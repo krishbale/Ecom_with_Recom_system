@@ -106,7 +106,7 @@ return(
         })}
       
      
-        {/* <Foryou  allproducts= { allproducts } /> */}
+        <Foryou  allproducts= { allproducts } />
 
       </div>
     </>

@@ -24,6 +24,7 @@ const Foryou = ({allproducts}) => {
             <div className='card' key={id}>
               <div className='item'>
               <Link to={`/details/${id}`}>
+              <p style={{display:"grid",align_item:"center"}}>{item.category}</p>
                 <div className='image'>
                   <img src={image} alt="logo" />
                   <div className="overlay">

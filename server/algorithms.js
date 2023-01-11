@@ -3,7 +3,10 @@
 
 
 
-  
+  //processsing the documensts 
+ 
+
+
   const formatteddocs = rawdocs.map((products)=>{
     let id = products.id;
     let content = products.title.concat(" "+products.category+" "+products.description+" "+ products.price+" "+products.brand) 
@@ -12,9 +15,73 @@
    
    
 })
+
+
   // Extract the content of each document
-  let docContents = formatteddocs.map(doc => doc.content);
+  const processdocuments = formatteddocs.map(item => {
+   function processingdocs(maincontent){
+   
+      let split = maincontent.split(' ')
+      let words = split.map((e)=>{
+        return e.toLowerCase();
+      })
+      let stopwords = ["i", "me", "my","With", "myself", "we", "our", "ours", "ourselves", "you", "your", "yours", "yourself", "yourselves", "he", "him", "his", "himself", "she", "her", "hers", "herself", "it", "its", "itself", "they", "them", "their", "theirs", "themselves", "what", "which", "who", "whom", "this", "that", "these", "those", "am", "is", "are", "was", "were", "be", "been", "being", "have", "has", "had", "having", "do", "does", "did", "doing", "a", "an", "the", "and", "but", "if", "or", "because", "as", "until", "while", "of", "at", "by", "for", "with", "about", "against", "between", "into", "through", "during", "before", "after", "above", "below", "to", "from", "up", "down", "in", "out", "on", "off", "over", "under", "again", "further", "then", "once", "here", "there", "when", "where", "why", "how", "all", "any", "both", "each", "few", "more", "most", "other", "some", "such", "no", "nor", "not", "only", "own", "same", "so", "than", "too", "very", "s", "t", "can", "will", "just", "don", "should", "now"]
+
+      // Filtering out the stopwords
+      let terms = words.filter(word => !stopwords.includes(word)); 
+      //changing terms to unigrams bigrams 
+     
+      // console.log(terms);
+
+      //function to create unigrams
+      function createUnigrams(words) {
+        var unigrams = words;
+        return unigrams;
+    }
+      //function to create bigrams
+    function createBigrams(words) {
+      var bigrams = [];
+      for (var i = 0; i < words.length - 1; i++) {
+          bigrams.push(words[i] + ' ' + words[i + 1]);
+      }
+      return bigrams;
+  }
+  //functions to create trigrams
+  function createTrigrams(words) {
+    var trigrams = [];
+    for (var i = 0; i < words.length - 2; i++) {
+        trigrams.push(words[i] + ' ' + words[i + 1] + ' ' + words[i + 2]);
+    }
+    return trigrams;
+}
+//calling functions unigrams bigrams and trigrams 
+      let unigrams = createUnigrams(terms);
+      let bigrams = createBigrams(terms);
+      let trigrams = createTrigrams(terms);
+//returning tokens
+      return token = [].concat(unigrams,bigrams,trigrams);
+
+      
+   }
+      //
   
+    let tokens = processingdocs((item.content));
+    return {
+      id:item.id,
+      tokens,
+    }
+  })
+  // console.log(processdocuments);
+  
+
+  
+
+// console.log(processdocuments)
+  let docContents = processdocuments.map(doc => doc.tokens);
+  // console.log(docContents)
+
+  //process the document before caluclating tfidf 
+  // let precessedDocuments = 
   // Calculate the tf-idf vectors for the documents
   let vectors = tfidf(docContents);
   
@@ -34,34 +101,35 @@
     }
   }
 
-  // scorearray.sort((b,a)=> a.score-b.score)
-  // console.log(scorearray);
-  //hello from balkrishna
+  scorearray.sort((b,a)=> a.score-b.score)
+  console.log(scorearray);
+  // hello from balkrishna
   // if(scorearray.id1==id  || scorearray.id2 ==id){
 
   //   scorearray.slice(0,3)
   // }
 // console.log(scorearray);
 
+// processing content before calculating tf idf
+
+
 
 
 function tfidf(docs) {
+
+  // console.log(docs);
     // Create an object to store the term frequency for each term in each document
     let termFreq = {};
     // Create an array to store the tf-idf values for each term in each document
     let tfidfValues = [];
-  
+    
     // Loop through each document
     for (let i = 0; i < docs.length; i++) {
-      // Split the document into an array of terms
-      let split = docs[i].split(' ');
-    
-      let stopwords = ["i", "me", "my","With", "myself", "we", "our", "ours", "ourselves", "you", "your", "yours", "yourself", "yourselves", "he", "him", "his", "himself", "she", "her", "hers", "herself", "it", "its", "itself", "they", "them", "their", "theirs", "themselves", "what", "which", "who", "whom", "this", "that", "these", "those", "am", "is", "are", "was", "were", "be", "been", "being", "have", "has", "had", "having", "do", "does", "did", "doing", "a", "an", "the", "and", "but", "if", "or", "because", "as", "until", "while", "of", "at", "by", "for", "with", "about", "against", "between", "into", "through", "during", "before", "after", "above", "below", "to", "from", "up", "down", "in", "out", "on", "off", "over", "under", "again", "further", "then", "once", "here", "there", "when", "where", "why", "how", "all", "any", "both", "each", "few", "more", "most", "other", "some", "such", "no", "nor", "not", "only", "own", "same", "so", "than", "too", "very", "s", "t", "can", "will", "just", "don", "should", "now"]
+      let terms =docs[i];
+      
+      
 
-// Filtering out the stopwords
-let terms = split.filter(word => !stopwords.includes(word));  
-      // Calculate the term frequency for each term in the document
-    
+  
       for (let j = 0; j < terms.length; j++) {
         let term = terms[j];
         if (termFreq[term]) {
@@ -137,10 +205,10 @@ let terms = split.filter(word => !stopwords.includes(word));
     // Calculate and return the cosine similarity
     return dotProduct / (vec1Magnitude * vec2Magnitude);
   }
-//   let vec1 = { term1: 0.5, term2: 0.5 };
-//   let vec2 = { term1: 0.5, term2: 0.5 };
-//   let similarity = cosineSimilarity(vec1, vec2);
-//   console.log(similarity);
+  // let vec1 = { term1: 0.5, term2: 0.5 };
+  // let vec2 = { term1: 0.5, term2: 0.5 };
+  // let similarity = cosineSimilarity(vec1, vec2);
+  // console.log(similarity);
     
   
 
