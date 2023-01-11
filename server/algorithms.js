@@ -102,7 +102,7 @@
   }
 
   scorearray.sort((b,a)=> a.score-b.score)
-  console.log(scorearray);
+  // console.log(scorearray);
   // hello from balkrishna
   // if(scorearray.id1==id  || scorearray.id2 ==id){
 
