@@ -1,5 +1,6 @@
 import React from 'react'
 import carticon  from '../assets/cart.svg'
+
 import {
   
   Routes,
@@ -10,10 +11,13 @@ import "../styles/NavBar.css";
 import Slider from "../components/Slider"
 import About from '../pages/About'
 import Contact from '../pages/Contact'
-import Login from '../pages/Login'
+
 import Cart from '../pages/Cartui'
 import Detail from '../pages/Detail';
 import { useCartContext } from '../context/Cartcontext';
+import Login from '../pages/Login';
+import Register from '../pages/Register';
+import Logout from '../pages/Logout';
 
 const NavBar = () => {
   const { totalItem  } = useCartContext()
@@ -25,8 +29,11 @@ const NavBar = () => {
           <nav>
             <ul>
               <li>logo</li>
+           
             </ul>
+
             <ul>
+          
           
               <li className="nav_items active">
                 <Link to="/">Home</Link>
@@ -38,9 +45,7 @@ const NavBar = () => {
               <li className="nav_items active">
                 <Link  to="/contact">Contact</Link>
               </li>
-              <li className="nav_items active">
-                <Link to="/login">Login</Link>
-              </li>
+             
           
               <li key={totalItem} className="nav_items active">
                 <Link  to="/cart/">
@@ -50,16 +55,25 @@ const NavBar = () => {
                     <span className='noti_count'>{totalItem}</span>
                   </Link>
               </li>
-             
-             
+            
+              <li className="nav_items active">
+                <Link  to="/login">Login</Link>
+              </li>
+              <li className="nav_items active">
+                <Link  to="/logout">Logout</Link>
+              </li>
+          
              
             </ul>
+            
           </nav>
           <Routes >
             <Route path="/" element={<Slider />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path="/cart/" element={<Cart />} />
             <Route path="/details/:id" element={<Detail />} />
           </Routes>

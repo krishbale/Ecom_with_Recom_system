@@ -87,6 +87,10 @@ if (action.type === "CLEAR_CART") {
   }
 
   return state;
+  
+    
+
+
 }
 
 export default Cartreducer

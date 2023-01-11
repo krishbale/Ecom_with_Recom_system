@@ -7,6 +7,8 @@ const CartProvider = ({children})=>{
         cart:[],
         totalAmount:0,
         totalItem:0,
+       
+        
       
         
 
@@ -45,6 +47,7 @@ const removeItem = (id) => {
     dispatch({ type: "GET_TOTAL" });
     
   }, [state.cart]);
+
 
 
 

@@ -1,42 +1,116 @@
-import React from 'react'
-import '../styles/Login.css'
-import {
-
-
-  Link
-} from "react-router-dom";
-import avatar from '../assets/avatar.png'
+import React,{ useState} from 'react'
+import { NavLink ,useNavigate } from 'react-router-dom';
 const Login = () => {
+    const history = useNavigate()
+    const [username, setUserName] = useState('');
+    const [password, setPassword] = useState('');
+    const loginUser = async (e) => {
+      
+        e.preventDefault();
+        try {
+    
+          const res =
+            await
+              fetch('/login',
+                {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify({
+                    username, password
+    
+                  })
+                });
+          const data = await res.json();
+          if (res.status === 422 || !data) {
+            window.alert("Invalid Credentials")
+          }
+          else
+          {
+            window.alert(`hello Viewer`)
+            // dispatch({type:"USER",payload:"true"})
+            history('/')
+           
+          }
+    
+    
+    
+    
+        } catch (error) {
+          console.log(error);
+    
+        }
+    
+      }
   return (
     <>
-      <div id="id01" class="modal">
-  
-  <form className="modal-content animate" action="/action_page.php" method="post">
-    <div className="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" className="close" title="Close Modal">&times;</span>
-      <img src={avatar} alt="Avatar" className="avatar"/>
+   
+    <section className='sign-in bg-dark'>
+    <div className='container mt-5'>
+    <div className='signin-content'>
+    <div className='signin-image bg-dark'>
+      <figure>
+        <img src='' height="100" width="75" alt="signpic" />
+      </figure>
+     
+
     </div>
 
-    <div className="login-container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required/>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required/>
-        
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"/> Remember me
+    <div className='signin-form bg-dark'>
+    <h2 className='form-title'>Log IN</h2>
+    <form method='POST'
+    className='register-form' id='register-form'>
+    <div className=''>
+    <div className='form-group  '>
+      <label htmlFor="username">
+      <i className="zmdi zmdi-account material-icons-name bg-info "></i>
       </label>
+      <input type="text" name="username" id="name" autoComplete='off' 
+        placeholder='Your Username' className='bg-dark text-white-50'
+
+          
+          onChange={(e) => setUserName(e.target.value)}
+                 />
+    </div>
+    <div className='form-group  '>
+      <label htmlFor="password">
+      <i className="zmdi zmdi-lock material-icons-password bg-info"></i>
+
+      </label>
+      <input type="text" name="password" id="password" autoComplete='off' 
+        placeholder='Your Password' className='bg-dark text-white-50'
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+
+      />
     </div>
 
-    <div className="container" style={{'background-color':'#f1f1f1'}} >
-      <button type="button" className="button1" onclick="document.getElementById('id01').style.display='none'" >Cancel</button>
-      <span className="psw">Forgot    <Link to="/">password?</Link></span>
+    <div className='form-group form-button '>
+      <input type="submit" 
+      onClick={loginUser}
+       name="login" id="login" className='form-submit btn btn-outline-success' value="Login" />
+       <p className='bg-dark' >
+        Do you want to register a new account ? 
+       </p>
+       <NavLink to="/register" className="signup-image-link btn  btn-outline-info" >Create an account</NavLink>
     </div>
-  </form>
-</div>
-    </>
+    </div>
+
+    </form>
+
+   
+    </div>
+
+    </div>
+
+    </div>
+    
+   
+
+
+  </section>
+  </>
   )
 }
 
