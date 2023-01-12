@@ -1,6 +1,8 @@
-import React,{ useState} from 'react'
+import React,{useContext, useState} from 'react'
+import {  LoginContext } from '../App';
 import { NavLink ,useNavigate } from 'react-router-dom';
 const Login = () => {
+  const {state,dispatch} = useContext(LoginContext);
     const history = useNavigate()
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');
@@ -29,7 +31,7 @@ const Login = () => {
           else
           {
             window.alert(`hello Viewer`)
-            // dispatch({type:"USER",payload:"true"})
+            dispatch({type:"USER",payload:"true"})
             history('/')
            
           }

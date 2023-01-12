@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import carticon  from '../assets/cart.svg'
-
+import {  LoginContext } from '../App';
 import {
   
   Routes,
@@ -20,6 +20,7 @@ import Register from '../pages/Register';
 import Logout from '../pages/Logout';
 
 const NavBar = () => {
+  const {state,dispatch} = useContext(LoginContext);
   const { totalItem  } = useCartContext()
   return (
     <>  
@@ -55,13 +56,19 @@ const NavBar = () => {
                     <span className='noti_count'>{totalItem}</span>
                   </Link>
               </li>
-            
-              <li className="nav_items active">
+            {state==="false"?  <li className="nav_items active">
                 <Link  to="/login">Login</Link>
-              </li>
+              </li>:
+
+            
               <li className="nav_items active">
                 <Link  to="/logout">Logout</Link>
               </li>
+            
+            
+            }
+             
+             
           
              
             </ul>

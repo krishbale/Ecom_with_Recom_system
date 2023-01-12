@@ -84,6 +84,14 @@ const logout = (req,res)=>{
       res.status(200).send('session Timeout , signing off')
 
 }
+const sessioncontroller = async(req,res)=>{
+    if(req.session.user){
+        return res.status(200).json(req.session.user)
+    }else{
+        res.status(401).json({msg:"nosession"})
+    }
+
+}
 
 
- module.exports = { register , login,logout }
+ module.exports = { register , login,logout,sessioncontroller }

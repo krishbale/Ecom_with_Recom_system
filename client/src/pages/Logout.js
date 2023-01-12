@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-// import {  UserContext } from '../App';
+import {  LoginContext } from '../App';
+import LoadingAnimations from './LoadingAnimations';
 const Logout = () => {
-    // const {state,dispatch} = useContext(UserContext);
+    const {state,dispatch} = useContext(LoginContext);
     const history = useNavigate();
     //promises
 
@@ -20,7 +21,7 @@ const Logout = () => {
     }).then((res)=>{
 
         history('/',{ replace:true });
-        // dispatch({type:"USER",payload:"false"})
+        dispatch({type:"USER",payload:"false"})
         if(res.status !== 200){
             const error = new Error(res.error);
             throw error;
@@ -36,7 +37,7 @@ const Logout = () => {
     
   return (
     <>
-    <h1>Logout page is working</h1>
+    <LoadingAnimations/>
     
     
     
