@@ -1,5 +1,6 @@
 import React,{useContext, useState} from 'react'
 import {  LoginContext } from '../App';
+import  loginpic  from '../assets/avatarlogin.png';
 import { NavLink ,useNavigate } from 'react-router-dom';
 const Login = () => {
   const {state,dispatch} = useContext(LoginContext);
@@ -53,7 +54,7 @@ const Login = () => {
     <div className='signin-content'>
     <div className='signin-image bg-dark'>
       <figure>
-        <img src='' height="100" width="75" alt="signpic" />
+        <img src={loginpic} height="100" width="75" alt="signpic" />
       </figure>
      
 

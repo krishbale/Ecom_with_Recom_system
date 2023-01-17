@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
-
+import  loginpic  from '../assets/avatarlogin.png';
 const Register = () => {
     const   history = useNavigate();
     const [user,setUser] = useState({
@@ -100,11 +100,12 @@ const Register = () => {
       </form>
 
       <div className='signup-image'>
+      <NavLink to="/login" className="signup-image-link btn btn-outline-warning" >Back to Login Page</NavLink>
         <figure>
-          <img src='' height="100" width="75" alt="signpic" />
+          <img src={loginpic} height="100" width="75" alt="signpic" />
         </figure>
 
-        <NavLink to="/login" className="signup-image-link btn btn-outline-warning" >Back to Login Page</NavLink>
+      
       </div>
     </div>
 

@@ -7,7 +7,7 @@ import { Fetchallproducts } from '../hooks/FetchAll';
 import Foryou from './Foryou';
 import LoadingAnimations from '../pages/LoadingAnimations';
 function Slider() {
- const [title,setTitle] = useState('Latest Products');
+ const [title,setTitle] = useState('New Arrivals');
 
   //addtocartbuttonlogic
   const {addtoCart} = useCartContext(); 
