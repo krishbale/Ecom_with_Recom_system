@@ -81,7 +81,7 @@ const NavBar = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/logout" element={<Logout />} />
-            <Route path="/cart/" element={<Cart />} />
+            <Route path="/cart/" element={ <Cart />} />
             <Route path="/details/:id" element={<Detail />} />
           </Routes>
         </div>

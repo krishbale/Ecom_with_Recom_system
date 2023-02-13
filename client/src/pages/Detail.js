@@ -13,6 +13,8 @@ function Detail() {
   let navigate = useNavigate();
   //fetching data
   const {allproducts } = Fetchallproducts(`/getrecom/${id}`,id);
+  // console.log(allproducts);
+
   //
     let array = allproducts;
   const {data,loading} = Fetchsingledata(id);
@@ -60,7 +62,10 @@ if(!loading){
       <div className="product_section  center">Recommended products for you</div>
     
       <div className='productitem'>
+      
       {
+        
+        
         array.map((product,i) => {
           return (
             <>  

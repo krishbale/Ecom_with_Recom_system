@@ -2,11 +2,14 @@ const mongoose = require('mongoose');
 const dotenv = require("dotenv");
 const express = require('express');
 const session = require('express-session')
+
 const app = express();
 require('dotenv').config();
+
 const connectDB = require('./db/connect');
 app.use(express.json())
 const User = require('./models/userSchema');
+
 const MongoDBStore = require('connect-mongodb-session')
 (session)
 
@@ -35,7 +38,7 @@ app.use(session({
 }))
 const userRouter = require('./routes/user')
 const productRouter = require('./routes/product')
-const cors = require('cors')
+
 
 app.use('/',userRouter)
 app.use('/',productRouter)

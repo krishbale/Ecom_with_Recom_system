@@ -1,8 +1,10 @@
 import  { useState,useEffect } from 'react'
 
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Fetchallproducts = (url,id) => {
+    const navigate = useNavigate();
     const [loading,isloading] = useState(true);
     const [allproducts,setAllproductss] = useState([])
 
@@ -11,6 +13,7 @@ const Fetchallproducts = (url,id) => {
             try{
                 isloading(true)
                 const { data } = await axios.get(url);
+                
                
                 let products =  data.data ? data.data: data.recomdata
                 console.log(products);
@@ -22,9 +25,14 @@ const Fetchallproducts = (url,id) => {
                     
 
                 }
-               
+              
             }catch(e){
-                console.log(e);
+                console.log(e.response.data)
+                if(e.response.status === 401){
+                    navigate('/login');
+                   }
+                
+             
                 
             }
         };
