@@ -6,8 +6,13 @@ import { useCartContext } from '../context/Cartcontext'
 import { Fetchallproducts } from '../hooks/FetchAll';
 import Foryou from './Foryou';
 import LoadingAnimations from '../pages/LoadingAnimations';
+import Trending from './Trending';
 function Slider() {
+  const {allproducts ,loading} = Fetchallproducts('/products');
  const [title,setTitle] = useState('New Arrivals');
+ const [query,setQuery] =useState('');
+// const [searchresult,setSearchResult] = useState([]);
+ const [filtered , setFiltered] = useState([])
 
   //addtocartbuttonlogic
   const {addtoCart} = useCartContext(); 
@@ -16,14 +21,26 @@ function Slider() {
       top:0,
       behavior:'smooth',
     })
+    
 
 
    }
+   const handleSearch =  () => {
+  
+    const results = allproducts.filter(item =>
+      item.title.toLowerCase().includes(query.toLowerCase())
+      );
+      // setSearchResult(results);
+      // console.log(results);
+      setFiltered(results)
+
+
+   }
+  
  
 //fetching data
-  const {allproducts ,loading} = Fetchallproducts('/products');
+  
   //
-  const [filtered , setFiltered] = useState([])
   if(loading){
 return(
   <LoadingAnimations/>
@@ -32,7 +49,9 @@ return(
   
   
  const filteredProduct = (cat)=>{
-  
+
+ 
+
   const updatedList = allproducts.filter((x)=>x.category === cat)
   setFiltered(updatedList)
   setTitle(cat);
@@ -41,7 +60,16 @@ return(
   return (
     <> 
     <section className="announcement">
-      <input className='search' type="text" placeholder='Search' />
+      <input className='search' type="text"
+       onChange={(e) =>  [setQuery(e.target.value),handleSearch()]} placeholder='Search' />
+      
+      {/* {console.log(searchresult)} */}
+       {/* <ul>
+
+        { searchresult.map(item => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul> */}
     </section>
   
     <section className="slider_section">
@@ -105,8 +133,10 @@ return(
           )
         })}
       
+      <Trending  allproducts = {allproducts}/>
+
      
-        <Foryou  allproducts= { allproducts } />
+        {/* <Foryou  allproducts= { allproducts } /> */}
 
       </div>
     </>

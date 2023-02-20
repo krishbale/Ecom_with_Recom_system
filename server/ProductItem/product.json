@@ -9,6 +9,7 @@
         "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
         "category": "electronics",
         "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg"
+       
     },
     {
         "id": "11",
@@ -32,7 +33,8 @@
         "price": 599,
         "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
         "category": "electronics",
-        "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg"
+        "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
+        "feature":true
     },
     {
         "id": "14",
@@ -58,7 +60,8 @@
         "price": 5000000,
         "description": "The mobile is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
         "category": "mobile",
-        "image": "https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        "image": "https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "feature":true
     },
     {
         "id": "23",
@@ -91,6 +94,7 @@
         "description": "The Laptop is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
         "category": "laptop",
         "image": "https://images.pexels.com/photos/303383/pexels-photo-303383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+       
     },
     {
         "id": "27",
@@ -123,6 +127,7 @@
         "description": "The mobile is compact with its 6.2-inch OLED screen and far lighter at 168g. It perfectly captures the design, looks, and feel of the expensive one. It comes with a snapdragon processor with a 5n chip in it. It has a 200mp camera in the rear 100mp in front perfect for selfie lovers. It also support HDR content means you can watch 4K content on it.",
         "category": "accessories",
         "image": "https://images.pexels.com/photos/1619651/pexels-photo-1619651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      
     },
     {
         "id": "31",
@@ -184,6 +189,7 @@
         "description": " Things are a little different this year as Samsung launched the Galaxy Watch 5 series without a “Classic” model. Instead, it released two variants of the smartwatch, namely, the Galaxy Watch 5 and Galaxy Watch 5 Pro. The updates to the Watch 5 are iterative but the Watch 5 Pro is a different beast of its own.",
         "category": "watch",
         "image": "https://www.gadgetbytenepal.com/wp-content/uploads/2022/07/Samsung-Galaxy-Watch-5-5-Pro-Design-Display.jpg"
+        
     },
     {
         "id": "38",
@@ -220,7 +226,8 @@
         "brand": "apple",
         "description": "Offering quad-core processors for the first time, MacBook Air now delivers even more speed across everyday activities, from organizing photos and creating presentations to editing videos. Featuring the latest 10th-generation Intel Core processors up to 1.2GHz quad-core Core i7 with Turbo Boost speeds up to 3.8GHz, MacBook Air delivers up to two times faster performance when compared to the previous generation. And with Intel Iris Plus Graphics, MacBook Air now delivers up to 80 percent faster graphics performance, so graphics-intensive activities like playing games and editing video are faster than ever. ",
         "category": "laptop",
-        "image": "https://www.apple.com/newsroom/images/product/mac/standard/Apple_new-macbook-air-wallpaper-screen_03182020_big.jpg.large.jpg"
+        "image": "https://www.apple.com/newsroom/images/product/mac/standard/Apple_new-macbook-air-wallpaper-screen_03182020_big.jpg.large.jpg",
+        "feature":true
     },
 
     {
@@ -335,6 +342,7 @@
         "image": "https://www.olizstore.com/media/catalog/product/cache/4b760c12577916f6afaaf35ef421b950/m/b/mbp13touch-space-select-202005-1_2_2.jpeg",
         "brand": "apple",
         "rate": "4.2"
+        
     },
     {
         "id": "54",
@@ -463,5 +471,6 @@
         "category":"electronics",
         "brand":"Logitech",
         "rate":"4"
+       
     }
 ]
