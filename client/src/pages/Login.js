@@ -3,7 +3,7 @@ import {  LoginContext } from '../App';
 import  loginpic  from '../assets/avatarlogin.png';
 import { NavLink ,useNavigate } from 'react-router-dom';
 const Login = () => {
-  const {state,dispatch} = useContext(LoginContext);
+  const {dispatch} = useContext(LoginContext);
     const history = useNavigate()
     const [username, setUserName] = useState('');
     const [password, setPassword] = useState('');

@@ -20,7 +20,7 @@ const Foryou = ({allproducts}) => {
       {/* <div className="All">for you</div> */}
         {Array.isArray(allproducts) && allproducts.map((item) => 
         {
-            const { id, title, price, description,  image,   } = item;
+            const { id, title, price,  image,   } = item;
             return (
             <div className='card' key={id}>
               <div className='item'>

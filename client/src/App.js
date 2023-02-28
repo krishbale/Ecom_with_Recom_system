@@ -1,5 +1,5 @@
-import React,{createContext, useEffect, useReducer, useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import React,{createContext, useEffect, useReducer,} from 'react';
+// import { useNavigate } from 'react-router-dom';
 
 import './App.css';
 import Homepage from './pages/Homepage';

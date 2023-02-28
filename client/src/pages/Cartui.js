@@ -114,7 +114,7 @@ const Cartui = () => {
 
   
     <br />
-    <button className="back" >Checkout</button>
+    <button  className="back" onClick={() => navigate('/checkoutpage')}>Checkout</button>
    
 
   </>

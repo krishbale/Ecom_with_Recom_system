@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import cart from '../assets/cart.svg'
 import { useCartContext } from '../context/Cartcontext'
 import { Fetchallproducts } from '../hooks/FetchAll';
-import Foryou from './Foryou';
+// import Foryou from './Foryou';
 import LoadingAnimations from '../pages/LoadingAnimations';
 import Trending from './Trending';
 function Slider() {
@@ -95,7 +95,7 @@ return(
       
   
         {filtered.map((product) => {
-          const { id, title, price,  descriptions, image,   } = product;
+          const { id, title, price, image,   } = product;
           return (
             <div className='card' key={id}>
               <div className='item'>

@@ -18,9 +18,11 @@ import { useCartContext } from '../context/Cartcontext';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Logout from '../pages/Logout';
+import Checkout from '../pages/Checkout';
+import Payment from '../pages/Payment';
 
 const NavBar = () => {
-  const {state,dispatch} = useContext(LoginContext);
+  const {state} = useContext(LoginContext);
   const { totalItem  } = useCartContext()
   return (
     <>  
@@ -83,6 +85,8 @@ const NavBar = () => {
             <Route path="/logout" element={<Logout />} />
             <Route path="/cart/" element={ <Cart />} />
             <Route path="/details/:id" element={<Detail />} />
+            <Route path="/checkoutpage" element={<Checkout />} />
+            <Route path="/payment/esewa" element={<Payment />} />
           </Routes>
         </div>
     
