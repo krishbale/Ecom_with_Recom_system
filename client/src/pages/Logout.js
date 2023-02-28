@@ -1,7 +1,7 @@
 import React, { useEffect,useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {  LoginContext } from '../App';
-import LoadingAnimations from './LoadingAnimations';
+import LoadingAnimations from '../components/LoadingAnimations';
 const Logout = () => {
     const {state,dispatch} = useContext(LoginContext);
     const history = useNavigate();
@@ -38,9 +38,6 @@ const Logout = () => {
   return (
     <>
     <LoadingAnimations/>
-    
-    
-    
     </>
   )
 }

@@ -40,33 +40,26 @@ const Register = () => {
    if(res.status === 422 || !data ){
 
     window.alert("Registeration failed")
-   }else {
-  
-  
+   }else {  
     window.alert('Registeration successfull')
     history('/login')
-   
-    
 
    }
-
   }catch(error){
 
     console.log(error)
   }
-
-    
-  
-
   }
   return (
-
         <>
     <section className='signup bg-dark'>
     <div className='container mt-5 '>
     <div className='signup-content'>
     <div className='signup-form'>
       <h2 className='form-title'>Sign Up</h2>
+      <figure>
+          <img src={loginpic} height="100" width="75" alt="signpic" />
+        </figure>
       <form method='POST' className='register-form' >
       <div className='form-group '>
         <label htmlFor="username">
@@ -101,9 +94,7 @@ const Register = () => {
 
       <div className='signup-image'>
       <NavLink to="/login" className="signup-image-link btn btn-outline-warning" >Back to Login Page</NavLink>
-        <figure>
-          <img src={loginpic} height="100" width="75" alt="signpic" />
-        </figure>
+      
 
       
       </div>
