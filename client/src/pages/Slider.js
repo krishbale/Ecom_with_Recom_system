@@ -7,31 +7,60 @@ function Slider() {
   const {allproducts ,loading} = Fetchallproducts('/products');
  const [title,setTitle] = useState('New Arrivals');
  const [query,setQuery] =useState('');
+ const [searchHistory,setSearchHistory] = useState([]);
  const [filtered , setFiltered] = useState([])
-   const handleSearch =  () => {
+
+
+ //function for search hanlde
+   const handleSearch =  (e) => {
+   
     const results = allproducts.filter(item =>
       item.title.toLowerCase().includes(query.toLowerCase())
       );
       setFiltered(results)
+      setSearchHistory([...searchHistory,query])
+      console.log(searchHistory);
    }
+  //  const handleSearchHistory = (userinput) => {
+  //   setSearchHistory([...searchHistory, userinput])
+
+  //    console.log(userinput);
+  //  }
+  // 
+
+   //for loading animations
   if(loading){
 return(
   <LoadingAnimations/>
 )
   }
+
+  //for filtering products according to category
  const filteredProduct = (cat)=>{
   const updatedList = allproducts.filter((x)=>x.category === cat)
   setFiltered(updatedList)
   setTitle(cat);
  }
-
+//rendering output
   return (
     <> 
     <section className="announcement">
-      <input typeof='search' id='search' name='search' className='search' type="text" 
-       onChange={(e) =>  [setQuery(e.target.value),handleSearch()]} placeholder='Search' />
-  
+      <input placeholder='Search'  className='search' type="text" 
+       onChange={(e) =>  [setQuery(e.target.value)]}  />
+           {searchHistory.length > 0 && (
+      <>
+        
+        <ul>
+          {searchHistory.map((search,index) => (
+            <li key={index}>{search}</li>
+          ))}
+        </ul>
+      </>
+    )}
+    <button onClick={() => handleSearch()}>Search</button>
+
     </section>
+
     <section className="slider_section">
     
       <div className="category center">

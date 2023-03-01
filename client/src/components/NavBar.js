@@ -31,16 +31,8 @@ const NavBar = () => {
               </Link></li>
             </ul>
             <ul>
-               <li className="nav_items active">
-              </li> 
-              <li key={totalItem} className="nav_items active">
-                <Link  to="/cart/">
-                  <img  src={carticon}
-                 style={{height:"20px",width:"30px"}}
-                  alt="Cart"/>
-                    <span className='noti_count'>{totalItem}</span>
-                  </Link>
-              </li>
+               
+            
             {state==="false"? <>
             <li className="nav_items active">
                 <Link  to="/login">Login</Link>
@@ -50,9 +42,20 @@ const NavBar = () => {
               </li>
             </> 
               :
+              <>
+              <li key={totalItem} className="nav_items active">
+                <Link  to="/cart/">
+                  <img  src={carticon}
+                 style={{height:"20px",width:"30px"}}
+                  alt="Cart"/>
+                    <span className='noti_count'>{totalItem}</span>
+                  </Link>
+              </li>
               <li className="nav_items active">
                 <Link  to="/logout">Logout</Link>
               </li>
+              </>
+             
             }
             </ul>
           </nav>
