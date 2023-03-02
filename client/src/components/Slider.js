@@ -7,6 +7,7 @@ import { Fetchallproducts } from '../hooks/FetchAll';
 import Foryou from './Foryou';
 import LoadingAnimations from '../pages/LoadingAnimations';
 import Trending from './Trending';
+import { carousel } from './carousel';
 function Slider() {
   const {allproducts ,loading} = Fetchallproducts('/products');
  const [title,setTitle] = useState('New Arrivals');
@@ -71,9 +72,9 @@ return(
         ))}
       </ul> */}
     </section>
-  
+ 
     <section className="slider_section">
-    
+ 
       <div className="category center">
     
       
@@ -87,7 +88,12 @@ return(
 
       </div>
 
+      <div className ="slider_image">
     
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKMCAsWzhp3I3IuBGC2yfrwt7fWQGoojND9NCs83ubglg6XhKAoberQ4rj_chbBzXJVhQ&usqp=CAU" alt ="Ecommerce image" />
+    </div>
+   
+ 
     </section>
     <div className="product_section  center"> {title}</div>
     
