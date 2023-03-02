@@ -1,5 +1,6 @@
 import '../styles/Slider.css'
 import { useState } from 'react'
+import babcover from '../assets/babstore.jpg'
 import { Fetchallproducts } from '../hooks/FetchAll';
 import LoadingAnimations from '../components/LoadingAnimations';
 import Card from '../components/Card';
@@ -18,15 +19,16 @@ function Slider() {
       item.title.toLowerCase().includes(query.toLowerCase())
       );
       setFiltered(results)
-      setSearchHistory([...searchHistory,query])
-      console.log(searchHistory);
-   }
-  //  const handleSearchHistory = (userinput) => {
-  //   setSearchHistory([...searchHistory, userinput])
 
-  //    console.log(userinput);
-  //  }
-  // 
+      // setSearchHistory([...searchHistory,query])
+      // console.log(searchHistory);
+   }
+   const handleSearchHistory = () => {
+    setSearchHistory([...searchHistory, query])
+
+     console.log(searchHistory);
+   }
+  
 
    //for loading animations
   if(loading){
@@ -46,7 +48,7 @@ return(
     <> 
     <section className="announcement">
       <input placeholder='Search'  className='search' type="text" 
-       onChange={(e) =>  [setQuery(e.target.value)]}  />
+       onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  />
            {searchHistory.length > 0 && (
       <>
         
@@ -57,22 +59,37 @@ return(
         </ul>
       </>
     )}
-    <button onClick={() => handleSearch()}>Search</button>
+    <button onClick={handleSearchHistory}>Search</button>
 
     </section>
 
     <section className="slider_section">
     
       <div className="category center">
-        <button className='categories'  onClick={()=>setFiltered(allproducts)}>All</button>
+      <ul>
+         <button className='categories'  onClick={()=>setFiltered(allproducts)}>All</button>
         <button  className='categories' onClick={()=>filteredProduct('watch')}>Watch</button>
         <button className='categories' onClick={()=>filteredProduct("laptop")}>Laptop</button>
         <button className='categories' onClick={()=>filteredProduct("electronics")}>Electronics</button>
-        <button className='categories' onClick={()=>filteredProduct("mobile")}>Mobile</button>
+         <button className='categories' onClick={()=>filteredProduct("mobile")}>Mobile</button>
+     
+
+      </ul>
+       
+      
+        
+        
+       
+       
+        <img className='section_img'  src={babcover} alt="babcover" />
+        
       </div>
+     
     </section>
-    <div className="product_section  center"> {title}</div>
+    
+    <div className="product_section  center">{title}</div>
       <div className='productitem'>
+     
         {filtered.map((product) => {
           return (
            <Card key={product.id} product={product} />

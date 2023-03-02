@@ -18,6 +18,8 @@ import Register from '../pages/Register';
 import Logout from '../pages/Logout';
 import Checkout from '../pages/Checkout';
 import Payment from '../pages/Payment';
+import logo from '../assets/BABstorelogo.png'
+
 const NavBar = () => {
   const {state} = useContext(LoginContext);
   const { totalItem  } = useCartContext()
@@ -27,7 +29,8 @@ const NavBar = () => {
           <nav>
             <ul>
               <li>
-              <Link to="/">Logo
+              <Link to="/">
+              <img src={logo} alt="Logo" />
               </Link></li>
             </ul>
             <ul>
