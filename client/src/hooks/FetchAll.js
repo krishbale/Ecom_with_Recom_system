@@ -16,12 +16,12 @@ const Fetchallproducts = (url,id) => {
                 
                
                 let products =  data.data ? data.data: data.recomdata
-                console.log(products);
+                // console.log(products);
                 setAllproductss(products);
                 
                 if(Array.isArray(products)){
                     isloading(false);
-                    console.log(products)
+                    // console.log(products)
                     
 
                 }

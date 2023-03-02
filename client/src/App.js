@@ -1,5 +1,6 @@
-import React,{createContext, useEffect, useReducer, useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import React,{createContext, useEffect, useReducer,} from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 import './App.css';
 import Homepage from './pages/Homepage';
@@ -7,18 +8,29 @@ import { initialState,reducer } from './reducer/useReducer';
 
 export const LoginContext = createContext({});
 function App() {
+  // const navigate = useNavigate('');
 
   const [state,dispatch] = useReducer(reducer,initialState)
     
   const FetchUserAuth =async ()=>{
     try{
       const res = await fetch('/isAuth')
-      if(!res.ok) 
-      dispatch({type:'USER',payload:"false"})
+      
+      
+      if(!res.ok) {
+        dispatch({type:'USER',payload:"false"})
+       
+      }
+      // console.log(res);
+   
+       
     
-    }catch(error){
+    }catch(e){
+      console.log(e);
+      
+
     
-      console.log(error.response.status)
+    
       
     }
   }

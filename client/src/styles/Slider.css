@@ -90,11 +90,12 @@ padding:1.4rem 0rem;
     padding: 14px;
      border: 1px solid #ccc;
 }
-/* .slider_section{ 
-    
-    background-image: url('../assets//sitecover1.png');
+/* .slider_section_img{ 
+   
+
+    background-image: url('../assets//purple_laptop.png');
     background-repeat:no-repeat;
-    min-height:50vh;
+    height:100vh;
     background-size:cover;
  } */
 .product_section{
@@ -172,4 +173,7 @@ border-radius: 150px;
     
     /* margin-bottom: rem; */
     /* border : 2px solid rgb(79, 78, 78) */
+}
+p{
+    color: rgb(155, 151, 151);
 }

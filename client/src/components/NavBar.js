@@ -6,48 +6,46 @@ import {
   Routes,
   Route,
   Link
+
 } from "react-router-dom";
 import "../styles/NavBar.css";
-import Slider from "../components/Slider"
-import About from '../pages/About'
-import Contact from '../pages/Contact'
-
-import Cart from '../pages/Cartui'
+import Slider from "../pages/Slider"
+import Cart from './Cartui'
 import Detail from '../pages/Detail';
 import { useCartContext } from '../context/Cartcontext';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Logout from '../pages/Logout';
+import Checkout from '../pages/Checkout';
+import Payment from '../pages/Payment';
+import logo from '../assets/BABstorelogo.png'
 
 const NavBar = () => {
-  const {state,dispatch} = useContext(LoginContext);
+  const {state} = useContext(LoginContext);
   const { totalItem  } = useCartContext()
   return (
-    <>  
-
-      
+        <>  
         <div  className="navbar">
           <nav>
             <ul>
-              <li>logo</li>
-           
+              <li>
+              <Link to="/">
+              <img src={logo} alt="Logo" />
+              </Link></li>
             </ul>
-
             <ul>
-          
-          
-              <li className="nav_items active">
-                <Link to="/">Home</Link>
-                
+               
+            
+            {state==="false"? <>
+            <li className="nav_items active">
+                <Link  to="/login">Login</Link>
               </li>
               <li className="nav_items active">
-                <Link to="/about">About</Link>
+                <Link  to="/register">Register</Link>
               </li>
-              <li className="nav_items active">
-                <Link  to="/contact">Contact</Link>
-              </li>
-             
-          
+            </> 
+              :
+              <>
               <li key={totalItem} className="nav_items active">
                 <Link  to="/cart/">
                   <img  src={carticon}
@@ -56,36 +54,25 @@ const NavBar = () => {
                     <span className='noti_count'>{totalItem}</span>
                   </Link>
               </li>
-            {state==="false"?  <li className="nav_items active">
-                <Link  to="/login">Login</Link>
-              </li>:
-
-            
               <li className="nav_items active">
                 <Link  to="/logout">Logout</Link>
               </li>
-            
-            
+              </>
+             
             }
-             
-             
-          
-             
             </ul>
-            
           </nav>
           <Routes >
             <Route path="/" element={<Slider />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/cart/" element={ <Cart />} />
             <Route path="/details/:id" element={<Detail />} />
+            <Route path="/checkoutpage" element={<Checkout />} />
+            <Route path="/payment/esewa" element={<Payment />} />
           </Routes>
         </div>
-    
     </>
   )
 }
