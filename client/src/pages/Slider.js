@@ -81,7 +81,7 @@ return(
         
        
        
-        <img className='section_img'  src={babcover} alt="babcover" />
+        {/* <img className='section_img'  src={babcover} alt="babcover" /> */}
         
       </div>
      

@@ -30,7 +30,7 @@ const NavBar = () => {
             <ul>
               <li>
               <Link to="/">
-              <img src={logo} alt="Logo" />
+              {/* <img src={logo} alt="Logo" /> */}
               </Link></li>
             </ul>
             <ul>
