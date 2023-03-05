@@ -84,6 +84,10 @@ return(
         {/* <img className='section_img'  src={babcover} alt="babcover" /> */}
         
       </div>
+      <div className ="slider_image">
+    
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKMCAsWzhp3I3IuBGC2yfrwt7fWQGoojND9NCs83ubglg6XhKAoberQ4rj_chbBzXJVhQ&usqp=CAU" alt ="Ecommerce image" />
+  </div>
      
     </section>
     

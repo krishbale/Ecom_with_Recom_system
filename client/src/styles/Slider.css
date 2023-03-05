@@ -98,6 +98,14 @@ padding:1.4rem 0rem;
     height:100vh;
     background-size:cover;
  } */
+ .slider_section{
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+ }
+ .slider_section .slider_image img{
+  width: 100% ;
+  object-fit: contain;
+ }
 .product_section{
     font-size: 1.5rem;
     font-weight: 600;
