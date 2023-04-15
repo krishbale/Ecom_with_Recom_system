@@ -109,28 +109,16 @@
     height:100vh;
     background-size:cover;
  } */
-.slider_section {
-    /* display: none;
-     */
+
+ .slider_section{
     display: grid;
-    grid-template-columns: 1fr 6fr;
-    /* display: none; */
-
-
-}
-
-.slider_image {
-    background-image:  url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKMCAsWzhp3I3IuBGC2yfrwt7fWQGoojND9NCs83ubglg6XhKAoberQ4rj_chbBzXJVhQ&usqp=CAU");
-    background-repeat: no-repeat;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-
-
-
-}
-
-.product_section {
+    grid-template-columns: 1fr 4fr;
+ }
+ .slider_section .slider_image img{
+  width: 100% ;
+  object-fit: contain;
+ }
+.product_section{
     font-size: 1.5rem;
     font-weight: 600;
     margin-top: 5rem;
