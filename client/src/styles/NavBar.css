@@ -44,3 +44,13 @@ padding: .8rem .5rem;
     position: relative;
     top:-15px;
 }
+.search {
+   
+
+  
+
+    margin: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
