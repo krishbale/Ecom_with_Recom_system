@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import carticon  from '../assets/cart.svg'
 import {  LoginContext } from '../App';
+import { useState } from 'react'
 import {
   
   Routes,
@@ -19,10 +20,16 @@ import Logout from '../pages/Logout';
 import Checkout from '../pages/Checkout';
 import Payment from '../pages/Payment';
 import logo from '../assets/BABstorelogo.png'
-
+import { Fetchallproducts } from '../hooks/FetchAll';
 const NavBar = () => {
+  const {allproducts ,loading} = Fetchallproducts('/products');
+
+  const [query,setQuery] =useState('');
+  const [searchHistory,setSearchHistory] = useState([]);
+  const [filtered , setFiltered] = useState([]);
   const {state} = useContext(LoginContext);
-  const { totalItem  } = useCartContext()
+  const { totalItem  } = useCartContext();
+  
   return (
         <>  
         <div  className="navbar">
@@ -56,6 +63,10 @@ const NavBar = () => {
               </li>
               <li className="nav_items active">
                 <Link  to="/logout">Logout</Link>
+              </li>
+              <li>
+                
+             
               </li>
               </>
              
