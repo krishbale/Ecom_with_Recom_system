@@ -19,14 +19,12 @@ import Register from '../pages/Register';
 import Logout from '../pages/Logout';
 import Checkout from '../pages/Checkout';
 import Payment from '../pages/Payment';
-import logo from '../assets/BABstorelogo.png'
-import { Fetchallproducts } from '../hooks/FetchAll';
-const NavBar = () => {
-  const {allproducts ,loading} = Fetchallproducts('/products');
+import About from '../pages/About';
+import Contact from '../pages/Contact';
 
-  const [query,setQuery] =useState('');
-  const [searchHistory,setSearchHistory] = useState([]);
-  const [filtered , setFiltered] = useState([]);
+
+const NavBar = () => {
+  
   const {state} = useContext(LoginContext);
   const { totalItem  } = useCartContext();
   
@@ -53,6 +51,16 @@ const NavBar = () => {
             </> 
               :
               <>
+              <li className="nav_items active">
+                <Link to="/">Home</Link>
+                
+              </li>
+              <li className="nav_items active">
+                <Link to="/about">About</Link>
+              </li>
+              <li className="nav_items active">
+                <Link  to="/contact">Contact</Link>
+              </li>
               <li key={totalItem} className="nav_items active">
                 <Link  to="/cart/">
                   <img  src={carticon}
@@ -61,6 +69,7 @@ const NavBar = () => {
                     <span className='noti_count'>{totalItem}</span>
                   </Link>
               </li>
+
               <li className="nav_items active">
                 <Link  to="/logout">Logout</Link>
               </li>
@@ -75,6 +84,8 @@ const NavBar = () => {
           </nav>
           <Routes >
             <Route path="/" element={<Slider />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/logout" element={<Logout />} />
