@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
 }
+
 li {
     display: inline;
     padding: .5rem .8rem;
@@ -53,3 +54,40 @@ padding: .8rem .5rem;
     border: 1px solid #ccc;
     border-radius: 15px;
 }
+.hamburger{
+    display: none;
+}
+@media (max-width: 900px) {
+    li{
+        display: inline;
+    }
+
+}
+@media (max-width: 600px) {
+    /* li{
+        display: none
+    } */
+    .hamburger{
+        display: block;
+   
+    }
+   .hamburger .show{
+        display: block;
+    
+    }
+    .hamburger .close{
+        display: none;
+    }
+    li{
+        justify-content: center; 
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
+  
+    
+    
+
+}
+
+

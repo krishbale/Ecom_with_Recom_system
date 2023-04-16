@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import carticon  from '../assets/cart.svg'
+import CloseIcon from '@mui/icons-material/Close';
 import {  LoginContext } from '../App';
+import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react'
 import {
   
@@ -26,15 +28,28 @@ import About from '../pages/About';
 import Contact from '../pages/Contact';
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
 
+
 const NavBar = () => {
+  const [showmenu,setshowmenu] = useState(false);
   
   const {state} = useContext(LoginContext);
   const { totalItem  } = useCartContext();
-  
+  const handlemenu = ()=>{
+    showmenu?setshowmenu(false):setshowmenu(true)
+  }
+  // const handlehambuger = ()=>{
+
+
+  // }
   return (
-        <>  
+        <> 
+         {/* productitem ${hidemenu ? ' hide' : ''} `}> */}
         <div  className="navbar">
           <nav>
+          <div  onClick={handlemenu} className={`hamburger`} >
+          <MenuIcon  className={`${showmenu ? 'close': ' show'}`} />
+          <CloseIcon className={` ${showmenu? 'show':' close'}`} />
+          </div>
             <ul>
               <li>
               <Link to="/">
