@@ -1,10 +1,17 @@
 .detail{
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
     gap:1rem;
     align-items: center;
     min-height: 55vh;
    margin: 2rem 1rem;
+}
+@media (min-width: 900px) {
+    .detail{
+        
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
 }
 .detail .image-container{
     display:flex;
