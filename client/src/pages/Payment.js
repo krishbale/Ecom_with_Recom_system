@@ -1,5 +1,13 @@
 import React from 'react'
 
+
+
+
+
+import Esewa from '../assets/esewa_logo.png';
+
+
+
 const Payment = () => {
     var path="https://uat.esewa.com.np/epay/main";
 var params= {
@@ -32,6 +40,8 @@ function post(path, params) {
 }
   return (
     <>
+    
+     
         
         <form  method="POST"/>
     <input value="100" name="tAmt" type="hidden"/>
@@ -43,6 +53,7 @@ function post(path, params) {
     <input value="ee2c3ca1-696b-4cc5-a6be-2c40d929d453" name="pid" type="hidden"/>
     <input value="http://merchant.com.np/page/esewa_payment_success?q=su" type="hidden" name="su"/>
     <input value="http://merchant.com.np/page/esewa_payment_failed?q=fu" type="hidden" name="fu"/>
+    <img src={Esewa} alt="" />
     <input value="Submit" type="submit" onClick={post(path,params)}/>
     
     </>

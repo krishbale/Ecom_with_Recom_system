@@ -9,6 +9,9 @@ import {
   Link
 
 } from "react-router-dom";
+import LogoutSharpIcon from '@mui/icons-material/LogoutSharp';
+import InfoSharpIcon from '@mui/icons-material/InfoSharp';
+import HomeIcon from '@mui/icons-material/Home';
 import "../styles/NavBar.css";
 import Slider from "../pages/Slider"
 import Cart from './Cartui'
@@ -21,7 +24,7 @@ import Checkout from '../pages/Checkout';
 import Payment from '../pages/Payment';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
-
+import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
 
 const NavBar = () => {
   
@@ -52,26 +55,32 @@ const NavBar = () => {
               :
               <>
               <li className="nav_items active">
-                <Link to="/">Home</Link>
+                <Link to="/">
+
+                Home
+                </Link>
                 
               </li>
               <li className="nav_items active">
-                <Link to="/about">About</Link>
+                <Link to="/about">
+              About
+                </Link>
               </li>
               <li className="nav_items active">
                 <Link  to="/contact">Contact</Link>
               </li>
               <li key={totalItem} className="nav_items active">
                 <Link  to="/cart/">
-                  <img  src={carticon}
-                 style={{height:"20px",width:"30px"}}
-                  alt="Cart"/>
+                <ShoppingCartSharpIcon />
+                  
                     <span className='noti_count'>{totalItem}</span>
                   </Link>
               </li>
 
               <li className="nav_items active">
-                <Link  to="/logout">Logout</Link>
+                <Link  to="/logout">
+                <LogoutSharpIcon />
+                </Link>
               </li>
               <li>
                 

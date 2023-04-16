@@ -1,6 +1,19 @@
 import React, {useState} from 'react'
-import { NavLink, useNavigate } from 'react-router-dom';
-import  loginpic  from '../assets/avatarlogin.png';
+// import { NavLink, useNavigate } from 'react-router-dom';
+// import  loginpic  from '../assets/avatarlogin.png';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+// import signpic from "../images/signup.svg";
+import {  useNavigate } from 'react-router-dom';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 const Register = () => {
     const   history = useNavigate();
     const [user,setUser] = useState({
@@ -52,59 +65,74 @@ const Register = () => {
   }
   return (
         <>
-    <section className='signup bg-dark'>
-    <div className='container mt-5 '>
-    <div className='signup-content'>
-    <div className='signup-form'>
-      <h2 className='form-title'>Sign Up</h2>
-      <figure>
-          <img src={loginpic} height="100" width="75" alt="signpic" />
-        </figure>
-      <form method='POST' className='register-form' >
-      <div className='form-group '>
-        <label htmlFor="username">
-        <i className="zmdi zmdi-account material-icons-name bg-info"></i>
-
-        </label>
-        <input type="text" className='bg-dark' name="username" id="name" autoComplete='off'
-          
-          onChange={handleInputs} 
-          placeholder='Your username'
-        />
-      </div>
-     
-      <div className='form-group'>
-        <label htmlFor="password">
-        <i className="zmdi zmdi-lock material-icons-password bg-info"></i>
-
-        </label>
-        <input type="text" name="password" id="password" autoComplete='off'
-          
-          onChange={handleInputs} className="bg-dark"
-          placeholder='Your Password'
-        />
-      </div>
+        
+       <Container component="main" maxWidth="xs">
+     <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Register 
+          </Typography>
+          <Box component="form" onSubmit={PostData} noValidate sx={{ mt: 1 }}>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              type="text"
+              id="username"
+              label="User Name"
+              name="username"
+              autoComplete="username"
+              autoFocus
+              onChange={handleInputs} 
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              onChange={handleInputs} 
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+             Create Account
+            </Button>
+            <Grid container>
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  Forgot password?
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="/login" variant="body2">
+                  {" Login "}
+                </Link>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+        </Container>
    
-      <div className='form-group form-button'>
-        <input type="submit" name="signup" id="signup" className='form-submit btn btn-outline-info' value="register"
-        onClick={ PostData } /> 
-      </div>
-
-      </form>
-
-      <div className='signup-image'>
-      <NavLink to="/login" className="signup-image-link btn btn-outline-warning" >Back to Login Page</NavLink>
-      
-
-      
-      </div>
-    </div>
-
-    </div>
-
-    </div>
-
-    </section>
     </>
   )
 }
