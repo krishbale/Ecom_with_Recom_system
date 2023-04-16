@@ -1,8 +1,11 @@
 import React from 'react'
 import "../styles/Detail.css"
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { useCartContext } from '../context/Cartcontext'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Fetchsingledata } from '../hooks/Fetchdata';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { Fetchallproducts } from '../hooks/FetchAll';
 import LoadingAnimations from '../components/LoadingAnimations';
 import Card from '../components/Card';
@@ -50,12 +53,12 @@ if(!loading){
            <NavLink 
            onClick={()=> addtoCart(data)} 
            to={'/cart'}>
-          <button     className='cartbutton'>Buy </button>
+          <button     className='cartbutton'> <ShoppingCartCheckoutIcon /></button>
           </NavLink> 
          
          
-          <button  onClick={()=> [addtoCart(data),displayconsole(data.title)]}  className='cartbutton'>Add to Cart</button>
-          <div><button className="back" onClick={() => navigate(-1)}>Continue Shopping</button></div>
+          <button  onClick={()=> [addtoCart(data),displayconsole(data.title)]}  className='cartbutton'><AddShoppingCartIcon/></button>
+          <div><button className="back" onClick={() => navigate(-1)}> <ArrowBackIcon /></button></div>
           </span>
          
         </div>

@@ -1,7 +1,13 @@
 import React, {  useState  } from 'react'
 import '../styles/AddtoCart.css'
+import PriceCheckIcon from '@mui/icons-material/PriceCheck';
 import add from '../assets/add.svg'
+import FirstPageIcon from '@mui/icons-material/FirstPage';
+import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
+import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 import minus from '../assets/minus.svg'
+import DeleteIcon from '@mui/icons-material/Delete';
 import delet from '../assets/delete.svg'
 import emptycart from '../assets/clearcart.svg'
 import { useCartContext } from '../context/Cartcontext';
@@ -50,17 +56,17 @@ const Cartui = () => {
       <td>{item.price}</td>
       <td>
       
-        <img  onClick={()=> increment(item.id)} style={{height:"20px",width:"20px"}} src={add} alt="+" />
+        <AddCircleIcon  onClick={()=> increment(item.id)} style={{height:"20px",width:"20px"}} src={add} alt="+" />
       
      { item.quantity}
       
-        <img  onClick={()=> decrement(item.id)} style={{height:"20px",width:"20px"}} src={minus} alt="-" />
+        <RemoveCircleIcon  onClick={()=> decrement(item.id)} style={{height:"20px",width:"20px"}} src={minus} alt="-" />
       
       </td>
       <td>{item.price * item.quantity}</td>
         <td onClick={()=> removeItem(item.id)}>
             
-                <img  style={{height:"20px",width:"20px"}} src={delet} alt="delet" />
+                <DeleteIcon  style={{height:"20px",width:"20px"}} src={delet} alt="delet" />
             
         </td>
       </tr>
@@ -94,7 +100,7 @@ const Cartui = () => {
     </td>
   
     <td onClick={clearCart}>
-        <img  style={{height:"20px",width:"20px"}} src={emptycart} alt="Clear Cart" />
+        <RemoveShoppingCartIcon  style={{height:"20px",width:"20px"}} src={emptycart} alt="Clear Cart" />
     </td>
   </tr>
   
@@ -107,8 +113,8 @@ const Cartui = () => {
     </table>
    
     <br />
-    <div  ><button className="back" onClick={() => navigate('/')}>Continue Shopping</button> 
-    <button  className="back" onClick={() => navigate('/checkoutpage')}>Checkout</button></div>
+    <div  ><button className="back" onClick={() => navigate('/')}><FirstPageIcon/></button> 
+    <button  className="back" onClick={() => navigate('/checkoutpage')}><PriceCheckIcon /></button></div>
  
    
 

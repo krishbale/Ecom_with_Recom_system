@@ -1,6 +1,6 @@
 import '../styles/Slider.css'
 import { useState } from 'react'
-
+import SearchIcon from '@mui/icons-material/Search';
 import { Fetchallproducts } from '../hooks/FetchAll';
 import LoadingAnimations from '../components/LoadingAnimations';
 import Card from '../components/Card';
@@ -61,8 +61,11 @@ return(
              <input placeholder='Search'  className='search' type="text" 
               onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  />
                  {/* <Searchistory searchHistory={searchHistory} /> */}
-                 {/* <button onClick={handleSearchHistory}>Search</button> */}
-    
+                 {/* <button onClick={handleSearchHistory}>
+                  <SearchIcon />
+                 </button> */}
+
+             
      
 
     </section >

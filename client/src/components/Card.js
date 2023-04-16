@@ -1,4 +1,5 @@
 import React from 'react'
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import { Link } from "react-router-dom";
 const Card = ({product}) => {
     const {  id, title, price, image,   } = product
