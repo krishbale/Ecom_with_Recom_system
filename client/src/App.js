@@ -1,9 +1,7 @@
 import React,{createContext, useEffect, useReducer,} from 'react';
-
-
-import './App.css';
-import Homepage from './pages/Homepage';
 import { initialState,reducer } from './reducer/useReducer';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 export const LoginContext = createContext({});
 function App() {
@@ -40,13 +38,13 @@ useEffect(() => {
  FetchUserAuth()
 }, [])
   return (
-  <div className="container">
+  
   <LoginContext.Provider value={{state,dispatch}}>
 
-  < Homepage />
+  <NavBar />
+  <Footer />
   </LoginContext.Provider>
 
-  </div>
     
   );
 }

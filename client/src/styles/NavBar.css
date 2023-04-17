@@ -57,14 +57,14 @@ padding: .8rem .5rem;
 .hamburger{
     display: none;
 }
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
     li{
         display: inline;
         z-index: 9999;
     }
 
-}
-@media (max-width: 600px) {
+} */
+@media (max-width: 700px) {
     /* li{
         display: none
     } */
@@ -92,7 +92,8 @@ padding: .8rem .5rem;
         grid-template-columns: 1fr;
     } */
      .nav_close{
-        visibility: hidden;
+        display: none;
+        /* visibility: ; */
         /* transform: translate(100%); */
         transform-origin: top;
         
