@@ -1,6 +1,5 @@
 import React,{createContext, useEffect, useReducer,} from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import { useNavigate } from 'react-router-dom';
+
 
 import './App.css';
 import Homepage from './pages/Homepage';
@@ -8,11 +7,11 @@ import { initialState,reducer } from './reducer/useReducer';
 
 export const LoginContext = createContext({});
 function App() {
-  // const navigate = useNavigate('');
+
 
   const [state,dispatch] = useReducer(reducer,initialState)
     
-  const FetchUserAuth =async ()=>{
+  const FetchUserAuth = async ()=>{
     try{
       const res = await fetch('/isAuth')
       
