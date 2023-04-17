@@ -25,6 +25,7 @@ import Payment from '../pages/Payment';
 import About from '../pages/About';
 
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
+import Homepage from '../pages/Homepage';
 
 
 const NavBar = () => {
@@ -70,7 +71,14 @@ const NavBar = () => {
               <>
               <li onClick={handlemenu} className="nav_items active">
                 <Link to="/">
-
+                Home
+                
+                </Link>
+                
+              </li>
+              <li onClick={handlemenu} className="nav_items active">
+                <Link to="/allproducts">
+                All Products
                 
                 </Link>
                 
@@ -114,9 +122,9 @@ const NavBar = () => {
             </ul>
           </nav>
           <Routes >
-            <Route path="/" element={<Slider />} />
+            <Route path="/" element={<Homepage />} />
             <Route path="/about" element={<About />} />
-         
+            <Route path="/allproducts" element={<Slider />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/logout" element={<Logout />} />
