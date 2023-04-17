@@ -251,12 +251,14 @@ p {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
-    display: block;
+    display: grid;
+    grid-template-columns: auto;
+
   }
   
   .dropdown-content  button:hover {background-color: #ddd;}
   
-  .dropdown:hover .dropdown-content {display:flex;}
+
   
   .dropdown:hover .dropbtn {background-color: #ebf3eb;}
 
@@ -266,11 +268,13 @@ p {
   }
   
   .card {
-    flex-basis: calc(50% - 20px);
-    margin: 10px;
+    flex: 0 0 auto;
+    /* flex-basis: calc(50% - 20px); */
+    /* margin: 10px; */
   }
   
   @media (max-width: 600px) {
+  
     .productitem{
         
         display: inline;
@@ -282,8 +286,12 @@ p {
         flex-basis: 100%;
         margin: 10px;
     }
+  
+  
     .card {
-        /* margin: 10px; */
+        position: relative;
+
+        margin: 10px;
     
   
       /* background-color: red; */
@@ -301,9 +309,9 @@ p {
 
     }
    
-    .card {
-      
+  
 
-      /* background-color: red; */
-    }
+   
+   
   }
+  

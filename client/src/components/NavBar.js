@@ -9,6 +9,8 @@ import {
   Link
 
 } from "react-router-dom";
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
 import LogoutSharpIcon from '@mui/icons-material/LogoutSharp';
 
@@ -60,10 +62,14 @@ const NavBar = () => {
             
             {state==="false"? <>
             <li onClick={handlemenu} className="nav_items active">
-                <Link  to="/login">Login</Link>
+                <Link  to="/login">
+                  <AccountCircleIcon />
+                </Link>
               </li>
               <li  onClick={handlemenu}  className="nav_items active">
-                <Link  to="/register">Register</Link>
+                <Link  to="/register">
+                  <PersonAddIcon />
+                </Link>
               </li>
             </> 
               :
