@@ -56,10 +56,9 @@ return(
 //rendering output
   return (
     <> 
-    <section className="announcement">
-    
-             <input placeholder='Search'  className='search' type="text" 
-              onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  />
+    {/* <input placeholder='Search'  className='search' type="text"  */}
+              {/* // onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  /> */}
+            
                  {/* <Searchistory searchHistory={searchHistory} /> */}
                  {/* <button onClick={handleSearchHistory}>
                   <SearchIcon />
@@ -68,9 +67,9 @@ return(
              
      
 
-    </section >
+  
     {/* ${hidemenu ? ' hide' : '' */}
-    <section className={`slider_section }`} >
+   
 
       <div  className="category center dropdown"> 
       
@@ -82,8 +81,9 @@ return(
         <button className='categories' onClick={()=>filteredProduct("laptop")}>Laptop</button>
         <button className='categories' onClick={()=>filteredProduct("electronics")}>Electronics</button>
          <button className='categories' onClick={()=>filteredProduct("mobile")}>Mobile</button>
-         {/* <button className='categories' onClick={()=> showsearchhistory(true)}>showsearchhistory</button> */}
-   
+         {/* { <button className='categories' onClick={()=> showsearchhistory(true)}>showsearchhistory</button> */} 
+     <input placeholder='Search'  className='search' type="text"  
+               onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  /> 
     
     
   </div>
@@ -91,7 +91,7 @@ return(
 </div>
 
   
-    </section>
+
     
   
     

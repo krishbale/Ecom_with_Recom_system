@@ -90,13 +90,7 @@
     opacity: 0.8;
 }
 
-.announcement {
-    padding: .2rem 0;
-    /* background-color: rgb(108, 108, 107); */
-    color: #fff;
-    padding-left: 0px;
-    padding-right: 85%;
-}
+
 
 
 
@@ -114,15 +108,7 @@
     height:100vh;
     background-size:cover;
  } */
-.slider_section {
-    /* display: none;
-     */
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    /* display: none; */
 
-
-}
 
 .slider_image {
     /* background-image:  url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKMCAsWzhp3I3IuBGC2yfrwt7fWQGoojND9NCs83ubglg6XhKAoberQ4rj_chbBzXJVhQ&usqp=CAU"); */

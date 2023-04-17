@@ -27,7 +27,6 @@ import About from '../pages/About';
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
 import Homepage from '../pages/Homepage';
 
-
 const NavBar = () => {
   const [showmenu,setshowmenu] = useState(false);
   
@@ -78,24 +77,24 @@ const NavBar = () => {
               </li>
               <li onClick={handlemenu} className="nav_items active">
                 <Link to="/allproducts">
-                All Products
+                Store
                 
                 </Link>
                 
               </li>
-              <li onClick={handlemenu} className="nav_items active" >
+              {/* <li onClick={handlemenu} className="nav_items active" >
               
               Sell More On App
                
-              </li>
-              <li onClick={handlemenu} className="nav_items active" >
+              </li> */}
+              {/* <li onClick={handlemenu} className="nav_items active" >
                 
-              </li>
-              <li onClick={handlemenu} className="nav_items active" >
+              </li> */}
+              {/* <li onClick={handlemenu} className="nav_items active" >
                 Customer Care
-              </li>
-              <li onClick={handlemenu} className="nav_items active" >
-                Track My Order
+              </li> */}
+              <li onClick={handlemenu}  className="nav_items active" >
+                 <Link  to="/checkoutpage"> Checkout</Link>
               </li>
 
              
