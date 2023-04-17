@@ -10,10 +10,10 @@ import { Fetchallproducts } from '../hooks/FetchAll';
 import LoadingAnimations from '../components/LoadingAnimations';
 import Card from '../components/Card';
 const  Detail = () => {
-     const displayconsole= (data)=>{
-    window.alert(` 1 item ${data } is added to the cart`)
+  //    const displayconsole= (data)=>{
+  //   window.alert(` 1 item ${data } is added to the cart`)
 
-   }
+  //  }
 
   let { id } = useParams()
   const {addtoCart} = useCartContext(); 
@@ -49,15 +49,8 @@ if(!loading){
           
           <span>
           <h3>Price:${data.price}</h3>
-          {/* {console.log(data.id)} */}
-           <NavLink 
-           onClick={()=> addtoCart(data)} 
-           to={'/cart'}>
-          <button     className='cartbutton'> <ShoppingCartCheckoutIcon /></button>
-          </NavLink> 
-         
-         
-          <button  onClick={()=> [addtoCart(data),displayconsole(data.title)]}  className='cartbutton'><AddShoppingCartIcon/></button>
+       
+          <button  onClick={()=> addtoCart(data)}  className='cartbutton'><AddShoppingCartIcon/></button>
           <div><button className="back" onClick={() => navigate(-1)}> <ArrowBackIcon /></button></div>
           </span>
          

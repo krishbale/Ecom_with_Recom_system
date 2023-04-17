@@ -112,8 +112,8 @@ const Cartui = () => {
       </table>
 
       <br />
-      <div  ><button className="back" onClick={() => navigate('/')}><FirstPageIcon /></button>
-        <button className="back" onClick={() => navigate('/checkoutpage')}><PriceCheckIcon /></button></div>
+      <div  ><button className="back" onClick={() => navigate('/')}><FirstPageIcon />Continue Shopping</button>
+        <button className="back" onClick={() => navigate('/checkoutpage')}><PriceCheckIcon /> Checkout</button></div>
 
 
 
