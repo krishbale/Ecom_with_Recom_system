@@ -1,7 +1,20 @@
 import React,{useContext, useState} from 'react'
+import PersonIcon from '@mui/icons-material/Person';
+
+// import {  useNavigate } from 'react-router-dom';
+// import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import TextField from '@mui/material/TextField';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 import {  LoginContext } from '../App';
 import Link from '@mui/material/Link';
 import { NavLink ,useNavigate } from 'react-router-dom';
+import { Avatar, Button } from '@mui/material';
 const Login = () => {
   const {dispatch} = useContext(LoginContext);
     const history = useNavigate()
@@ -49,10 +62,76 @@ const Login = () => {
   return <>
 
 
+   <Container component="main" maxWidth="xs">
+     <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'primary.dark' }}>
+            <PersonIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign in
+          </Typography>
+          <Box component="form" onSubmit={loginUser} noValidate sx={{ mt: 1 }}>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              type="text"
+              id="username"
+              label="User Name"
+              name="username"
+              autoComplete="username"
+              autoFocus
+              onChange={(e) => setUserName(e.target.value)}
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Sign In
+            </Button>
+            <Grid container>
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  Forgot password?
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="/register" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+        </Container>
  
    
  
-
+{/* 
    <section className='sign-in bg-dark'>
       <div className='container mt-5'>
       <div className='signin-content'>
@@ -105,7 +184,7 @@ const Login = () => {
       </div>
       
      
-    </section> 
+    </section>  */}
    
    
         </>
