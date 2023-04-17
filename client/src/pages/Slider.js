@@ -56,6 +56,58 @@ return(
 //rendering output
   return (
     <> 
+    <div className='section_slider' >
+    <div  className="category center dropdown"> 
+      
+      <button class="dropbtn">Category</button>
+      <input placeholder='Search'  className='search' type="text"  
+          onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  /> 
+      
+      <div class="dropdown-content">
+                   
+            <button className='categories'  onClick={()=>setFiltered(allproducts)}>All</button>
+            <button  className='categories' onClick={()=>filteredProduct('watch')}>Watch</button>
+            <button className='categories' onClick={()=>filteredProduct("laptop")}>Laptop</button>
+            <button className='categories' onClick={()=>filteredProduct("electronics")}>Electronics</button>
+            <button className='categories' onClick={()=>filteredProduct("mobile")}>Mobile</button>
+                    
+            
+          
+       
+         
+        
+        
+      </div>
+      
+    </div>
+    
+      
+    
+        
+      
+        
+        
+          <div className='productitem'>
+       
+            {filtered.map((product) => {
+            
+              return (
+                
+               <Card key={product.id} product={product} />
+              )
+            })}
+          </div>
+          <div className={`productitem ${hidemenu ? ' hide' : ''} `}>
+         
+         {allproducts.map((product) => {
+         
+           return (
+             
+            <Card key={product.id} product={product} />
+           )
+         })}
+       </div>
+    </div>
     {/* <input placeholder='Search'  className='search' type="text"  */}
               {/* // onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  /> */}
             
@@ -71,51 +123,7 @@ return(
     {/* ${hidemenu ? ' hide' : '' */}
    
 
-      <div  className="category center dropdown"> 
-      
-  <button class="dropbtn">Category</button>
-  <div class="dropdown-content">
-  
-         <button className='categories'  onClick={()=>setFiltered(allproducts)}>All</button>
-        <button  className='categories' onClick={()=>filteredProduct('watch')}>Watch</button>
-        <button className='categories' onClick={()=>filteredProduct("laptop")}>Laptop</button>
-        <button className='categories' onClick={()=>filteredProduct("electronics")}>Electronics</button>
-         <button className='categories' onClick={()=>filteredProduct("mobile")}>Mobile</button>
-         {/* { <button className='categories' onClick={()=> showsearchhistory(true)}>showsearchhistory</button> */} 
-     <input placeholder='Search'  className='search' type="text"  
-               onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  /> 
-    
-    
-  </div>
-  
-</div>
-
-  
-
-    
-  
-    
-    
-      <div className='productitem'>
    
-        {filtered.map((product) => {
-        
-          return (
-            
-           <Card key={product.id} product={product} />
-          )
-        })}
-      </div>
-      <div className={`productitem ${hidemenu ? ' hide' : ''} `}>
-     
-     {allproducts.map((product) => {
-     
-       return (
-         
-        <Card key={product.id} product={product} />
-       )
-     })}
-   </div>
     </>
   )
 }

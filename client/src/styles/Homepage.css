@@ -1,4 +1,4 @@
-section{
+.section_homepage{
     min-height: 100vh;
     padding-top: o rem;
     /* padding: 5 rem ; */
@@ -7,7 +7,7 @@ section{
     grid-template-columns: 1fr 1fr;
     
 }
-section img{
+.section_homepage img{
     
     min-width: 10rem;
     height: 10rem;
@@ -31,6 +31,7 @@ section img{
 }
 
 .hero-section-image{
+    margin-top: 0;
     width: 100%;
     height: auto;
     display: flex;
@@ -48,9 +49,26 @@ section img{
     height: auto;
 }
 @media (max-width:600px){
-    section{
+    .section_homepage{
+        display: flex;
+        flex-direction: column;
+    }
+    .carousel{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+}
+@media (max-width:950px){
+    .section_homepage{
         display: flex;
         flex-direction: column;
     }
 
 }
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+  }
