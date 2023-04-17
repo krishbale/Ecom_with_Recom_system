@@ -11,6 +11,7 @@ import {
   Link
 
 } from "react-router-dom";
+import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
 import LogoutSharpIcon from '@mui/icons-material/LogoutSharp';
 import InfoSharpIcon from '@mui/icons-material/InfoSharp';
 import HomeIcon from '@mui/icons-material/Home';
@@ -44,12 +45,13 @@ const NavBar = () => {
   return (
         <> 
          {/* productitem ${hidemenu ? ' hide' : ''} `}> */}
-        <div  className="navbar">
-          <nav>
+        <div >
+          
           <div  onClick={handlemenu} className={`hamburger`} >
           <MenuIcon  className={`${showmenu ? 'close': ' show'}`} />
-          <CloseIcon className={` ${showmenu? 'show':' close'}`} />
+          <LogoutSharpIcon className={` ${showmenu? 'show':' close'}`} />
           </div>
+          <nav className={`navbar ${showmenu ? ' nav_open':' nav_close'}`}>
             <ul>
               <li>
               <Link to="/">
@@ -60,7 +62,7 @@ const NavBar = () => {
                
             
             {state==="false"? <>
-            <li className="nav_items active">
+            <li onClick={handlemenu} className="nav_items active">
                 <Link  to="/login">Login</Link>
               </li>
               <li className="nav_items active">
@@ -69,22 +71,22 @@ const NavBar = () => {
             </> 
               :
               <>
-              <li className="nav_items active">
+              <li onClick={handlemenu} className="nav_items active">
                 <Link to="/">
 
                 Home
                 </Link>
                 
               </li>
-              <li className="nav_items active">
+              <li onClick={handlemenu} className="nav_items active" >
                 <Link to="/about">
               About
                 </Link>
               </li>
-              <li className="nav_items active">
+              <li onClick={handlemenu} className="nav_items active">
                 <Link  to="/contact">Contact</Link>
               </li>
-              <li key={totalItem} className="nav_items active">
+              <li onClick={handlemenu} key={totalItem} className="nav_items active">
                 <Link  to="/cart/">
                 <ShoppingCartSharpIcon />
                   
@@ -92,9 +94,9 @@ const NavBar = () => {
                   </Link>
               </li>
 
-              <li className="nav_items active">
+              <li onClick={handlemenu} className="nav_items active">
                 <Link  to="/logout">
-                <LogoutSharpIcon />
+                <PersonRemoveIcon />
                 </Link>
               </li>
               <li>
