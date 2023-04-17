@@ -1,6 +1,4 @@
 import React, { useContext } from 'react'
-import carticon  from '../assets/cart.svg'
-import CloseIcon from '@mui/icons-material/Close';
 import {  LoginContext } from '../App';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react'
@@ -13,8 +11,7 @@ import {
 } from "react-router-dom";
 import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
 import LogoutSharpIcon from '@mui/icons-material/LogoutSharp';
-import InfoSharpIcon from '@mui/icons-material/InfoSharp';
-import HomeIcon from '@mui/icons-material/Home';
+
 import "../styles/NavBar.css";
 import Slider from "../pages/Slider"
 import Cart from './Cartui'
@@ -65,7 +62,7 @@ const NavBar = () => {
             <li onClick={handlemenu} className="nav_items active">
                 <Link  to="/login">Login</Link>
               </li>
-              <li className="nav_items active">
+              <li  onClick={handlemenu}  className="nav_items active">
                 <Link  to="/register">Register</Link>
               </li>
             </> 
