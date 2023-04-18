@@ -59,11 +59,11 @@ return(
     <div className='section_slider' >
     <div  className="category center dropdown"> 
       
-      <button class="dropbtn">Category</button>
+      <button className="dropbtn">Category</button>
       <input placeholder='Search'  className='search' type="text"  
           onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  /> 
       
-      <div class="dropdown-content">
+      <div className="dropdown-content">
                    
             <button className='categories'  onClick={()=>setFiltered(allproducts)}>All</button>
             <button  className='categories' onClick={()=>filteredProduct('watch')}>Watch</button>
