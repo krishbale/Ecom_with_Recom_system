@@ -271,3 +271,6 @@ p {
     margin-left: 80%;
     margin-top: 0;
   }
+  .slider_hide{
+    display: none;
+  }

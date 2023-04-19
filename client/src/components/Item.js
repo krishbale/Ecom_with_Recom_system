@@ -1,11 +1,18 @@
 import React from 'react'
 import { Paper, Button } from '@mui/material'
+import { NavLink } from 'react-router-dom';
 
 const Item = ({item}) => {
     const {image,id,description,title,brand,price} =item;
   return (
+    <>
+{/* <NavLink to="details/41"> */}
+<img src={image} alt="" />
+ {/* </NavLink> */}
  
-    <img src={image} alt="" />
+  
+    </>
+
  
   )
 }

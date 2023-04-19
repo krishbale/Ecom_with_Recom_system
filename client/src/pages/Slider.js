@@ -9,6 +9,8 @@ import Item from '../components/Item';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; //
 import imagedata from '../components/imagedata';
 import { Carousel } from 'react-responsive-carousel';
+// import Carousel from 'react-material-ui-carousel'
+
 function Slider() {
   const {allproducts ,loading} = Fetchallproducts('/products');
 
@@ -68,7 +70,7 @@ return(
     </div>
     <div  className="category"> 
      
-    <div>   
+    <div className={`${query.length===0 ?'':'slider_hide'}`}>   
             
     <Carousel
    

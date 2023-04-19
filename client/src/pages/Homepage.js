@@ -22,6 +22,7 @@ const Homepage = () => {
   return (
     <>
   <div className='section_homepage'>
+  
   <Carousel>
   {
         imagedata.map((item,i) => 
