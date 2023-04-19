@@ -5,6 +5,9 @@ import { Fetchallproducts } from '../hooks/FetchAll';
 import LoadingAnimations from '../components/LoadingAnimations';
 import Card from '../components/Card';
 import Searchistory from './Searchistory';
+import Item from '../components/Item';
+import imagedata from '../components/imagedata';
+import Carousel from 'react-material-ui-carousel'
 function Slider() {
   const {allproducts ,loading} = Fetchallproducts('/products');
 
@@ -57,11 +60,14 @@ return(
   return (
     <> 
     <div className='section_slider' >
+    <div>
+    <button className="dropbtn">Category</button>
+      <input placeholder='Search'  className='search' type="text"  
+          onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  />
+    </div>
     <div  className="category center dropdown"> 
       
-      <button className="dropbtn">Category</button>
-      <input placeholder='Search'  className='search' type="text"  
-          onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  /> 
+      
       
       <div className="dropdown-content">
                    
@@ -79,6 +85,21 @@ return(
         
       </div>
       
+    </div>
+    <div>
+    <Carousel
+   
+
+  
+   >
+     {
+        imagedata.map((item,i) => 
+        <Item key={i} item = {item} />
+        )
+      }
+   </Carousel>
+ 
+   
     </div>
     
       
