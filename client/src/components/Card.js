@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 const Card = ({product}) => {
-    const {  id, title, price, image,   } = product
+    const {  id, title, price, image   } = product
   return (
     <>
               <div  className='card'>
