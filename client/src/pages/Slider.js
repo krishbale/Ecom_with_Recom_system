@@ -6,8 +6,9 @@ import LoadingAnimations from '../components/LoadingAnimations';
 import Card from '../components/Card';
 import Searchistory from './Searchistory';
 import Item from '../components/Item';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; //
 import imagedata from '../components/imagedata';
-import Carousel from 'react-material-ui-carousel'
+import { Carousel } from 'react-responsive-carousel';
 function Slider() {
   const {allproducts ,loading} = Fetchallproducts('/products');
 
@@ -60,33 +61,15 @@ return(
   return (
     <> 
     <div className='section_slider' >
-    <div>
-    <button className="dropbtn">Category</button>
+    <div className='searcharea'>
+    <button className="dropbtn"></button>
       <input placeholder='Search'  className='search' type="text"  
           onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  />
     </div>
-    <div  className="category center dropdown"> 
-      
-      
-      
-      <div className="dropdown-content">
-                   
-            <button className='categories'  onClick={()=>setFiltered(allproducts)}>All</button>
-            <button  className='categories' onClick={()=>filteredProduct('watch')}>Watch</button>
-            <button className='categories' onClick={()=>filteredProduct("laptop")}>Laptop</button>
-            <button className='categories' onClick={()=>filteredProduct("electronics")}>Electronics</button>
-            <button className='categories' onClick={()=>filteredProduct("mobile")}>Mobile</button>
-                    
+    <div  className="category"> 
+     
+    <div>   
             
-          
-       
-         
-        
-        
-      </div>
-      
-    </div>
-    <div>
     <Carousel
    
 
@@ -98,6 +81,21 @@ return(
         )
       }
    </Carousel>
+         
+        
+        
+            </div>
+
+    
+  
+     <div className="dropdown-content">       
+            <button className='categories'  onClick={()=>setFiltered(allproducts)}>All</button>
+            <button  className='categories' onClick={()=>filteredProduct('watch')}>Watch</button>
+            <button className='categories' onClick={()=>filteredProduct("laptop")}>Laptop</button>
+            <button className='categories' onClick={()=>filteredProduct("electronics")}>Electronics</button>
+            <button className='categories' onClick={()=>filteredProduct("mobile")}>Mobile</button>          
+     </div> 
+   
  
    
     </div>

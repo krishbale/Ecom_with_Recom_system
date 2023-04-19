@@ -3,9 +3,13 @@ import '../styles/Homepage.css';
 import { NavLink } from 'react-router-dom';
 import { Box, Button, Grid } from '@mui/material';
 import herosectionimage from '../assets/purple_laptop.png';
+import imagedata from '../components/imagedata';
+import Item from '../components/Item';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 // import {Button} from '@mui/material';
 import Card from '../components/Card';
+import { Carousel } from 'react-responsive-carousel';
 
 import { Fetchallproducts } from '../hooks/FetchAll';
 import Home from '@mui/icons-material/Home';
@@ -18,6 +22,14 @@ const Homepage = () => {
   return (
     <>
   <div className='section_homepage'>
+  <Carousel>
+  {
+        imagedata.map((item,i) => 
+        <Item key={i} item = {item} />
+        )
+      }
+            </Carousel>
+
  
          {/* <div className="hero-section-data">
         <p>Categories</p>
