@@ -7,13 +7,13 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 // i
 import Card from '../components/Card';
 import { Carousel } from 'react-responsive-carousel';
-
+import { Carousel as carousel} from 'react-material-ui-carousel'
 import { Fetchallproducts } from '../hooks/FetchAll';
 
 
 const Homepage = () => {
 
-
+  const {allproducts ,loading} = Fetchallproducts('/products');
  
 
 
@@ -33,12 +33,22 @@ const Homepage = () => {
        
        
    
-        <div className="carousel">
-        {/* {
-          randomproducts.map((product,indes) =>{
-            <Card key={indes} product={product} />
-          })
-        } */}
+        <div className="productitem">
+          <Carousel>
+ {/* {allproducts.map((product) => {
+         
+         return (
+      
+           <Card key={product.id} product={product} />
+
+         
+         )
+       })} */}
+          </Carousel>
+
+ 
+
+      
       
         </div>
 

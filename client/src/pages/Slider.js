@@ -9,6 +9,7 @@ import Item from '../components/Item';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; //
 import imagedata from '../components/imagedata';
 import { Carousel } from 'react-responsive-carousel';
+import { Button } from '@mui/material';
 // import Carousel from 'react-material-ui-carousel'
 
 function Slider() {
@@ -29,14 +30,15 @@ function Slider() {
       item.title.toLowerCase().includes(query.toLowerCase())
       );
       setFiltered(results)
-
+      sethidemenu(true);
       // setSearchHistory([...searchHistory,query])
       // console.log(searchHistory);
    }
    
    const handleSearchHistory = () => {
-    // sethidemenu(false);
-    setSearchHistory([...searchHistory, query])
+    
+    
+    setSearchHistory([...searchHistory,query])
 
     //  console.log(searchHistory);
    }
@@ -64,13 +66,19 @@ return(
     <> 
     <div className='section_slider' >
     <div className='searcharea'>
-    <button className="dropbtn"></button>
-      <input placeholder='Search'  className='search' type="text"  
+ 
+      <input  placeholder='Search' className='search' type="text"  
           onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  />
+         <Button className='search-button' onClick={handleSearchHistory}> <SearchIcon  /></Button>
+         <div className={`${query.length===0 ? 'slider_hide' : 'searchhistory'}`}>
+         <Searchistory searchHistory={searchHistory} />
+         </div>
+         
+         
     </div>
     <div  className="category"> 
      
-    <div className={`${query.length===0 ?'':'slider_hide'}`}>   
+    <div className={`${query.length === 0 ?'':'slider_hide'}`}>   
             
     <Carousel
    
