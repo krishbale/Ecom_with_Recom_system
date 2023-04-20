@@ -89,7 +89,7 @@ const Register = () => {
               id="username"
               label="User Name"
               name="username"
-              autoComplete="username"
+           
               autoFocus
               onChange={handleInputs} 
             />
@@ -101,7 +101,7 @@ const Register = () => {
               label="Password"
               type="password"
               id="password"
-              autoComplete="current-password"
+              
               onChange={handleInputs} 
             />
             <FormControlLabel

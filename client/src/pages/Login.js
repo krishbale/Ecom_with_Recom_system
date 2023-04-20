@@ -86,7 +86,7 @@ const Login = () => {
               id="username"
               label="User Name"
               name="username"
-              autoComplete="username"
+             
               autoFocus
               onChange={(e) => setUserName(e.target.value)}
             />
@@ -98,7 +98,7 @@ const Login = () => {
               label="Password"
               type="password"
               id="password"
-              autoComplete="current-password"
+            
               onChange={(e) => setPassword(e.target.value)}
             />
             <FormControlLabel
