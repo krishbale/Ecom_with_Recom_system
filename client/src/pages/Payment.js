@@ -1,6 +1,7 @@
 import React from 'react'
 
 
+import { useCartContext } from '../context/Cartcontext';
 
 
 
@@ -9,13 +10,15 @@ import Esewa from '../assets/esewa_logo.png';
 
 
 const Payment = () => {
+    const { cart, removeItem, clearCart, totalItem, totalAmount, increment, decrement } = useCartContext()
+
     var path="https://uat.esewa.com.np/epay/main";
 var params= {
-    amt: 100,
+    amt: totalAmount,
     psc: 0,
     pdc: 0,
     txAmt: 0,
-    tAmt: 100,
+    tAmt: totalAmount,
     pid: "ee2c3ca1-696b-4cc5-a6be-2c40d929d453",
     scd: "EPAYTEST",
     su: "http://merchant.com.np/page/esewa_payment_success",
@@ -44,11 +47,11 @@ function post(path, params) {
      
         
         <form  method="POST"/>
-    <input value="100" name="tAmt" type="hidden"/>
-    <input value="90" name="amt" type="hidden"/>
-    <input value="5" name="txAmt" type="hidden"/>
-    <input value="2" name="psc" type="hidden"/>
-    <input value="3" name="pdc" type="hidden"/>
+    <input value={totalAmount} name="tAmt" type="hidden"/>
+    <input value="0" name="amt" type="hidden"/>
+    <input value="0" name="txAmt" type="hidden"/>
+    <input value="0" name="psc" type="hidden"/>
+    <input value="0" name="pdc" type="hidden"/>
     <input value="EPAYTEST" name="scd" type="hidden"/>
     <input value="ee2c3ca1-696b-4cc5-a6be-2c40d929d453" name="pid" type="hidden"/>
     <input value="http://merchant.com.np/page/esewa_payment_success?q=su" type="hidden" name="su"/>

@@ -4,6 +4,7 @@ var mongo = require('mongodb').MongoClient;
 const express = require('express')
 const router = express.Router();
 var cookieParser = require('cookie-parser')
+const Shipdata = require('../models/shipdataSchema');
 router.use(cookieParser());
 const jwt = require('jsonwebtoken');
 const session = require('express-session')
@@ -92,6 +93,43 @@ const sessioncontroller = async(req,res)=>{
     }
 
 }
+const handleshippingform = async(req,res )=>{
+    console.log(req.body);
+    const { 
+        firstName,
+
+        lastName,
+        address1,
+        address2,
+        city,
+        state,
+        zip,
+        country} = req.body;
+
+    if(!firstName|| !lastName || !address1 || !city || !state || !country  ){
+        return res.status(422).json({error:"only address2 and zip or optional Please fill the form properly"})
+
+    }
+    try{
+     
+        const shipdata = new Shipdata({ firstName,
+
+            lastName,
+            address1,
+            address2,
+            city,
+            state,
+            zip,
+            country
+        })
+        await shipdata.save();
+        res.json({msg:"log created successfully"})
+
+    }catch(e){
+        console.log(e)
+    }
+
+}
 
 
- module.exports = { register , login,logout,sessioncontroller }
+ module.exports = { register ,handleshippingform, login,logout,sessioncontroller }
