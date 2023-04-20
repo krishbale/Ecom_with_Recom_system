@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import {  LoginContext } from '../App';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Icon } from '@mui/material';
 import { useState } from 'react'
 import {
   
@@ -47,8 +48,13 @@ const NavBar = () => {
         <div >
           
           <div  onClick={handlemenu} className={`hamburger`} >
-          <MenuIcon  className={`${showmenu ? 'close': ' show'}`} />
+          <Icon fontSize="large">
+          <MenuIcon   className={`${showmenu ? 'close': ' show'}`} />
           <LogoutSharpIcon className={` ${showmenu? 'show':' close'}`} />
+          </Icon>
+
+
+         
           </div>
           <nav className={`navbar ${showmenu ? ' nav_open':' nav_close'}`}>
             <ul>
