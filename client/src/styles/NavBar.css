@@ -65,10 +65,17 @@ padding: .8rem .5rem;
 
 } */
 @media (max-width: 700px) {
+    .showmenu{
+        height: 2em;
+        width: 5em;
+    }
     /* li{
         display: none
     } */
     .hamburger{
+
+        margin-left: 80%;
+   
         /* background-color: #ccc; */
         display: block;
         
