@@ -76,5 +76,31 @@ width: auto !important;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.cartbutton{
+    display:flex;
+    justify-content: center;
+    padding:.2rem 1.5rem;
+    color:rgb(140, 75, 245);
+    text-align:center !important;
+    align-items:center;
+    align-content: center;
+    cursor: pointer;
 
- 
+}
+.cartbutton .back h4{
+    margin: 0 .2rem;
+}
+ .back{
+    display:flex;
+    justify-content: center;
+    padding:.2rem 1.5rem;
+    color:rgb(140, 75, 245);
+    text-align:center !important;
+    align-items:center;
+    align-content: center;
+ cursor: pointer;
+ }
+ .cartbutton .back :hover{
+    color:rgb(206, 180, 248);
+    
+}

@@ -39,7 +39,15 @@
     margin-top: 1rem;
     margin: auto;
 }
-
+.searcharea{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.searcharea input{
+   min-width: 50%;
+}
 .card .des {
     padding: 1.4rem 0rem;
 
@@ -267,32 +275,10 @@ p {
    
   }
   .searcharea{
-  
- 
-  
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    padding: 13px 19px;
-    font-family: Roboto-Regular,Helvetica,sans-serif;
-    font-size: 14px;
-    line-height: 1;
-    letter-spacing: 0;
-    color: #212121;
-    border: none;
-    outline: none;
-    /* background: #c3aaaa; */
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border-radius: 2px;
     /* background-color: red; */
-    /* padding-right: 5%; */
-    /* margin-top: 1rem; */
+    margin-left: 55%;
+    margin-top: 0;
   }
-
   .slider_hide{
     display: none;
   }
- 
-  /* Style the search history list items */

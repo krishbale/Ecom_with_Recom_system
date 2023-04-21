@@ -50,8 +50,8 @@ if(!loading){
           <span>
           <h3>Price:${data.price}</h3>
        
-          <button  onClick={()=> addtoCart(data)}  className='cartbutton'><AddShoppingCartIcon/></button>
-          <div><button className="back" onClick={() => navigate(-1)}> <ArrowBackIcon /></button></div>
+          <button  onClick={()=> addtoCart(data)}  className='cartbutton'> <h4>Add To Cart </h4> <AddShoppingCartIcon/></button>
+          <div><button className="back" onClick={() => navigate(-1)}> <ArrowBackIcon /> <h4> Add To Cart </h4></button></div>
           </span>
          
         </div>
