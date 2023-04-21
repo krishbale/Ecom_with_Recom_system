@@ -45,7 +45,7 @@ const NavBar = () => {
   return (
         <> 
          {/* productitem ${hidemenu ? ' hide' : ''} `}> */}
-        <div >
+        <div  className='header' >
           
           <div  onClick={handlemenu} className={`hamburger`} >
           <Icon fontSize="large">
