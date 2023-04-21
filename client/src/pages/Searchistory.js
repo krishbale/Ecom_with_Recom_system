@@ -2,15 +2,14 @@ import React from 'react'
 
 const Searchistory = ({searchHistory}) => {
   return (
-    <div className='searcharea-histroy'>
-
+    <div>
      {searchHistory.length > 0 && (
-     <div>
+     <ul>
           {searchHistory.map((search,index) => (
          
-            <p key={index}>{index}.{search}</p> 
+            <li key={index}>{search}</li> 
           ))}
-        </div>
+        </ul>
       )} </div>
   )
 }
