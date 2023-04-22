@@ -51,7 +51,7 @@ if(!loading){
           <h3>Price:${data.price}</h3>
        
           <button  onClick={()=> addtoCart(data.id , data.price,data)}  className='cartbutton'> <h4>Add To Cart </h4> <AddShoppingCartIcon/></button>
-          <div><button className="back" onClick={() => navigate(-1)}> <ArrowBackIcon /> <h4> Add To Cart </h4></button></div>
+          <div><button className="back" onClick={() => navigate(-1)}> <ArrowBackIcon /> <h4>Back To HOME</h4></button></div>
           </span>
          
         </div>
