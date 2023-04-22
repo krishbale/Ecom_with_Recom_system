@@ -2,22 +2,51 @@ const Cartreducer = (state,action) => {
 
     //Add to cart
 if(action.type === "ADD_TO_CART"){
-    let {products} = action.payload;
+    let {id,amount,product} = action.payload;
+   
+    let existingProduct = state.cart.find(
+      (curElem) => curElem.id === id
+    );
+    if(existingProduct){
+      let updatedProduct = state.cart.map((curElem) =>{
+        if(curElem.id === id){
+          let newAmount = curElem.amount + amount;
+          if(newAmount >= curElem.max){
+            newAmount = curElem.max;
+          }
+          return {
+            ...curElem,
+            amount:newAmount,
+          };
+
+        }else {
+          return curElem;
+        }
+      });
+      return {
+        ...state,
+        cart:updatedProduct,
+      };
+    }else{
+
+    
     // console.log(`details products:${products.id}`);
     let cardProduct;
     cardProduct={
-        "id":products.id,
-        "title":products.title,
-        "image":products.image,
-        "price":products.price,
+        "id":product.id,
+        "title":product.title,
+        "image":product.image,
+        "price":product.price,
         "quantity":1,
-    }
+    };
+    
     // console.log(cardProduct)
 return{
     ...state,
     cart:[...state.cart,cardProduct],
     
 };
+}
 }
 ///remove item
 

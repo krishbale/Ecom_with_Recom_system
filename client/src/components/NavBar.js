@@ -38,10 +38,8 @@ const NavBar = () => {
   const handlemenu = ()=>{
     showmenu?setshowmenu(false):setshowmenu(true)
   }
-  // const handlehambuger = ()=>{
 
-
-  // }
+  
   return (
         <> 
          {/* productitem ${hidemenu ? ' hide' : ''} `}> */}
@@ -87,13 +85,13 @@ const NavBar = () => {
                 </Link>
                 
               </li>
-              <li onClick={handlemenu} className="nav_items active">
+              {/* <li onClick={handlemenu} className="nav_items active">
                 <Link to="/allproducts">
                 Store
                 
                 </Link>
                 
-              </li>
+              </li> */}
               {/* <li onClick={handlemenu} className="nav_items active" >
               
               Sell More On App
@@ -133,9 +131,10 @@ const NavBar = () => {
             </ul>
           </nav>
           <Routes >
-            <Route path="/" element={<Homepage />} />
+        
+            <Route path="/" element={<Slider />} />
             <Route path="/about" element={<About />} />
-            <Route path="/allproducts" element={<Slider />} />
+            {/* <Route path="/allproducts" element={<Slider />} /> */}
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/logout" element={<Logout />} />
