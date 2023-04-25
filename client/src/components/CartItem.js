@@ -55,6 +55,7 @@ const { cart, removeItem, clearCart, totalItem, totalAmount, increment, decremen
         </div>
       </div>
       <img src={image} alt={title} />
+      
     </Wrapper>
    
    

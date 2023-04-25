@@ -96,18 +96,15 @@ const NavBar = () => {
               </li>
 
              
-              {/* <li onClick={handlemenu} key={totalItem} className="nav_items active"> */}
-                {/* <Link  to="/cart/"> */}
-
-                {/* <ShoppingCartSharpIcon /> */}
+           
                 <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}> 
-                <Cartui />
+                <Cartui  />
                  </Drawer>
                  <Button onClick={() => setCartOpen(true)}>
-        <Badge badgeContent={1} color="error">
-        <ShoppingCartSharpIcon />
-        </Badge>
-      </Button>
+                  <Badge badgeContent={totalItem} color="error">
+                    <ShoppingCartSharpIcon />
+                   </Badge>
+                  </Button>
                   
                     {/* <span className='noti_count'>{totalItem}</span> */}
                   {/* </Link> */}
@@ -135,7 +132,7 @@ const NavBar = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/logout" element={<Logout />} />
-            <Route path="/cart/" element={ <Cart />} />
+         
             <Route path="/details/:id" element={<Detail />} />
             <Route path="/checkoutpage" element={<Checkout />} />
             <Route path="/payment/esewa" element={<Payment />} />
