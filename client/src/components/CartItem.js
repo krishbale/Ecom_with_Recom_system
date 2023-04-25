@@ -6,39 +6,57 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import PriceCheckIcon from '@mui/icons-material/PriceCheck';
 import { useCartContext } from '../context/Cartcontext';
 import DeleteIcon from '@mui/icons-material/Delete';
-
+import { Wrapper } from './CartItem.style';
+import { Button } from '@mui/material';
 const CartItem = ({ curElem }) => {
 const { cart, removeItem, clearCart, totalItem, totalAmount, increment, decrement } = useCartContext()
 
     const { id,price ,quantity,title,image} = curElem;
   return (
     <>
-    <div className='table-row'>
-    <div className="table-cell">
-{id}
-    </div>
-    <div className="table-cell">
-    <img style={{ height: "20px", width: "20px" }} src={image} alt="phone" />
-    </div>
-    <div className="table-cell">
-{title}
-    </div>
-    <div className="table-cell">
-{price}
-    </div>
-    <div className="table-cell">
-    <AddCircleIcon onClick={() => increment(id)} style={{ height: "20px", width: "20px" }} alt="+" />
-
-{quantity}
-
-<RemoveCircleIcon onClick={() => decrement(id)} style={{ height: "20px", width: "20px" }} alt="-" />
-    </div>
-    <div className='table-cell'> <p>{price * quantity}</p></div>
-    <div className='table-cell'><p onClick={() => removeItem(id)}>
-
-<DeleteIcon style={{ height: "20px", width: "20px" }} alt="delet" /> 
-</p></div>
-    </div>
+     <Wrapper>
+      <div>
+        <h3>{curElem.title}</h3>
+        <div className="information">
+          <p> Price :${price}</p>
+          <br />
+         
+          <p>Sets: {quantity}</p>
+          <br />
+          <p>Sub-Total: ${(price * quantity).toFixed(2)}</p>
+      
+        </div>
+        <div className="buttons">
+          <Button
+            size="small"
+            disableElevation
+            variant="contained"
+            onClick={() => decrement(id)}
+          >
+            <RemoveCircleIcon />
+          </Button>
+          <p>{curElem.amount}</p>
+          <Button
+            size="small"
+            disableElevation
+            variant="contained"
+            onClick={() => increment(id)}
+          >
+            <AddCircleIcon />
+          </Button>
+          <Button
+            size="small"
+            disableElevation
+            variant="contained"
+            onClick={() => removeItem(id)}
+          >
+            <DeleteIcon />
+          </Button>
+        </div>
+      </div>
+      <img src={image} alt={title} />
+    </Wrapper>
+   
    
 
     </>
@@ -47,20 +65,4 @@ const { cart, removeItem, clearCart, totalItem, totalAmount, increment, decremen
 }
 
 export default CartItem;
-{/* <td>{item.id}</td>
-<td><img style={{ height: "20px", width: "20px" }} src={item.image} alt="phone" /></td>
-<td>{item.title}</td>
-<td>{item.price}</td>
-<td>
 
-  <AddCircleIcon onClick={() => increment(item.id)} style={{ height: "20px", width: "20px" }} alt="+" />
-
-  {item.quantity}
-
-  <RemoveCircleIcon onClick={() => decrement(item.id)} style={{ height: "20px", width: "20px" }} alt="-" />
-
-</td>
-<td>{item.price * item.quantity}</td>
-<td onClick={() => removeItem(item.id)}>
-
-  <DeleteIcon style={{ height: "20px", width: "20px" }} alt="delet" /> */}

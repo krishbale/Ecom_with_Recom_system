@@ -41,7 +41,7 @@ useEffect(() => {
   
   <LoginContext.Provider value={{state,dispatch}}>
   <NavBar />
-  <Footer />
+  {/* <Footer /> */}
   </LoginContext.Provider>
 
     

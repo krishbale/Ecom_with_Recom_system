@@ -18,7 +18,7 @@ import Review from './Review';
 
 
 
-const steps = ['Shipping address', 'Review your order', 'Payment Gateway'];
+const steps = ['Shipping address', 'Review your order',];
 
 function getStepContent(step) {
   switch (step) {
@@ -26,8 +26,7 @@ function getStepContent(step) {
       return <AddressForm />;
     case 1:
       return <Review />;
-    case 2:
-      return <Payment />;
+    
     default:
       throw new Error('Unknown step');
   }
@@ -39,6 +38,7 @@ export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
 
   const handleNext = () => {
+    if(steps)
     setActiveStep(activeStep + 1);
   };
 
@@ -73,12 +73,7 @@ export default function Checkout() {
             ))}
           </Stepper>
           {activeStep === steps.length ? (
-            <React.Fragment>
-     
-      
-          
-             
-            </React.Fragment>
+            <Payment />
           ) : (
             <React.Fragment>
               {getStepContent(activeStep)}

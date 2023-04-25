@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
 import {  LoginContext } from '../App';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Icon } from '@mui/material';
+import { Button, Drawer, Icon } from '@mui/material';
 import { useState } from 'react'
+
 import {
   
   Routes,
@@ -10,6 +11,9 @@ import {
   Link
 
 } from "react-router-dom";
+import Badge from '@mui/material/Badge';
+
+
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
@@ -29,10 +33,11 @@ import About from '../pages/About';
 
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
 import Homepage from '../pages/Homepage';
+import Cartui from './Cartui';
 
 const NavBar = () => {
   const [showmenu,setshowmenu] = useState(false);
-  
+  const [cartOpen, setCartOpen] = useState(false);
   const {state} = useContext(LoginContext);
   const { totalItem  } = useCartContext();
   const handlemenu = ()=>{
@@ -85,36 +90,28 @@ const NavBar = () => {
                 </Link>
                 
               </li>
-              {/* <li onClick={handlemenu} className="nav_items active">
-                <Link to="/allproducts">
-                Store
-                
-                </Link>
-                
-              </li> */}
-              {/* <li onClick={handlemenu} className="nav_items active" >
-              
-              Sell More On App
-               
-              </li> */}
-              {/* <li onClick={handlemenu} className="nav_items active" >
-                
-              </li> */}
-              {/* <li onClick={handlemenu} className="nav_items active" >
-                Customer Care
-              </li> */}
+             
               <li onClick={handlemenu}  className="nav_items active" >
                  <Link  to="/checkoutpage"> Checkout</Link>
               </li>
 
              
-              <li onClick={handlemenu} key={totalItem} className="nav_items active">
-                <Link  to="/cart/">
-                <ShoppingCartSharpIcon />
+              {/* <li onClick={handlemenu} key={totalItem} className="nav_items active"> */}
+                {/* <Link  to="/cart/"> */}
+
+                {/* <ShoppingCartSharpIcon /> */}
+                <Drawer anchor="right" open={cartOpen} onClose={() => setCartOpen(false)}> 
+                <Cartui />
+                 </Drawer>
+                 <Button onClick={() => setCartOpen(true)}>
+        <Badge badgeContent={1} color="error">
+        <ShoppingCartSharpIcon />
+        </Badge>
+      </Button>
                   
-                    <span className='noti_count'>{totalItem}</span>
-                  </Link>
-              </li>
+                    {/* <span className='noti_count'>{totalItem}</span> */}
+                  {/* </Link> */}
+              {/* </li> */}
 
               <li onClick={handlemenu} className="nav_items active">
                 <Link  to="/logout">
@@ -142,6 +139,8 @@ const NavBar = () => {
             <Route path="/details/:id" element={<Detail />} />
             <Route path="/checkoutpage" element={<Checkout />} />
             <Route path="/payment/esewa" element={<Payment />} />
+            <Route path='/paymentsuccess' element={<>Payment successfull</>} />
+            <Route path='/paymentfailed' element={<>Payment failed</>} />
           </Routes>
         </div>
     </>

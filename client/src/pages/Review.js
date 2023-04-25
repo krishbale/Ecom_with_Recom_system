@@ -4,10 +4,11 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import { useCartContext } from '../context/Cartcontext';
+import Esewa from '../assets/esewa_logo.png';
 
 import Grid from '@mui/material/Grid';
 
-    // const { id,price ,quantity,title,image} = curElem;
+
 
 
 export default function Review() {
@@ -36,10 +37,22 @@ export default function Review() {
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
           <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-            Shipping
+            Shipping Address
           </Typography>
-          <Typography gutterBottom>{}</Typography>
-          <Typography gutterBottom></Typography>
+          <Typography gutterBottom>Shiiping Details</Typography>
+          <Typography gutterBottom >Default Address</Typography>
+      
+        </Grid>
+        <Grid item xs={12} sm={6}>
+       
+          <Typography gutterBottom >Select Payment Method:</Typography>
+          <Typography> 
+       
+
+          </Typography>
+          <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
+          Available Payment Method:  
+          <img width={120}  src={Esewa} alt="esewa" />        </Typography>
         </Grid>
      
       </Grid>
