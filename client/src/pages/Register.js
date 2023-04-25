@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-
+import { regexPassword,mailformat } from '../utils';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
@@ -19,13 +19,18 @@ const Register = () => {
     const [user,setUser] = useState({
         username:"",password:""
       });
+      const [errors,setErrors] = useState(false);
        
   const handleInputs = (e) => {
     let name, value;
    
-
+    
     name = e.target.name;
     value = e.target.value;
+    let iscorrectvalue = name === 'username' ? mailformat.test(value)
+    :regexPassword.test(value);
+    iscorrectvalue ? setErrors({...errors,[name]:false})
+    :setErrors({...errors,[name]:true})    
     setUser({ ...user,[name]:value})
    
   }
@@ -89,7 +94,9 @@ const Register = () => {
               id="username"
               label="User Name"
               name="username"
-           
+            error={errors.username}
+            helperText={errors.username && "Any character other than white-space is allowed, length between 8 and 24."}
+
               autoFocus
               onChange={handleInputs} 
             />
@@ -97,6 +104,8 @@ const Register = () => {
               margin="normal"
               required
               fullWidth
+              error={errors.password}
+              helperText={errors.password && "Must Includes (a   upper ,lower ,number,special character) & 8 - 32 characters long"}
               name="password"
               label="Password"
               type="password"
