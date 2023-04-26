@@ -7,7 +7,7 @@ const Item = ({item}) => {
   return (
     <>
 {/* <NavLink to="details/41"> */}
-<img src={image} alt="" />
+<img className='home__image' src={image} alt="" />
  {/* </NavLink> */}
  
   

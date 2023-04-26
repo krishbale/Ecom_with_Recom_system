@@ -44,7 +44,7 @@ function post(path, params) {
   return (
     <>
     
-     <h1></h1>
+     <h1>Connecting with Esewa API ....</h1>
       
     {/* <img src={Esewa} alt="" /> */}
     <input value="Submit" hidden type="submit" onClick={post(path,params)}/>

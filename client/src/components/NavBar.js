@@ -20,19 +20,11 @@ import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
 import LogoutSharpIcon from '@mui/icons-material/LogoutSharp';
 
 import "../styles/NavBar.css";
-import Slider from "../pages/Slider"
-import Cart from './Cartui'
-import Detail from '../pages/Detail';
+
 import { useCartContext } from '../context/Cartcontext';
-import Login from '../pages/Login';
-import Register from '../pages/Register';
-import Logout from '../pages/Logout';
-import Checkout from '../pages/Checkout';
-import Payment from '../pages/Payment';
-import About from '../pages/About';
 
 import ShoppingCartSharpIcon from '@mui/icons-material/ShoppingCartSharp';
-import Homepage from '../pages/Homepage';
+import Homepage from '../pages/Home';
 import Cartui from './Cartui';
 
 const NavBar = () => {
@@ -124,21 +116,7 @@ const NavBar = () => {
             }
             </ul>
           </nav>
-          <Routes >
-        
-            <Route path="/" element={<Slider />} />
-            <Route path="/about" element={<About />} />
-            {/* <Route path="/allproducts" element={<Slider />} /> */}
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/logout" element={<Logout />} />
          
-            <Route path="/details/:id" element={<Detail />} />
-            <Route path="/checkoutpage" element={<Checkout />} />
-            <Route path="/payment/esewa" element={<Payment />} />
-            <Route path='/paymentsuccess' element={<>Payment successfull</>} />
-            <Route path='/paymentfailed' element={<>Payment failed</>} />
-          </Routes>
         </div>
     </>
   )

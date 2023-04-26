@@ -73,7 +73,7 @@ return(
      
     <div className={`${query.length===0 ?'':'slider_hide'}`}>   
             
-    <Carousel
+    {/* <Carousel
    
 
   
@@ -83,7 +83,7 @@ return(
         <Item key={i} item = {item} />
         )
       }
-   </Carousel>
+   </Carousel>  */}
          
         
         
@@ -111,13 +111,13 @@ return(
         
           <div className='productitem'>
        
-            {filtered.map((product) => {
+            {/* {filtered.map((product) => {
             
               return (
                 
                <Card key={product.id} product={product} />
               )
-            })}
+            })} */}
           </div>
           <div className={`productitem ${hidemenu ? ' hide' : ''} `}>
          

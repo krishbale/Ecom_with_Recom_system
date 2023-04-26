@@ -2,6 +2,17 @@ import React,{createContext, useEffect, useReducer,} from 'react';
 import { initialState,reducer } from './reducer/useReducer';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import Header from './components/Header';
+import Home from './pages/Home';
+import Slider from './pages/Slider';
+  import About from './pages/About'
+  import Login from './pages/Login'
+  import Logout from './pages/Logout'
+  import Detail from './pages/Detail'
+import Register from './pages/Register'
+import Checkout from './pages/Checkout';
+import Payment from './pages/Payment';
+    import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 export const LoginContext = createContext({});
 function App() {
@@ -38,9 +49,32 @@ useEffect(() => {
  FetchUserAuth()
 }, [])
   return (
+
   
   <LoginContext.Provider value={{state,dispatch}}>
-  <NavBar />
+  <Header/>  
+   <Routes >
+  
+         
+            <Route exact path="/" element={<Home />
+        
+            } />
+            <Route path="/about" element={<About />} />
+            {/* <Route path="/allproducts" element={<Slider />} /> */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/logout" element={<Logout />} />
+         
+            <Route path="/details/:id" element={<Detail />} />
+            <Route path="/checkoutpage" element={<Checkout />} />
+            <Route path="/payment/esewa" element={<Payment />} />
+            <Route path='/paymentsuccess' element={<>Payment successfull</>} />
+            <Route path='/paymentfailed' element={<>Payment failed</>} />
+          </Routes>
+        
+  
+  
+  
   {/* <Footer /> */}
   </LoginContext.Provider>
 
