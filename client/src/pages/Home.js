@@ -8,19 +8,22 @@ import '../styles/Home.css'
 import Product from "../components/Product";
 import Card from "../components/Card";
 import { Fetchallproducts } from '../hooks/FetchAll';
+import { Link } from "react-router-dom";
 function    Home() {
   const {allproducts ,loading} = Fetchallproducts('/products');
   return (
     <div className="home">
       <div className="home__container">;
-     
-        <img
+     <Link to={'/details/26'}>
+     <img
           className="home__image"
           // src="https://m.media-amazon.com/images/I/61TD5JLGhIL._SX3000_.jpg"
             src="https://icms-image.slatic.net/images/ims-web/07342e59-6d96-4629-85ef-d78e9a3c34c0.jpg"
           // src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
           alt=""
         />
+     </Link>
+      
      
      <div className="home__row">
      

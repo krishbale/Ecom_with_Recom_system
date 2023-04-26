@@ -9,6 +9,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { Fetchallproducts } from '../hooks/FetchAll';
 import LoadingAnimations from '../components/LoadingAnimations';
 import Card from '../components/Card';
+import { Button } from '../components/Button';
 const  Detail = () => {
   //    const displayconsole= (data)=>{
   //   window.alert(` 1 item ${data } is added to the cart`)
@@ -57,7 +58,12 @@ if(!loading){
         </div>
       </div>  
       
-      <div className="product_section  center">Recommended products for you</div>
+      <div className="product_section  center">
+      <Button>
+      Recommended products for you
+
+      </Button>
+      </div>
     
       <div className='productitem' >
       

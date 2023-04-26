@@ -10,7 +10,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; //
 import imagedata from '../components/imagedata';
 import { Carousel } from 'react-responsive-carousel';
 // import Carousel from 'react-material-ui-carousel'
-
+import { Button } from '../components/Button';
 function Slider() {
   const {allproducts ,loading} = Fetchallproducts('/products');
 
@@ -130,11 +130,11 @@ return(
          })}
        </div>
     </div>
-    {/* <input placeholder='Search'  className='search' type="text"  */}
-              {/* // onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  /> */}
-            
-                 {/* <Searchistory searchHistory={searchHistory} /> */}
-                 {/* <button onClick={handleSearchHistory}>
+    <input placeholder='Search'  className='search' type="text"  
+               onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  /> 
+{/*             
+                  <Searchistory searchHistory={searchHistory} /> 
+                  <button onClick={handleSearchHistory}>
                   <SearchIcon />
                  </button> */}
 
