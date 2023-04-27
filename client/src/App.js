@@ -61,25 +61,33 @@ useEffect(() => {
   
   <LoginContext.Provider value={{username,dispatch}}>
   <Header/>  
-   <Routes >
+  
+    <Routes >
   
          
-            <Route exact path="/" element={<Home />
-        
-            } />
-            <Route path="/about" element={<About />} />
-            <Route path="/allproducts" element={<Slider />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/logout" element={<Logout />} />
-         
-            <Route path="/details/:id" element={<Detail />} />
-            <Route path="/checkoutpage" element={<Checkout />} />
-            <Route path="/payment/esewa" element={<Payment />} />
-            <Route path='/paymentsuccess' element={<>Payment successfull</>} />
-            <Route path='/paymentfailed' element={<>Payment failed</>} />
-          </Routes>
-        
+  <Route exact path="/" element={<Home />} />
+  <Route path="/about" element={<About />} />
+  <Route path="/allproducts" element={<Slider />} />
+  <Route path="/login" element={<Login />} />
+  <Route path="/register" element={<Register />} />
+  <Route path="/logout" element={<Logout />} />
+
+  <Route path="/details/:id" element={<Detail />} />
+  <Route path="/checkoutpage" element={<Checkout />} />
+   
+
+  <Route path="/login" element={<Login />} />
+  <Route path="/payment/esewa" element={<Payment />} />
+  <Route path='/paymentsuccess' element={<>Payment successfull</>} />
+  <Route path='/paymentfailed' element={<>Payment failed</>} />
+</Routes>
+
+  
+
+
+  
+
+  
   
   
   

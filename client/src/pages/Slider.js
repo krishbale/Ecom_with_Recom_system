@@ -1,16 +1,13 @@
 import '../styles/Slider.css'
 import { useState } from 'react'
-import SearchIcon from '@mui/icons-material/Search';
+import { Button } from '../components/Button';
 import { Fetchallproducts } from '../hooks/FetchAll';
 import LoadingAnimations from '../components/LoadingAnimations';
 import Card from '../components/Card';
-import Searchistory from './Searchistory';
-import Item from '../components/Item';
+
 import "react-responsive-carousel/lib/styles/carousel.min.css"; //
-import imagedata from '../components/imagedata';
-import { Carousel } from 'react-responsive-carousel';
-// import Carousel from 'react-material-ui-carousel'
-import { Button } from '../components/Button';
+import SearchIcon from '@mui/icons-material/Search';
+
 function Slider() {
   
   const {allproducts ,loading} = Fetchallproducts('/products');
@@ -64,31 +61,13 @@ return(
   return (
     <> 
     <div className='section_slider' >
-    <div className='searcharea'>
-      <input placeholder='Search'  className='search' type="text"  
-          onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  />
-           <button className="dropbtn"> Search</button>
-    </div>
-
-    <div  className="category"> 
-     
-    <div className={`${query.length===0 ?'':'slider_hide'}`}>   
-            
-    {/* <Carousel
    
 
+    <div  className="category"> 
+   
+ 
   
-   >
-     {
-        imagedata.map((item,i) => 
-        <Item key={i} item = {item} />
-        )
-      }
-   </Carousel>  */}
-         
-        
-        
-            </div>
+ 
 
     
   
@@ -98,6 +77,12 @@ return(
             <button className='categories' onClick={()=>filteredProduct("laptop")}>Laptop</button>
             <button className='categories' onClick={()=>filteredProduct("electronics")}>Electronics</button>
             <button className='categories' onClick={()=>filteredProduct("mobile")}>Mobile</button>  
+            {/* <div className='searcharea'> */}
+          <input placeholder='Search'  className='search' type="text"  
+          onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  />
+          {/* <Button>Search</Button> */}
+          
+    {/* </div> */}
             {/* <input placeholder='Search'  className='search' type="text"  
                onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  />          */}
      </div> 

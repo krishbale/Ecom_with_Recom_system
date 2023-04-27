@@ -16,7 +16,11 @@ import {  LoginContext } from '../App';
 import Link from '@mui/material/Link';
 import { NavLink ,useNavigate } from 'react-router-dom';
 import { Avatar, Button } from '@mui/material';
+import InstantMessage from '../components/InstantMessage';
+
 const Login = () => {
+  const [alert,setAlert] = useState(false);
+  const [alertmsg,setAlertMsg] = useState('')
   const {dispatch} = useContext(LoginContext);
     const history = useNavigate()
 
@@ -58,14 +62,17 @@ const Login = () => {
           const data = await res.json();
           if (res.status === 422 || !data) {
             window.alert("Invalid Credentials")
+            setAlertMsg("Invalid Credentials ")
+            setAlert(true);
           }
           else
           {
-            // window.alert(`Login Successfull`);
+            window.alert(`Login Successfull`);
             dispatch({type:"USER",payload:username})
             history('/')
            
           }
+          setAlert(false);
     
     
     
@@ -78,7 +85,7 @@ const Login = () => {
       }
   return <>
 
-
+{alert ?  <InstantMessage message = {alertmsg} /> : `` }
    <Container component="main" maxWidth="xs">
      <Box
           sx={{

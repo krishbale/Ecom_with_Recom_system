@@ -26,6 +26,10 @@ const  Detail = () => {
 
     let array = allproducts;
   const {data,loading} = Fetchsingledata(id);
+  const handleClick = () =>{
+    navigate('/checkoutpage')
+    addtoCart(data.id , data.price,data)
+  }
 
 
     if(loading){
@@ -51,8 +55,9 @@ if(!loading){
           <span>
           <h3>Price:${data.price}</h3>
        
-          <button  onClick={()=> addtoCart(data.id , data.price,data)}  className='cartbutton'> <h4>Add To Cart </h4> <AddShoppingCartIcon/></button>
-          <div><button className="back" onClick={() => navigate(-1)}> <ArrowBackIcon /> <h4>Back To HOME</h4></button></div>
+          <Button  onClick={()=> addtoCart(data.id , data.price,data)}  className='cartbutton'> <h4>Add To Cart </h4> <AddShoppingCartIcon/></Button>
+          <Button onClick={handleClick} className='cartbutton'>Buy</Button>
+          <div><Button className="back" onClick={() => navigate(-1)}> <ArrowBackIcon /> <h4>Back To HOME</h4></Button></div>
           </span>
          
         </div>

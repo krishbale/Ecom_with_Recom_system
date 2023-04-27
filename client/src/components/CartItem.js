@@ -28,9 +28,17 @@ const { cart, removeItem, clearCart, totalItem, totalAmount, increment, decremen
         </div>
         <div className="buttons">
           <Button
+          variant='contained'
             size="small"
             disableElevation
-            variant="contained"
+            style={{
+        borderRadius: 35,
+        // color:'##f57224',
+        backgroundColor: "#f57224",
+        padding: "18px 36px",
+        fontSize: "18px"
+    }}
+           
             onClick={() => decrement(id)}
           >
             <RemoveCircleIcon />
@@ -38,6 +46,13 @@ const { cart, removeItem, clearCart, totalItem, totalAmount, increment, decremen
           <p>{curElem.amount}</p>
           <Button
             size="small"
+            style={{
+        borderRadius: 35,
+        // color:'#
+        backgroundColor: "#f57224",
+        padding: "18px 36px",
+        fontSize: "18px"
+    }}
             disableElevation
             variant="contained"
             onClick={() => increment(id)}
@@ -48,6 +63,13 @@ const { cart, removeItem, clearCart, totalItem, totalAmount, increment, decremen
             size="small"
             disableElevation
             variant="contained"
+            style={{
+        borderRadius: 35,
+        // color:'#
+        backgroundColor: "#f57224",
+        padding: "18px 36px",
+        fontSize: "18px"
+    }}
             onClick={() => removeItem(id)}
           >
             <DeleteIcon />

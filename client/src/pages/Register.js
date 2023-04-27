@@ -71,11 +71,11 @@ const Register = () => {
    if(res.status === 422 || !data ){
     setAlertMsg("registeration failed")
     setAlert(true);
-    // window.alert("Registeration failed")
+    window.alert("Registeration failed")
    }else {
-  setAlertMsg("Registeratin Successfull");
+  // setAlertMsg("Registeratin Successfull");
   // setAlert(true);
-    // window.alert('Registeration successfull')
+    window.alert('Registeration successfull')
     history('/login')
 
 
@@ -146,7 +146,7 @@ const Register = () => {
             >
            Create Account
             </Button>
-            {alert ?  <InstantMessage message = {alertmsg} /> : `` }
+            {/* {alert ?  <InstantMessage message = {alertmsg} /> : `` } */}
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">

@@ -18,7 +18,7 @@ function Header() {
   const {username} = useContext(LoginContext);
   // console.log(username);
   const [filtered , setFiltered] = useState([])
-  const {allproducts ,loading} = Fetchallproducts('/products');
+  // const {allproducts ,loading} = Fetchallproducts('/products');
 
   // console.log(username);
   const [cartOpen, setCartOpen] = useState(false);
@@ -28,10 +28,10 @@ function Header() {
     
     
    
-      const results = allproducts.filter(item =>
-        item.title.toLowerCase().includes(query.toLowerCase())
-        );
-        setFiltered(results)
+      // const results = allproducts.filter(item =>
+      //   item.title.toLowerCase().includes(query.toLowerCase())
+      //   );
+      //   setFiltered(results)
   
         // setSearchHistory([...searchHistory,query])
         // console.log(searchHistory);
@@ -47,19 +47,14 @@ function Header() {
         />
       </Link>
        
-      
-      <Link to={ username===undefined ? '/login':'/logout'} >
-        <div className="header__option">
-        <span className="header__optionLineOne">Hello {username===undefined ? 'Guest' : username}</span>
-            <span className="header__optionLineTwo">{username===undefined ? 'Sign IN' : 'Sign Out'}</span>
-          </div>
-        </Link>
+    
       <div className="header__search">
         <input placeholder='Search'  onChange={(e) =>  [setQuery(e.target.value),handleSearch()]} className="header__searchInput" type="text" />
         <SearchIcon className="header__searchIcon" />
       </div>
 
       <div className="header__nav">
+      
      
         <Link to={'/allproducts'}>
         <div className="header__option">
