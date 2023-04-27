@@ -130,6 +130,13 @@ const handleshippingform = async(req,res )=>{
     }
 
 }
+const getshiipingdetails = async(req,res)=>{
+    
+    const details = await Shipdata.findOne({userid: req.userID})
+    res.send(details)
+    
+
+}
 
 
- module.exports = { register ,handleshippingform, login,logout,sessioncontroller }
+ module.exports = { register ,handleshippingform, login,logout,sessioncontroller,getshiipingdetails }

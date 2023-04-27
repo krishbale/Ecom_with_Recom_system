@@ -1,15 +1,15 @@
-import * as React from 'react';
+
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-
+import React, { useState, useEffect } from 'react'
 import Paper from '@mui/material/Paper';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
-
+import axios from 'axios';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AddressForm from './AddressForm';
@@ -18,28 +18,49 @@ import Review from './Review';
 
 
 
+
 const steps = ['Shipping address', 'Review your order',];
 
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <AddressForm />;
-    case 1:
-      return <Review />;
-    
-    default:
-      throw new Error('Unknown step');
-  }
-}
+
 
 const theme = createTheme();
 
 export default function Checkout() {
-  const [activeStep, setActiveStep] = React.useState(0);
+ 
 
+  const [ userData,setUserData] = useState([]);
+  const getdetails = async() =>{
+    try{
+      const { data } = await axios.get('/sdetails');
+      let sdetails = data;
+      setUserData(sdetails);
+      console.log(userData);
+    }catch(e){
+      console.log(e)
+      
+    }
+  }
+useEffect(() => {
+  getdetails()
+}, [])
+
+  const [activeStep, setActiveStep] = React.useState(0);
+  function getStepContent(step) {
+
+    switch (step) {
+      case 0:
+        return <AddressForm userData={userData} />;
+      case 1:
+        return <Review userData={userData} />;
+      
+      default:
+        throw new Error('Unknown step');
+    }
+  }
   const handleNext = () => {
     if(steps)
     setActiveStep(activeStep + 1);
+    
   };
 
   const handleBack = () => {

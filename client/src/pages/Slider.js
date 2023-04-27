@@ -12,6 +12,7 @@ import { Carousel } from 'react-responsive-carousel';
 // import Carousel from 'react-material-ui-carousel'
 import { Button } from '../components/Button';
 function Slider() {
+  
   const {allproducts ,loading} = Fetchallproducts('/products');
 
  const [query,setQuery] =useState('');
@@ -96,7 +97,9 @@ return(
             <button  className='categories' onClick={()=>filteredProduct('watch')}>Watch</button>
             <button className='categories' onClick={()=>filteredProduct("laptop")}>Laptop</button>
             <button className='categories' onClick={()=>filteredProduct("electronics")}>Electronics</button>
-            <button className='categories' onClick={()=>filteredProduct("mobile")}>Mobile</button>          
+            <button className='categories' onClick={()=>filteredProduct("mobile")}>Mobile</button>  
+            {/* <input placeholder='Search'  className='search' type="text"  
+               onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  />          */}
      </div> 
    
  
@@ -111,13 +114,13 @@ return(
         
           <div className='productitem'>
        
-            {/* {filtered.map((product) => {
+            {filtered.map((product) => {
             
               return (
                 
                <Card key={product.id} product={product} />
               )
-            })} */}
+            })}
           </div>
           <div className={`productitem ${hidemenu ? ' hide' : ''} `}>
          
@@ -130,8 +133,7 @@ return(
          })}
        </div>
     </div>
-    <input placeholder='Search'  className='search' type="text"  
-               onChange={(e) =>  [setQuery(e.target.value),handleSearch()]}  /> 
+   
 {/*             
                   <Searchistory searchHistory={searchHistory} /> 
                   <button onClick={handleSearchHistory}>

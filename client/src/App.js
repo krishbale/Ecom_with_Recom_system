@@ -1,5 +1,5 @@
 import React,{createContext, useEffect, useReducer,} from 'react';
-import { initialState,reducer } from './reducer/useReducer';
+import { initialState,reducer, username } from './reducer/useReducer';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -18,15 +18,23 @@ export const LoginContext = createContext({});
 function App() {
 
 
-  const [state,dispatch] = useReducer(reducer,initialState)
+  const [username,dispatch] = useReducer(reducer,initialState)
     
   const FetchUserAuth = async ()=>{
     try{
       const res = await fetch('/isAuth')
-      
+      // console.log;
+      const data = await res.json();
+      const username = data.username;
+      // console.log(username)
+      if(username){
+        
+        dispatch({type:'USER',payload:username})
+      }
+      // console.log(data.username);
       
       if(!res.ok) {
-        dispatch({type:'USER',payload:"false"})
+        dispatch({type:'USER',payload:undefined})
        
       }
       // console.log(res);
@@ -51,7 +59,7 @@ useEffect(() => {
   return (
 
   
-  <LoginContext.Provider value={{state,dispatch}}>
+  <LoginContext.Provider value={{username,dispatch}}>
   <Header/>  
    <Routes >
   
@@ -60,7 +68,7 @@ useEffect(() => {
         
             } />
             <Route path="/about" element={<About />} />
-            {/* <Route path="/allproducts" element={<Slider />} /> */}
+            <Route path="/allproducts" element={<Slider />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/logout" element={<Logout />} />

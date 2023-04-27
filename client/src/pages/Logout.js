@@ -1,8 +1,11 @@
-import React, { useEffect,useContext } from 'react'
+import React, { useEffect,useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {  LoginContext } from '../App';
 import LoadingAnimations from '../components/LoadingAnimations';
+import InstantMessage from '../components/InstantMessage';
 const Logout = () => {
+    const [alert,setAlert] = useState(false)
+    const [ message,setMessage] = useState('')
     const {state,dispatch} = useContext(LoginContext);
     const history = useNavigate();
     //promises
@@ -19,9 +22,13 @@ const Logout = () => {
         },credentials:"include"
         
     }).then((res)=>{
+       
 
-        history('/',{ replace:true });
-        dispatch({type:"USER",payload:"false"})
+        // history('/',{ replace:true });
+        dispatch({type:"USER",payload:undefined})
+        setMessage("User Logged Out")
+        setAlert(true);
+
         if(res.status !== 200){
             const error = new Error(res.error);
             throw error;
@@ -37,6 +44,7 @@ const Logout = () => {
     
   return (
     <>
+    {alert ?  <InstantMessage message = {message} /> : `` }
     <LoadingAnimations/>
     </>
   )

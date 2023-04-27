@@ -1,5 +1,6 @@
 import React,{useContext, useState} from 'react'
 import PersonIcon from '@mui/icons-material/Person';
+import { regexPassword,mailformat } from '../utils';
 
 // import {  useNavigate } from 'react-router-dom';
 // import TextField from '@mui/material/TextField';
@@ -18,13 +19,29 @@ import { Avatar, Button } from '@mui/material';
 const Login = () => {
   const {dispatch} = useContext(LoginContext);
     const history = useNavigate()
-    const [username, setUserName] = useState('');
-    const [password, setPassword] = useState('');
+
+    const [user,setUser] = useState({
+        username:"",password:""
+      });
+      const [errors,setErrors] = useState(false);
+      const handleInputs = (e) => {
+        let name, value;
+       
+        
+        name = e.target.name;
+        value = e.target.value;
+        let iscorrectvalue = name === 'username' ? mailformat.test(value)
+        :regexPassword.test(value);
+        iscorrectvalue ? setErrors({...errors,[name]:false})
+        :setErrors({...errors,[name]:true})    
+        setUser({ ...user,[name]:value})
+       
+      }
     const loginUser = async (e) => {
       
         e.preventDefault();
         try {
-    
+          const { username , password } = user; 
           const res =
             await
               fetch('/login',
@@ -44,8 +61,8 @@ const Login = () => {
           }
           else
           {
-            window.alert(`Login Successfull`);
-            dispatch({type:"USER",payload:"true"})
+            // window.alert(`Login Successfull`);
+            dispatch({type:"USER",payload:username})
             history('/')
            
           }
@@ -84,11 +101,13 @@ const Login = () => {
               fullWidth
               type="text"
               id="username"
-              label="User Name"
+              label=" Email"
               name="username"
-             
+              error={errors.username}
+            helperText={errors.username && "Any character other than white-space is allowed, length between 8 and 24."}
+
               autoFocus
-              onChange={(e) => setUserName(e.target.value)}
+              onChange={handleInputs} 
             />
             <TextField
               margin="normal"
@@ -99,7 +118,9 @@ const Login = () => {
               type="password"
               id="password"
             
-              onChange={(e) => setPassword(e.target.value)}
+              error={errors.password}
+              helperText={errors.password && "Must Includes (a   upper ,lower ,number,special character) & 8 - 32 characters long"}
+              onChange={handleInputs} 
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}

@@ -18,12 +18,15 @@
   }
   
   .header__search {
+
     display: flex;
     flex: 1;
     border: none;
     align-items: center;
     border-radius: 24px;
     outline: none;
+    /* display: hide; */
+    visibility: hidden;
   }
   
   .header__searchInput {
@@ -70,5 +73,5 @@
     flex-direction: column;
     margin-left: 10px;
     margin-right: 10px;
-    color: white;
+    color: rgb(255, 255, 255);
   }

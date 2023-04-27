@@ -1,17 +1,21 @@
-import * as React from 'react';
+import React, { useContext } from 'react'
 import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import { useCartContext } from '../context/Cartcontext';
 import Esewa from '../assets/esewa_logo.png';
-
+import {  LoginContext } from '../App';
 import Grid from '@mui/material/Grid';
 
 
 
 
-export default function Review() {
+export default function Review({userData}) {
+  const {address1,address2,city,country,firstName,lastName,state,zip} = userData
+
+  const {username} = useContext(LoginContext);
+
   const { cart, removeItem, clearCart, totalItem, totalAmount, increment, decrement } = useCartContext()
 
   return (
@@ -36,23 +40,36 @@ export default function Review() {
       </List>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
-          <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
-            Shipping Address
+          
+        <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
+            Address Details:-
           </Typography>
-          <Typography gutterBottom>Shiiping Details</Typography>
-          <Typography gutterBottom >Default Address</Typography>
+          <Typography gutterBottom>{firstName} {lastName}</Typography>
+          <Typography gutterBottom></Typography>
+          <Typography gutterBottom>{city},{country}</Typography>
+          <Typography gutterBottom>Postal Code:{zip}</Typography>
+
+          <Typography gutterBottom>Primary Address:{address1}</Typography>
+          <Typography gutterBottom >Secondary Address:{address2}</Typography>
+          <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
+            Email
+          </Typography>
+          <Typography gutterBottom>Order Placed by:-</Typography>
+          <Typography gutterBottom >{username}</Typography>
       
         </Grid>
         <Grid item xs={12} sm={6}>
        
           <Typography gutterBottom >Select Payment Method:</Typography>
-          <Typography> 
-       
-
-          </Typography>
+        
           <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
           Available Payment Method:  
-          <img width={120}  src={Esewa} alt="esewa" />        </Typography>
+          <Typography> 
+       
+         1. ESEWA <br /> <img width={120}  src={Esewa} alt="esewa" />   
+       </Typography>
+          
+               </Typography>
         </Grid>
      
       </Grid>

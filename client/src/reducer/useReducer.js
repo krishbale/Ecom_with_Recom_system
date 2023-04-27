@@ -1,5 +1,6 @@
-export const initialState = true;
-export const reducer = (state,action) =>
+export const initialState = undefined;
+
+export const reducer = (username,action) =>
 {
 
 if(action.type === "USER") {
@@ -9,7 +10,8 @@ if(action.type === "USER") {
     return action.payload;
 
 }
-return state;
+
+return username;
 
 
 

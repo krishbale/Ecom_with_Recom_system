@@ -5,14 +5,17 @@ import TextField from '@mui/material/TextField';
 
 import Typography from '@mui/material/Typography';
 import { Box, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 
 
 
-export default function AddressForm() {
+export default function AddressForm({userData}) {
+  const {address1,address2,city,country,firstName,lastName,state,zip} = userData
+  const history = useNavigate();
   const [shippingaddress,setShippingAddress] =
    React.useState({
-    firstname:"",
+    firstname:'',
 
     lastname:"",
     address1:"",
@@ -73,9 +76,12 @@ export default function AddressForm() {
       const data = await res.json();
       if(res.status === 422 || !data){
         window.alert("Registeration failed")
+        console.log(data);
+ 
+        
+        
       }else{
         window.alert("Registeration successfull")
-        
       }
 
     
@@ -101,6 +107,7 @@ export default function AddressForm() {
           
           <TextField
             required
+            value={firstName}
             id="firstName"
             name="firstName"
             label="First name"
@@ -113,6 +120,7 @@ export default function AddressForm() {
         <Grid item xs={12} sm={6}>
           <TextField
             required
+            value={lastName}
             id="lastName"
             name="lastName"
             label="Last name"
@@ -125,6 +133,7 @@ export default function AddressForm() {
         <Grid item xs={12}>
           <TextField
             required
+            value={address1}
             id="address1"
             name="address1"
             label="Address line 1"
@@ -138,6 +147,7 @@ export default function AddressForm() {
           <TextField
             id="address2"
             name="address2"
+            value={address2}
             label="Address line 2"
             fullWidth
             autoComplete="shipping address-line2"
@@ -150,6 +160,7 @@ export default function AddressForm() {
             required
             id="city"
             name="city"
+            value={city}
             label="City"
             fullWidth
             autoComplete="shipping address-level2"
@@ -163,6 +174,7 @@ export default function AddressForm() {
             name="state"
             label="State/Province/Region"
             fullWidth
+            value={state}
             variant="standard"
             onChange={handleInputs} 
           />
@@ -174,6 +186,7 @@ export default function AddressForm() {
             name="zip"
             label="Zip / Postal code"
             fullWidth
+            value={zip}
             autoComplete="shipping postal-code"
             variant="standard"
             onChange={handleInputs} 
@@ -182,6 +195,7 @@ export default function AddressForm() {
         <Grid item xs={12} sm={6}>
           <TextField
             required
+            value={country}
             id="country"
             name="country"
             label="Country"

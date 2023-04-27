@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 
+import InstantMessage from '../components/InstantMessage';
 import { regexPassword,mailformat } from '../utils';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -14,8 +15,20 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+
+
+
+
+
+
+
+
+
 const Register = () => {
+  const [alert,setAlert] = useState(false);
+  const [alertmsg,setAlertMsg] = useState('')
     const   history = useNavigate();
+
     const [user,setUser] = useState({
         username:"",password:""
       });
@@ -56,14 +69,22 @@ const Register = () => {
     
    const data = await res.json();
    if(res.status === 422 || !data ){
-
-    window.alert("Registeration failed")
-   }else {  
-    window.alert('Registeration successfull')
+    setAlertMsg("registeration failed")
+    setAlert(true);
+    // window.alert("Registeration failed")
+   }else {
+  setAlertMsg("Registeratin Successfull");
+  // setAlert(true);
+    // window.alert('Registeration successfull')
     history('/login')
 
+
+
    }
+  //  setAlert(false);
   }catch(error){
+ 
+   
 
     console.log(error)
   }
@@ -92,7 +113,7 @@ const Register = () => {
               fullWidth
               type="text"
               id="username"
-              label="User Name"
+              label="Email"
               name="username"
             error={errors.username}
             helperText={errors.username && "Any character other than white-space is allowed, length between 8 and 24."}
@@ -125,6 +146,7 @@ const Register = () => {
             >
            Create Account
             </Button>
+            {alert ?  <InstantMessage message = {alertmsg} /> : `` }
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
