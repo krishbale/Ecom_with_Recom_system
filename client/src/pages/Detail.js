@@ -20,11 +20,23 @@ const  Detail = () => {
   const {addtoCart} = useCartContext(); 
   let navigate = useNavigate();
 
-  const {allproducts } = Fetchallproducts(`/getrecom/${id}`,id);
+  const {allproducts} = Fetchallproducts(`/getrecom/${id}`,id);
 
 
 
     let array = allproducts;
+    // const [ recomdata, topThree] = array;
+
+    // console.log(array);
+    // let mergedArray = array[0].map(obj => {
+    //   let matchingObj = array[1].find(matchObj => matchObj.id === obj.id);
+    //   return {...obj, ...matchingObj};
+    // });
+    
+    // console.log(mergedArray);
+
+  
+
   const {data,loading} = Fetchsingledata(id);
   const handleClick = () =>{
     navigate('/checkoutpage')
@@ -55,9 +67,9 @@ if(!loading){
           <span>
           <h3>Price:${data.price}</h3>
        
-          <Button  onClick={()=> addtoCart(data.id , data.price,data)}  className='cartbutton'> <h4>Add To Cart </h4> <AddShoppingCartIcon/></Button>
+          <Button  onClick={()=> addtoCart(data.id , data.price,data)}  className='cartbutton'> <h4>Add To Cart</h4> <br /> <AddShoppingCartIcon/></Button>
           <Button onClick={handleClick} className='cartbutton'>Buy</Button>
-          <div><Button className="back" onClick={() => navigate(-1)}> <ArrowBackIcon /> <h4>Back To HOME</h4></Button></div>
+          <div><Button className="back" onClick={() => navigate(-1)}> <ArrowBackIcon /> <h4>Continue Shopping</h4></Button></div>
           </span>
          
         </div>

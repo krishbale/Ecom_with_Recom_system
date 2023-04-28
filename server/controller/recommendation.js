@@ -10,6 +10,7 @@ const recom = async (req,res,next)=>{
     // console.log(sortedArray)
     
     const topThree = sortedArray.slice(0, 3);
+    console.log(topThree);
     
     // const array = [  { id: '27', id1: '1', score: 0.06596311249767592 },  { id: '15', id1: '1', score: 0.051570159427414906 },  { id: '13', id1: '1', score: 0.05136716072111169 }];
     
@@ -31,10 +32,17 @@ const recom = async (req,res,next)=>{
   recomdata[i] = data[rec];
 }
 // console.log(recomdata);
+// const result = recomdata.map((product) => {
+//   const matchingScore = topThree.find((score) => score.id === product.id);
+//   const score = matchingScore ? matchingScore.score : null;
+//   return { ...product, score };
+// });
+// console.log(result)
 
 res.status(200).json({
     success:true,
-    recomdata,
+  recomdata
+    
     
 })
 

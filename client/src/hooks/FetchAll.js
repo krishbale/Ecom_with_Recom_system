@@ -14,8 +14,9 @@ const Fetchallproducts = (url,id) => {
                 isloading(true)
                 const { data } = await axios.get(url);
                 
-               
-                let products =  data.data ? data.data: data.recomdata
+            //    console.log(data)
+                let products =  data.data ? data.data: data.recomdata;
+                // let topThree = data.topThree ? data.Three : 
                 // console.log(products);
                 setAllproductss(products);
                 

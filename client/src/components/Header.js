@@ -54,6 +54,18 @@ function Header() {
       </div>
 
       <div className="header__nav">
+      {/* <Link to={ state==='false' ? '/login':'/logout'} >
+        <div className="header__option">
+        <span className="header__optionLineOne">Hello {state==='false' ? 'Guest' : 'UserName'}</span>
+            <span className="header__optionLineTwo">{state==='false' ? 'Sign IN' : 'Sign Out'}</span>
+          </div>
+        </Link> */}
+        <Link to={ username===undefined ? '/login':'/logout'} >
+        <div className="header__option">
+        <span className="header__optionLineOne">Hello {username===undefined ? 'Guest' : username}</span>
+            <span className="header__optionLineTwo">{username===undefined ? 'Sign IN' : 'Sign Out'}</span>
+          </div>
+        </Link>
       
      
         <Link to={'/allproducts'}>

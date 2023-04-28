@@ -1,10 +1,13 @@
+import { Typography } from '@mui/material';
 import React from 'react'
 import { Link } from "react-router-dom";
 const Card = ({product}) => {
-    const {  id, title, price, image   } = product
+    const {  id, title, price, image ,score  } = product
+    console.log(score)
   return (
-    <>
+    <>        
               <div  className='card'>
+              <Typography>{score? `score ${score}`:""}</Typography>
               <div   className='item'>
               <Link to={`/details/${id}`}>
                 <div className='image'>
