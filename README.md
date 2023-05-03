@@ -2,7 +2,7 @@
 
 
 ## Project Members:
-## Balkrishna Pokharel:[Project Lead] balkrishnapokharel70@gmail.com
+## Balkrishna Pokharel: balkrishnapokharel70@gmail.com
 ## Bishnu Upadhyay: 
 ## Arjun Khadka: 
 ## Balkrishna Pokharel:
