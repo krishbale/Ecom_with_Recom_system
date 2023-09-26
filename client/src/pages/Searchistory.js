@@ -1,17 +1,17 @@
-import React from 'react'
+import React from "react";
 
-const Searchistory = ({searchHistory}) => {
+const Searchistory = ({ searchHistory }) => {
   return (
     <div>
-     {searchHistory.length > 0 && (
-     <ul>
-          {searchHistory.map((search,index) => (
-         
-            <li key={index}>{search}</li> 
+      {searchHistory.length > 0 && (
+        <ul>
+          {searchHistory.map((search, index) => (
+            <li key={index}>{search}</li>
           ))}
         </ul>
-      )} </div>
-  )
-}
+      )}{" "}
+    </div>
+  );
+};
 
-export default Searchistory
+export default Searchistory;

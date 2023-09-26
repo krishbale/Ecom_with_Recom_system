@@ -1,12 +1,11 @@
-
 import React from "react";
-import '../styles/Product.css'
+import "../styles/Product.css";
 
 function Product({ id, title, image, price, rating }) {
- 
   return (
-    <div  key={id} className="product">
-      <div className="product__info">Categories
+    <div key={id} className="product">
+      <div className="product__info">
+        Categories
         <p>{title}</p>
         <p className="product__price">
           <small>$</small>

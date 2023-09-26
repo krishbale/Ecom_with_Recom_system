@@ -1,101 +1,84 @@
-import React,{useContext, useState} from 'react'
-import PersonIcon from '@mui/icons-material/Person';
-import { regexPassword,mailformat } from '../utils';
+import React, { useContext, useState } from "react";
+import PersonIcon from "@mui/icons-material/Person";
+import { regexPassword, mailformat } from "../utils";
 
-// import {  useNavigate } from 'react-router-dom';
-// import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import TextField from '@mui/material/TextField';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import {  LoginContext } from '../App';
-import Link from '@mui/material/Link';
-import { NavLink ,useNavigate } from 'react-router-dom';
-import { Avatar, Button } from '@mui/material';
-import InstantMessage from '../components/InstantMessage';
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import TextField from "@mui/material/TextField";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import { LoginContext } from "../App";
+import Link from "@mui/material/Link";
+import { NavLink, useNavigate } from "react-router-dom";
+import { Avatar, Button } from "@mui/material";
+import InstantMessage from "../components/InstantMessage";
 
 const Login = () => {
-  const [alert,setAlert] = useState(false);
-  const [alertmsg,setAlertMsg] = useState('')
-  const {dispatch} = useContext(LoginContext);
-    const history = useNavigate()
+  const [alert, setAlert] = useState(false);
+  const [alertmsg, setAlertMsg] = useState("");
+  const { dispatch } = useContext(LoginContext);
+  const history = useNavigate();
 
-    const [user,setUser] = useState({
-        username:"",password:""
+  const [user, setUser] = useState({
+    username: "",
+    password: "",
+  });
+  const [errors, setErrors] = useState(false);
+  const handleInputs = (e) => {
+    let name, value;
+
+    name = e.target.name;
+    value = e.target.value;
+    let iscorrectvalue =
+      name === "username" ? mailformat.test(value) : regexPassword.test(value);
+    iscorrectvalue
+      ? setErrors({ ...errors, [name]: false })
+      : setErrors({ ...errors, [name]: true });
+    setUser({ ...user, [name]: value });
+  };
+  const loginUser = async (e) => {
+    e.preventDefault();
+    try {
+      const { username, password } = user;
+      const res = await fetch("/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          password,
+        }),
       });
-      const [errors,setErrors] = useState(false);
-      const handleInputs = (e) => {
-        let name, value;
-       
-        
-        name = e.target.name;
-        value = e.target.value;
-        let iscorrectvalue = name === 'username' ? mailformat.test(value)
-        :regexPassword.test(value);
-        iscorrectvalue ? setErrors({...errors,[name]:false})
-        :setErrors({...errors,[name]:true})    
-        setUser({ ...user,[name]:value})
-       
+      const data = await res.json();
+      if (res.status === 422 || !data) {
+        window.alert("Invalid Credentials");
+        setAlertMsg("Invalid Credentials ");
+        setAlert(true);
+      } else {
+        window.alert(`Login Successfull`);
+        dispatch({ type: "USER", payload: username });
+        history("/");
       }
-    const loginUser = async (e) => {
-      
-        e.preventDefault();
-        try {
-          const { username , password } = user; 
-          const res =
-            await
-              fetch('/login',
-                {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json"
-                  },
-                  body: JSON.stringify({
-                    username, password
-    
-                  })
-                });
-          const data = await res.json();
-          if (res.status === 422 || !data) {
-            window.alert("Invalid Credentials")
-            setAlertMsg("Invalid Credentials ")
-            setAlert(true);
-          }
-          else
-          {
-            window.alert(`Login Successfull`);
-            dispatch({type:"USER",payload:username})
-            history('/')
-           
-          }
-          setAlert(false);
-    
-    
-    
-    
-        } catch (error) {
-          console.log(error);
-    
-        }
-    
-      }
-  return <>
-
-{alert ?  <InstantMessage message = {alertmsg} /> : `` }
-   <Container component="main" maxWidth="xs">
-     <Box
+      setAlert(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  return (
+    <>
+      {alert ? <InstantMessage message={alertmsg} /> : ``}
+      <Container component="main" maxWidth="xs">
+        <Box
           sx={{
             marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'primary.dark' }}>
+          <Avatar sx={{ m: 1, bgcolor: "primary.dark" }}>
             <PersonIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -111,10 +94,12 @@ const Login = () => {
               label=" Email"
               name="username"
               error={errors.username}
-            helperText={errors.username && "Any character other than white-space is allowed, length between 8 and 24."}
-
+              helperText={
+                errors.username &&
+                "Any character other than white-space is allowed, length between 8 and 24."
+              }
               autoFocus
-              onChange={handleInputs} 
+              onChange={handleInputs}
             />
             <TextField
               margin="normal"
@@ -124,10 +109,12 @@ const Login = () => {
               label="Password"
               type="password"
               id="password"
-            
               error={errors.password}
-              helperText={errors.password && "Must Includes (a   upper ,lower ,number,special character) & 8 - 32 characters long"}
-              onChange={handleInputs} 
+              helperText={
+                errors.password &&
+                "Must Includes (a   upper ,lower ,number,special character) & 8 - 32 characters long"
+              }
+              onChange={handleInputs}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -155,68 +142,9 @@ const Login = () => {
             </Grid>
           </Box>
         </Box>
-        </Container>
- 
-   
- 
-{/* 
-   <section className='sign-in bg-dark'>
-      <div className='container mt-5'>
-      <div className='signin-content'>
-      <div className='signin-image bg-dark'>
-        <figure>
-          <img  height="100" width="75" alt="signpic" />
-        </figure>
-       
-      </div>
-      <div className='signin-form bg-dark'>
-      <h2 className='form-title'>Log IN</h2>
-      <form method='POST'
-      className='register-form' id='register-form'>
-      <div className=''>
-      <div className='form-group  '>
-        <label htmlFor="username">
-        <i className="zmdi zmdi-account material-icons-name bg-info "></i>
-        </label>
-        <input type="text" name="username" id="name" autoComplete='off' 
-          placeholder='Your Username' className='bg-dark text-white-50'
- 
-            
-            onChange={(e) => setUserName(e.target.value)}
-                   />
-      </div>
-      <div className='form-group  '>
-        <label htmlFor="password">
-        <i className="zmdi zmdi-lock material-icons-password bg-info"></i>
-        </label>
-        <input type="text" name="password" id="password" autoComplete='off' 
-          placeholder='Your Password' className='bg-dark text-white-50'
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
-      <div className='form-group form-button '>
-        <input type="submit" 
-        onClick={loginUser}
-         name="login" id="login" className='form-submit btn btn-outline-success' value="Login" />
-         <p className='bg-dark' >
-          Do you want to register a new account ? 
-         </p>
-         <Link to="/signup" className="signup-image-link btn  btn-outline-info" >Create an account</Link>
-      </div>
-      </div>
-      </form>
-     
-      </div>
-      </div>
-      </div>
-      
-     
-    </section>  */}
-   
-   
-        </>
-  
-}
+      </Container>
+    </>
+  );
+};
 
-export default Login
+export default Login;

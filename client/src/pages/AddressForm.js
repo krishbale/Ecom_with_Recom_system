@@ -1,64 +1,55 @@
-import * as React from 'react';
-import Grid from '@mui/material/Grid';
+import * as React from "react";
+import Grid from "@mui/material/Grid";
 
-import TextField from '@mui/material/TextField';
+import TextField from "@mui/material/TextField";
 
-import Typography from '@mui/material/Typography';
-import { Box,  } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
-import { Button } from '../components/Button';
+import Typography from "@mui/material/Typography";
+import { useNavigate } from "react-router-dom";
+import { Button } from "../components/Button";
 
-
-
-
-export default function AddressForm({userData}) {
-  const {address1,address2,city,country,firstName,lastName,state,zip} = userData
+export default function AddressForm({ userData }) {
+  const { address1, address2, city, country, firstName, lastName, state, zip } =
+    userData;
   const history = useNavigate();
-  const [shippingaddress,setShippingAddress] =
-   React.useState({
-    firstname:'',
+  const [shippingaddress, setShippingAddress] = React.useState({
+    firstname: "",
 
-    lastname:"",
-    address1:"",
-    address2:"",
-    city:"",
-    state:"",
-    zip:"",
-    country:""
-  })
+    lastname: "",
+    address1: "",
+    address2: "",
+    city: "",
+    state: "",
+    zip: "",
+    country: "",
+  });
   const handleInputs = (e) => {
     let name, value;
-   
 
     name = e.target.name;
     value = e.target.value;
-    
-    setShippingAddress({ ...shippingaddress,[name]:value}
-      
-      )
-   
-  }
-  const handleShipForm = async(e) =>{
+
+    setShippingAddress({ ...shippingaddress, [name]: value });
+  };
+  const handleShipForm = async (e) => {
     e.preventDefault();
-    const {  
+    const {
       firstName,
 
-          lastName,
-    address1,
-    address2,
-    city,
-    state,
-    zip,
-    country
-  
-
-  } = shippingaddress;
-  console.log(shippingaddress.firstname);
-  try{
-    const res = await fetch("/shippingform",{
-      method:"POST",
-      headers:{
-        "Content-Type" : "application/json"},
+      lastName,
+      address1,
+      address2,
+      city,
+      state,
+      zip,
+      country,
+    } = shippingaddress;
+    console.log(shippingaddress.firstname);
+    try {
+      const res = await fetch("/shippingform", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           firstName,
 
@@ -68,44 +59,34 @@ export default function AddressForm({userData}) {
           city,
           state,
           zip,
-          country
-          
-    
-        })
-
+          country,
+        }),
       });
       const data = await res.json();
-      if(res.status === 422 || !data){
-        window.alert("Registeration failed")
+      if (res.status === 422 || !data) {
+        window.alert("Registeration failed");
         console.log(data);
- 
-        
-        
-      }else{
-        window.alert("Registeration successfull")
+      } else {
+        window.alert("Registeration successfull");
       }
-
-    
-
-  }catch(e){
-    console.log(e);
-  }
-
-
-  }
-
-
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
         Shipping address
       </Typography>
-      <Grid component='form' onSubmit={handleShipForm} container noValidate spacing={3}>
-
-
+      <Grid
+        component="form"
+        onSubmit={handleShipForm}
+        container
+        noValidate
+        spacing={3}
+      >
         <Grid item xs={12} sm={6}>
-          
           <TextField
             required
             value={firstName}
@@ -115,7 +96,7 @@ export default function AddressForm({userData}) {
             fullWidth
             autoComplete="given-name"
             variant="standard"
-            onChange={handleInputs} 
+            onChange={handleInputs}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -128,7 +109,7 @@ export default function AddressForm({userData}) {
             fullWidth
             autoComplete="family-name"
             variant="standard"
-            onChange={handleInputs} 
+            onChange={handleInputs}
           />
         </Grid>
         <Grid item xs={12}>
@@ -141,7 +122,7 @@ export default function AddressForm({userData}) {
             fullWidth
             autoComplete="shipping address-line1"
             variant="standard"
-            onChange={handleInputs} 
+            onChange={handleInputs}
           />
         </Grid>
         <Grid item xs={12}>
@@ -153,7 +134,7 @@ export default function AddressForm({userData}) {
             fullWidth
             autoComplete="shipping address-line2"
             variant="standard"
-            onChange={handleInputs} 
+            onChange={handleInputs}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -166,7 +147,7 @@ export default function AddressForm({userData}) {
             fullWidth
             autoComplete="shipping address-level2"
             variant="standard"
-            onChange={handleInputs} 
+            onChange={handleInputs}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -177,7 +158,7 @@ export default function AddressForm({userData}) {
             fullWidth
             value={state}
             variant="standard"
-            onChange={handleInputs} 
+            onChange={handleInputs}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -190,7 +171,7 @@ export default function AddressForm({userData}) {
             value={zip}
             autoComplete="shipping postal-code"
             variant="standard"
-            onChange={handleInputs} 
+            onChange={handleInputs}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -203,16 +184,13 @@ export default function AddressForm({userData}) {
             fullWidth
             autoComplete="shipping country"
             variant="standard"
-            onChange={handleInputs} 
+            onChange={handleInputs}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
-        <Button type='submit' >Submit </Button>
+          <Button type="submit">Submit </Button>
         </Grid>
-
       </Grid>
-    
-     
     </React.Fragment>
   );
 }

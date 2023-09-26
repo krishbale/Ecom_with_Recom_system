@@ -1,96 +1,76 @@
-const Cartreducer = (state,action) => {
+const Cartreducer = (state, action) => {
+  if (action.type === "ADD_TO_CART") {
+    let { id, amount, product } = action.payload;
 
-    //Add to cart
-if(action.type === "ADD_TO_CART"){
-    let {id,amount,product} = action.payload;
-   
-    let existingProduct = state.cart.find(
-      (curElem) => curElem.id === id
-    );
-    if(existingProduct){
-      let updatedProduct = state.cart.map((curElem) =>{
-        if(curElem.id === id){
+    let existingProduct = state.cart.find((curElem) => curElem.id === id);
+    if (existingProduct) {
+      let updatedProduct = state.cart.map((curElem) => {
+        if (curElem.id === id) {
           let newAmount = curElem.amount + amount;
-          if(newAmount >= curElem.max){
+          if (newAmount >= curElem.max) {
             newAmount = curElem.max;
           }
           return {
             ...curElem,
-            amount:newAmount,
+            amount: newAmount,
           };
-
-        }else {
+        } else {
           return curElem;
         }
       });
       return {
         ...state,
-        cart:updatedProduct,
+        cart: updatedProduct,
       };
-    }else{
+    } else {
+      let cardProduct;
+      cardProduct = {
+        id: product.id,
+        title: product.title,
+        image: product.image,
+        price: product.price,
+        quantity: 1,
+      };
 
-    
-    // console.log(`details products:${products.id}`);
-    let cardProduct;
-    cardProduct={
-        "id":product.id,
-        "title":product.title,
-        "image":product.image,
-        "price":product.price,
-        "quantity":1,
-    };
-    
-    // console.log(cardProduct)
-return{
-    ...state,
-    cart:[...state.cart,cardProduct],
-    
-};
-}
-}
-///remove item
-
-if(action.type === 'REMOVE_ITEM'){
-    return{
+      return {
         ...state,
-        cart:state.cart.filter((curlElem)=>{
-            return curlElem.id !== action.payload
-        })
+        cart: [...state.cart, cardProduct],
+      };
     }
-}
+  }
 
-//add item
-if(action.type === 'ADD_ITEM'){
-    const updatedcart= state.cart.map((curlElem) => {
-        if(curlElem.id === action.payload) {
-            return { ...curlElem,quantity:curlElem.quantity + 1};
-        }
-        return curlElem;
+  if (action.type === "REMOVE_ITEM") {
+    return {
+      ...state,
+      cart: state.cart.filter((curlElem) => {
+        return curlElem.id !== action.payload;
+      }),
+    };
+  }
 
+  if (action.type === "ADD_ITEM") {
+    const updatedcart = state.cart.map((curlElem) => {
+      if (curlElem.id === action.payload) {
+        return { ...curlElem, quantity: curlElem.quantity + 1 };
+      }
+      return curlElem;
     });
     return { ...state, cart: updatedcart };
+  }
 
-  
-}
-
-//sub item
-if(action.type === 'SUB_ITEM'){
+  if (action.type === "SUB_ITEM") {
     const updatedCart = state.cart
-  .map((curElem) => {
-    if (curElem.id === action.payload) {
-      return { ...curElem, quantity: curElem.quantity - 1 };
-    }
-    return curElem;
-  })
-  .filter((curElem) => curElem.quantity !== 0);
-return { ...state, cart: updatedCart };
+      .map((curElem) => {
+        if (curElem.id === action.payload) {
+          return { ...curElem, quantity: curElem.quantity - 1 };
+        }
+        return curElem;
+      })
+      .filter((curElem) => curElem.quantity !== 0);
+    return { ...state, cart: updatedCart };
+  }
 
-  
-}
-
-
-//get total
-if (action.type === "GET_TOTAL") {
+  if (action.type === "GET_TOTAL") {
     let { totalItem, totalAmount } = state.cart.reduce(
       (accum, curVal) => {
         let { price, quantity } = curVal;
@@ -109,17 +89,11 @@ if (action.type === "GET_TOTAL") {
     return { ...state, totalItem, totalAmount };
   }
 
-//clear cart
-
-if (action.type === "CLEAR_CART") {
+  if (action.type === "CLEAR_CART") {
     return { ...state, cart: [] };
   }
 
   return state;
-  
-    
+};
 
-
-}
-
-export default Cartreducer
+export default Cartreducer;
